@@ -1,0 +1,233 @@
+{
+ "def":[
+         {
+          "template":"trimrate.fio",
+          "alias":"4KTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"64KTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "64K",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"1MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "1024K",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"2MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "2M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"4MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "4M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"8MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "8M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"16MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "16M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"32MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "32M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"64MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "64M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"128MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "128M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"256MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "256M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"512MTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "512M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"1GTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "1024M",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"2GTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "2G",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"3GTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "3G",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

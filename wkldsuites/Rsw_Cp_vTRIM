@@ -1,0 +1,50 @@
+{
+"pre":[
+        {
+         "template":"rsw_cp_precon.fio",
+         "alias":"rsw_cp_precondition",
+         "values" : {
+             "TIME" : "N/A",
+             "RATE1" : "30000",
+             "RATE2" : "900",
+             "DEPTH1" : "900",
+             "RAMPTIME": "0"
+         }
+        },
+        {
+          "template":"rsw_cp_vtrim.fio",
+          "alias":"rsw_cp_vTRIM",
+          "values" : {
+              "TIME" : "10800",
+              "SIZE" : "90%",
+              "RATE1" : "300",
+              "RATE2" : "9",
+              "DEPTH1" : "4",
+              "RAMPTIME": "120",
+              "W1THINK" : "300000000",
+              "W2THINK" : "15000000"
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"rsw_cp_vtrim.fio",
+          "alias":"rsw_cp_vTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "SIZE" : "90%",
+              "RATE1" : "300",
+              "RATE2" : "9",
+              "DEPTH1" : "4",
+              "RAMPTIME": "120",
+              "W1THINK" : "300000000",
+              "W2THINK" : "15000000"
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

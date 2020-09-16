@@ -1,0 +1,23 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+direct=1
+ioengine=libaio
+random_generator=tausworthe64
+size=100%
+loops=10000
+invalidate=1
+time_based
+norandommap
+randrepeat=0
+ramp_time=${RAMPTIME}
+runtime=${TIME}
+group_reporting=1
+filename=${DEV}
+
+[job0]
+numjobs=1
+iodepth=26
+rw=randrw
+rwmixread=94
+percentage_random=9,27,
+bssplit=4k/11:8k/4:16k/1:64k/2:128k/1:256k/2:512k/29:1m/50,4k/29:8k/3:64k/1:128k/1:256k/4:512k/21:1m/41

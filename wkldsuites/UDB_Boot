@@ -1,0 +1,45 @@
+{
+"pre":[
+        {
+         "template":"prep_flash.fio",
+         "alias":"prep_flash",
+         "values" : {
+             "TIME" : "N/A",
+             "BLKSIZE" : "128K",
+             "DEPTH" : 128,
+             "RRATE" : 0,
+             "SIZE" : "N/A",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "W4THINK" : 0
+         }
+        },
+        {
+         "template":"udb_boot.fio",
+         "alias":"UDB_Boot_precondition",
+         "values" : {
+             "TIME" : "3480",
+             "RAMPTIME": "120",
+             "W1THINK" : 0,
+             "W2THINK" : 0
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"udb_boot.fio",
+          "alias":"UDB_Boot",
+          "values" : {
+              "TIME" : "1080",
+              "RAMPTIME": "120",
+              "W1THINK" : 5000000,
+              "W2THINK" : 19000000
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

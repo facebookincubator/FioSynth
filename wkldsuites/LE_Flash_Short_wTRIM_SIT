@@ -1,0 +1,68 @@
+{
+ "def":[
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"L2R0.5DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 153600000,
+              "W4THINK" : 360000000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"M2R.5DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 20,
+              "RRATE" : 20000,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 153600000,
+              "W4THINK" : 360000000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"L2R1DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 7680000,
+              "W2THINK" : 15360000,
+              "W3THINK" : 76800000,
+              "W4THINK" : 180000000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"L2R1.5DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 1280000,
+              "W2THINK" : 2560000,
+              "W3THINK" : 5120000,
+              "W4THINK" : 120000000
+          }
+         }
+        ],
+"run_cycles": 700,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

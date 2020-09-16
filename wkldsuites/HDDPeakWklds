@@ -1,0 +1,448 @@
+{
+ "def":[
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD001",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 1,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD002",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 2,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD004",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 4,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD008",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 8,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD016",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD032",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD064",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD0128",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 128,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD001",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 1,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD002",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 2,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD004",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 4,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD008",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 8,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD016",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD032",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD064",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD128",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 128,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD001",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 1,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD002",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 2,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD004",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 4,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD008",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 8,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD016",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD032",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD064",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_70_30.fio",
+          "alias":"70_30_QD128",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 128,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD001",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 1,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD002",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 2,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD004",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 4,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD008",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 8,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD016",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 16,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD032",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 32,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD064",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 64,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD128",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 128,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD001",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 1,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD002",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 2,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD004",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 4,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD008",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 8,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD016",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 16,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD032",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 32,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD064",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 64,
+              "SIZE" : "10%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD128",
+          "values" : {
+              "TIME" : "120",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 128,
+              "SIZE" : "10%"
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

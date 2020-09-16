@@ -1,0 +1,126 @@
+{
+ "def":[
+         {
+          "template":"trimrate.fio",
+          "alias":"3GTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "3G",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_precon.fio",
+          "alias":"T6_precondition2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"4K_L2R6DWPD_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 43750,
+              "SIZE" : "90%",
+              "W1THINK" : 1280000,
+              "W2THINK" : 2560000,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"4K_L2R9DWPD_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 43750,
+              "SIZE" : "90%",
+              "W1THINK" : 960000,
+              "W2THINK" : 1920000,
+              "W3THINK" : 9600000,
+              "W4THINK" : 22500000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"4K_L2R30DWPD_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 43750,
+              "SIZE" : "90%",
+              "W1THINK" : 256000,
+              "W2THINK" : 512000,
+              "W3THINK" : 2560000,
+              "W4THINK" : 6000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"4K_L2R60DWPD_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 43750,
+              "SIZE" : "90%",
+              "W1THINK" : 128000,
+              "W2THINK" : 256000,
+              "W3THINK" : 1280000,
+              "W4THINK" : 3000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

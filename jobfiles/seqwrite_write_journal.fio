@@ -1,0 +1,27 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+size=${SIZE}
+ioengine=libaio
+direct=1
+loops=10000
+invalidate=1
+ramp_time=30s
+time_based
+runtime=${TIME}
+group_reporting=1
+numjobs=${JOBS}
+
+[writes]
+iodepth=${DEPTH1}
+percentage_random=,63,
+bssplit=,4k/1:32k/1:64k/49:128k/49
+rw=write
+filename=${DEV}
+rate=${RATE1}
+
+[trims]
+iodepth=${DEPTH2}
+rw=trim
+bssplit=,,2m/1:4m/1:8m/2:16m/8:32m/17:64m/54:128m/17
+filename=${DEV}
+rate=${RATE2}

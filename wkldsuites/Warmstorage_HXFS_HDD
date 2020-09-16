@@ -1,0 +1,52 @@
+{
+ "def":[
+         {
+          "template":"ws_hxfs_hdd.fio",
+          "alias":"Warmstorage_HXFS_HDD_LOW",
+          "values" : {
+              "TIME" : "300",
+              "RAMPTIME": "120",
+              "DEPTH1" : 4,
+              "RATE1" : "1220k,732k",
+              "BLKSIZE" : "32k/2:64k/3:128k/10:256k/12:512k/12:1m/61,4k/4:8k/1:32k/5:64k/3:128k/1:256k/8:512k/7:1m/71"
+          }
+         },
+         {
+          "template":"ws_hxfs_hdd.fio",
+          "alias":"Warmstorage_HXFS_HDD_MEDIUM",
+          "values" : {
+              "TIME" : "300",
+              "RAMPTIME": "120",
+              "DEPTH1" : 4,
+              "RATE1" : "2441k,1953k",
+              "BLKSIZE" : "32k/2:64k/3:128k/10:256k/12:512k/12:1m/61,4k/4:8k/1:32k/5:64k/3:128k/1:256k/8:512k/7:1m/71"
+          }
+         },
+         {
+          "template":"ws_hxfs_hdd.fio",
+          "alias":"Warmstorage_HXFS_HDD_HIGH",
+          "values" : {
+              "TIME" : "300",
+              "RAMPTIME": "120",
+              "DEPTH1" : 4,
+              "RATE1" : "4882k,3417k",
+              "BLKSIZE" : "32k/2:64k/3:128k/10:256k/12:512k/12:1m/61,4k/4:8k/1:32k/5:64k/3:128k/1:256k/8:512k/7:1m/71"
+          }
+         },
+         {
+          "template":"ws_hxfs_hdd_heavy.fio",
+          "alias":"Warmstorage_HXFS_HDD_HEAVYREAD",
+          "values" : {
+              "TIME" : "300",
+              "RAMPTIME": "120",
+              "DEPTH1" : 4,
+              "RATE1" : "15m,2m",
+              "BLKSIZE" : "32k/22:64k/2:128k/3:256k/11:512k/34:1m/28,4k/3:8k/1:32k/1:64k/4:128k/2:256k/12:512k/40:1m/37"
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

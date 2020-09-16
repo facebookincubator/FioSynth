@@ -1,0 +1,101 @@
+{
+"pre":[
+        {
+         "template":"prep_flash.fio",
+         "alias":"prep_flash",
+         "values" : {
+             "BLKSIZE" : "192K",
+             "DEPTH" : 256,
+         }
+        },
+        {
+         "template":"twshared.fio",
+         "alias":"Boot_SSD_precondition",
+         "values" : {
+             "TIME" : "3480",
+             "RAMPTIME": "120",
+             "RATE1": "0",
+             "W1THINK" : 30000
+         }
+        }
+       ],
+"def":[
+         {
+          "template":"twshared.fio",
+          "alias":"Boot_SSD_twshared",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "RATE1": "140k,3m",
+              "W1THINK" : 30000
+          }
+         },
+         {
+          "template":"twfeed.fio",
+          "alias":"Boot_SSD_twfeed",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "W1THINK" : 30000
+          }
+         },
+         {
+          "template":"twshared-pkg.fio",
+          "alias":"twshared-pkg",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "50",
+              "RAMPTIME": "120",
+              "W1THINK" : 18000000,
+              "W2THINK" : 330000,
+              "W3THINK" : 30000000
+          }
+         },
+         {
+          "template":"rsw_burst.fio",
+          "alias":"Boot_SSD_wedge",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "W1THINK" : 30000
+          }
+         },
+         {
+          "template":"ws_hxfs_ssd.fio",
+          "alias":"Boot_SSD_hxfs",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "RATE1" : "110k",
+              "RATE2" : "6k",
+              "W1THINK" : 1250,
+              "W2THINK" : 250
+          }
+         },
+         {
+          "template":"udb_boot.fio",
+          "alias":"UDB_Boot",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "W1THINK" : 5000000,
+              "W2THINK" : 19000000
+          }
+         },
+	 {
+          "template":"rsw_cp.fio",
+          "alias":"rsw_cp",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RATE2" : "9",
+              "DEPTH1" : "4",
+              "RAMPTIME": "120"
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

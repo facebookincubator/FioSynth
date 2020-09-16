@@ -1,0 +1,19 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+# Read from 32 different regions of a flash device.  
+# Each job will read continuously from a 16MB logical 
+# region of the flash device.
+
+[global]
+bs=${BLKSIZE}
+direct=1
+rw=read
+ioengine=libaio
+iodepth=${DEPTH}
+loops=1000000000
+time_based
+runtime=3600s
+group_reporting=1
+offset=${OFFSET1}m
+offset_increment=${INCREMENT}m
+numjobs=32
+size=128M

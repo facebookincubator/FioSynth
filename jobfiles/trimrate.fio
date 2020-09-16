@@ -1,0 +1,11 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+bs=${BLKSIZE}
+rw=randtrim
+time_based
+runtime=1m
+group_reporting=1
+numjobs=${JOBS}
+size=100%
+[job0]
+filename=${DEV}

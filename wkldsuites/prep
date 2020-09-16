@@ -1,0 +1,23 @@
+{
+ "def":[
+         {
+          "template":"prep_flash.fio",
+          "alias":"prep_flash",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 256,
+              "RRATE" : 0,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

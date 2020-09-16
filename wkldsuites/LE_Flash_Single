@@ -1,0 +1,23 @@
+{
+ "def":[
+         {
+          "template":"TypeVI.fio",
+          "alias":"4K_L2R1.5DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "100%",
+              "W1THINK" : 5120000,
+              "W2THINK" : 10240000,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

@@ -1,0 +1,20 @@
+{
+ "def": [
+         {
+          "template": "bursttrim.fio",
+          "alias": "BurstTrim",
+          "values": {
+              "TIME": "1200",
+              "RRATE": 50000,
+              "SIZE": "90%",
+              "BLKSIZE": "4k/25:16k/25:64k/25:256k/25",
+              "DEPTH": 1200,
+              "W4THINK": 500000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

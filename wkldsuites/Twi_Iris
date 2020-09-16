@@ -1,0 +1,52 @@
+{
+"pre":[
+        {
+         "template":"twi_iris_precon.fio",
+         "alias":"twi_iris_precondition",
+         "values" : {
+             "TIME" : "N/A",
+             "RATE1" : "900",
+             "RATE2" : "650K,100000K",
+             "DEPTH2" : "15000K,80000K",
+             "RAMPTIME": "120",
+             "W1THINK": "30000",
+             "W2THINK": "30000"
+         }
+        },
+        {
+          "template":"twi_iris.fio",
+          "alias":"twi_iris_precondition2",
+          "values" : {
+              "TIME" : "10800",
+              "RATE1" : "9",
+              "RATE2" : "650K,1000K",
+              "DEPTH2" : "15000K,800K",
+              "RAMPTIME": "120",
+              "W1THINK": "30000000",
+              "W2THINK": "30000000",
+              "W3THINK": "30000000"
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"twi_iris.fio",
+          "alias":"twi_iris",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "9",
+              "RATE2" : "650K,1000K",
+              "DEPTH2" : "15000K,800K",
+              "RAMPTIME": "120",
+              "W1THINK": "30000000",
+              "W2THINK": "30000000",
+              "W3THINK": "30000000"
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

@@ -1,0 +1,20 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+rw=read
+blocksize=${BLKSIZE}
+blockalign=${BLKSIZE}
+size=${SIZE}
+ioengine=libaio
+iodepth=${DEPTH}
+direct=1
+loops=10000
+invalidate=1
+time_based
+ramp_time=${RAMPTIME}
+norandommap
+randrepeat=0
+runtime=${TIME}
+group_reporting=1
+numjobs=${JOBS}
+[job0]
+filename=${DEV}

@@ -1,0 +1,9 @@
+Copyright (c) Facebook, Inc. and its affiliates.
+
+Version 3.1 Release Notes
+
+1. Fixed bug in HE Flash workload profile.  Data from workloads with 0DWPD are
+now correct.
+2. Added support for parsing fio TRIM results
+3. Added support for parsing fio results without group reporting
+4. Multiple json files are now parsed in order.

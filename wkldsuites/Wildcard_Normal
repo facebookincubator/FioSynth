@@ -1,0 +1,41 @@
+{
+"pre":[
+        {
+         "template":"wildcard.fio",
+         "alias":"Wildcard_precondition",
+         "values" : {
+             "TIME" : "36000",
+             "BLKSIZE" : "131072/73:65536/2:32768/2:16384/6:8192/11:4096/6",
+             "DEPTH" : 10,
+             "RRATE" : 65,
+             "SIZE" : "90%",
+             "W1THINK" : 400,
+             "W2THINK" : 24000,
+             "W3THINK" : 48000,
+             "W4THINK" : 16000,
+             "OFFSET2" : 100000
+         }
+        }
+       ],
+ "def":[
+        {
+         "template":"wildcard_normal.fio",
+         "alias":"Wildcard_Normal",
+         "values" : {
+             "TIME" : "1200",
+             "BLKSIZE" : "131072/73:65536/2:32768/2:16384/6:8192/11:4096/6",
+             "DEPTH" : 10,
+             "RRATE" : 32,
+             "SIZE" : "90%",
+             "W1THINK" : 24000,
+             "W2THINK" : 1250000,
+             "W3THINK" : 1600000,
+             "OFFSET2" : 100000
+         }
+        }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

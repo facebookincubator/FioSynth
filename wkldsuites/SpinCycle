@@ -1,0 +1,71 @@
+{
+ "def":[
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD16",
+          "values" : {
+              "TIME" : "270",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "SIZE" : "100%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD16",
+          "values" : {
+              "TIME" : "270",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "SIZE" : "100%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD16",
+          "values" : {
+              "TIME" : "2670",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "1m",
+              "DEPTH" : 16,
+              "SIZE" : "100%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD16",
+          "values" : {
+              "TIME" : "2670",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "1m",
+              "DEPTH" : 16,
+              "SIZE" : "100%"
+          }
+         },
+         {
+          "template":"coldstorage.fio",
+          "alias":"Warmstorage_coldstorage",
+          "values" : {
+              "TIME" : "570",
+              "RAMPTIME": "30"
+          }
+         },
+         {
+          "template":"ws_hxfs_hdd.fio",
+          "alias":"Warmstorage_HXFS_unthrottled",
+          "values" : {
+              "TIME" : "570",
+              "RAMPTIME": "30",
+              "DEPTH1" : 144,
+              "RATE1" : "0",
+              "BLKSIZE" : "32k/2:64k/3:128k/10:256k/12:512k/12:1m/61,4k/4:8k/1:32k/5:64k/3:128k/1:256k/8:512k/7:1m/71"
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

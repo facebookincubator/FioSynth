@@ -1,0 +1,34 @@
+{
+"pre":[
+        {
+         "template":"twshared-pkg.fio",
+         "alias":"twshared-pkg_precondition",
+         "values" : {
+             "TIME" : "5400",
+             "RATE1" : "1",
+             "RAMPTIME": "120",
+             "W1THINK" : 60000000,
+             "W2THINK" : 330,
+             "W3THINK" : 30000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"twshared-pkg.fio",
+          "alias":"twshared-pkg",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "50",
+              "RAMPTIME": "120",
+              "W1THINK" : 18000000,
+              "W2THINK" : 330000,
+              "W3THINK" : 30000000
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

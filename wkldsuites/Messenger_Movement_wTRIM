@@ -1,0 +1,138 @@
+{
+ "pre":[
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM_precon.fio",
+          "alias":"T8_Messenger_Movement_wTRIM_precond1",
+          "values" : {
+              "TIME" : "36000",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 20,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 1300,
+              "W4THINK" : 800000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM_precon.fio",
+          "alias":"T8_Messenger_Movement_wTRIM_precond2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 20,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 1300,
+              "W4THINK" : 800000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM.fio",
+          "alias":"Msg_Migration_wTRIM_LQD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 20,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM.fio",
+          "alias":"Msg_Migration_wTRIM_MQD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 50,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM.fio",
+          "alias":"Msg_Migration_wTRIM_HQD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 100,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM.fio",
+          "alias":"Msg_Migration_wTRIM_LQD_sanity",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 20,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM.fio",
+          "alias":"Msg_Migration_wTRIM_MQD_sanity",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 50,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM.fio",
+          "alias":"Msg_Migration_wTRIM_HQD_sanity",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 100,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

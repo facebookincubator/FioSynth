@@ -1,0 +1,16 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+rw=write
+blocksize=${BLKSIZE}
+blockalign=${BLKSIZE}
+size=100%
+ioengine=libaio
+iodepth=${DEPTH}
+direct=1
+loops=2
+invalidate=1
+group_reporting=1
+[job0]
+filename=${DEV}
+
+

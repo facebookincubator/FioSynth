@@ -1,0 +1,100 @@
+{
+ "pre":[
+         {
+          "template":"TypeVI90.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "36000",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000
+          }
+         },
+         {
+          "template":"TypeVI90_precon.fio",
+          "alias":"T6_precondition2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_L2R1DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 7680000,
+              "W2THINK" : 15360000,
+              "W3THINK" : 76800000,
+              "W4THINK" : 180000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_H2R1DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 20,
+              "RRATE" : 60000,
+              "SIZE" : "90%",
+              "W1THINK" : 7680000,
+              "W2THINK" : 15360000,
+              "W3THINK" : 76800000,
+              "W4THINK" : 180000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_L2R3DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 2560000,
+              "W2THINK" : 5120000,
+              "W3THINK" : 25600000,
+              "W4THINK" : 60000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_L2R6DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 1280000,
+              "W2THINK" : 2560000,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

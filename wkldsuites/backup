@@ -1,0 +1,21 @@
+{
+ "def":[
+         {
+          "template":"backup.fio",
+          "alias":"backup",
+          "values" : {
+              "SIZE" : "100%",
+              "TIME" : "300",
+              "RAMPTIME": "120",
+              "DEPTH1" : 4,
+              "DEPTH2" : 1,
+              "RATE1" : "100m",
+              "RATE2" : "1m"
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

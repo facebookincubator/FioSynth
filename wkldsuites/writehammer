@@ -1,0 +1,55 @@
+{
+"pre":[
+        {
+         "template":"prep.fio",
+         "alias":"prep",
+         "values" : {
+             "TIME" : "N/A",
+             "BLKSIZE" : "512K",
+             "DEPTH" : 256,
+             "RRATE" : 0,
+             "SIZE" : "N/A",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "W4THINK" : 0
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"writehammer.fio",
+          "alias":"writehammer",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"readhammer.fio",
+          "alias":"readhammer",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "N",
+"scale_by_capacity": "Y"
+}

@@ -1,0 +1,38 @@
+{
+ "def":[
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"4K_L2R9DWPD_wTRIM",
+          "values" : {
+              "TIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 8750,
+              "SIZE" : "90%",
+              "W1THINK" : 960000,
+              "W2THINK" : 1920000,
+              "W3THINK" : 9600000,
+              "W4THINK" : 22500000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM.fio",
+          "alias":"FLeaf_wTRIM",
+          "values" : {
+              "TIME" : "90",
+              "BLKSIZE" : "4096/74:8192/15:12288/5:16384/2:20480/2:262144/2",
+              "DEPTH" : 10,
+              "RRATE" : 35000,
+              "SIZE" : "90%",
+              "W1THINK" : 96000,
+              "W2THINK" : 76000000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

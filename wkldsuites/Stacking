@@ -1,0 +1,41 @@
+{
+"pre":[
+        {
+          "template":"stacking.fio",
+          "alias":"stacking_precondition",
+          "values" : {
+              "TIME" : "10800",
+              "SIZE" : "90%",
+              "RATE1" : "120",
+              "DEPTH1" : "4",
+              "RAMPTIME": "120",
+              "W1THINK" : "30",
+              "W2THINK" : "20000",
+              "W3THINK" : "60000000",
+              "W4THINK" : "700000"
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"stacking.fio",
+          "alias":"stacking",
+          "values" : {
+              "TIME" : "3600",
+              "SIZE" : "90%",
+              "RATE1" : "120",
+              "DEPTH1" : "4",
+              "RAMPTIME": "120",
+              "W1THINK" : "30000",
+              "W2THINK" : "20000000",
+              "W3THINK" : "60000000",
+              "W4THINK" : "700000"
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

@@ -1,0 +1,38 @@
+{
+ "def":[
+         {
+          "template":"trimrate.fio",
+          "alias":"3GTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "3G",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"TypeVI.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "36000",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 3500,
+              "SIZE" : "100%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

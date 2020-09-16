@@ -1,0 +1,272 @@
+{
+ "pre":[
+        {
+         "template":"prep_flash.fio",
+         "alias":"prep_flash",
+         "values" : {
+             "TIME" : "N/A",
+             "BLKSIZE" : "512K",
+             "DEPTH" : 256,
+             "RRATE" : 0,
+             "SIZE" : "N/A",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "W4THINK" : 0
+         }
+        },
+        {
+         "template":"searchindex_noTRIM.fio",
+         "alias":"Search_precondition",
+         "values" : {
+             "TIME" : "3600",
+             "BLKSIZE" : "8192/75:4096/21:16384/4",
+             "DEPTH" : 80,
+             "RRATE" : 60000,
+             "SIZE" : "100%",
+             "W1THINK" : 12800,
+             "W2THINK" : 25600,
+             "W3THINK" : 6000000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"searchindex_noTRIM.fio",
+          "alias":"SearchIndex_noTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/75:4096/21:16384/4",
+              "DEPTH" : 80,
+              "RRATE" : 60000,
+              "SIZE" : "100%",
+              "W1THINK" : 5120000,
+              "W2THINK" : 10240000,
+              "W3THINK" : 6000000
+          }
+         },
+         {
+          "template":"searchdoc_noTRIM.fio",
+          "alias":"SearchDocNormal_noTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4096/95:8192/5",
+              "DEPTH" : 4,
+              "RRATE" : 1250,
+              "SIZE" : "100%",
+              "W1THINK" : 61440000,
+              "W2THINK" : 122880000,
+              "W3THINK" : 6000000
+          }
+         },
+         {
+          "template":"searchdoc_noTRIM.fio",
+          "alias":"SearchDocHeavy_noTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4096/95:8192/5",
+              "DEPTH" : 12,
+              "RRATE" : 3500,
+              "SIZE" : "100%",
+              "W1THINK" : 7680000,
+              "W2THINK" : 15360000,
+              "W3THINK" : 6000000
+          }
+         },
+         {
+          "template":"trimrate.fio",
+          "alias":"3GTRIM",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "3G",
+              "DEPTH" : 1,
+              "RRATE" : 1,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "36000",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000
+          }
+         },
+         {
+          "template":"TypeVI90_precon.fio",
+          "alias":"T6_precondition2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_L2R1DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 7680000,
+              "W2THINK" : 15360000,
+              "W3THINK" : 76800000,
+              "W4THINK" : 180000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_H2R1DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 20,
+              "RRATE" : 60000,
+              "SIZE" : "90%",
+              "W1THINK" : 7680000,
+              "W2THINK" : 15360000,
+              "W3THINK" : 76800000,
+              "W4THINK" : 180000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_L2R3DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 2560000,
+              "W2THINK" : 5120000,
+              "W3THINK" : 25600000,
+              "W4THINK" : 60000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_L2R6DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 1280000,
+              "W2THINK" : 2560000,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000
+          }
+         },
+         {
+          "template":"TypeVI90.fio",
+          "alias":"4K_L2R9DWPD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 960000,
+              "W2THINK" : 1920000,
+              "W3THINK" : 9600000,
+              "W4THINK" : 22500000
+          }
+         },
+         {
+          "template":"MyRocks_noTRIM.fio",
+          "alias":"MyRocks_Normal_noTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/60:4096/35:16384/5",
+              "DEPTH" : 16,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 1340000,
+              "W2THINK" : 6000000
+          }
+         },
+         {
+          "template":"MyRocks_noTRIM.fio",
+          "alias":"MyRocks_Heavy_noTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/60:4096/35:16384/5",
+              "DEPTH" : 16,
+              "RRATE" : 3500,
+              "SIZE" : "90%",
+              "W1THINK" : 134000,
+              "W2THINK" : 600000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement.fio",
+          "alias":"Msg_Migration_LQD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 20,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement.fio",
+          "alias":"Msg_Migration_MQD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 50,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement.fio",
+          "alias":"Msg_Migration_HQD",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "131072/92:8192/3:12288/2:4096/1:262144/1",
+              "DEPTH" : 100,
+              "RRATE" : 150,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 1300000,
+              "W4THINK" : 10000000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

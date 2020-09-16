@@ -1,0 +1,32 @@
+{
+ "def":[
+         {
+          "template":"backup_write_journal.fio",
+          "alias":"backup_write_journal",
+          "values" : {
+              "SIZE" : "100%",
+              "TIME" : "300",
+              "DEPTH1" : 256,
+              "DEPTH2" : 100,
+              "RATE1" : "150m",
+              "RATE2" : "150m"
+          }
+         },
+         {
+          "template":"seqwrite_write_journal.fio",
+          "alias":"seqwrite_write_journal",
+          "values" : {
+              "SIZE" : "100%",
+              "TIME" : "300",
+              "DEPTH1" : 256,
+              "DEPTH2" : 100,
+              "RATE1" : "780m",
+              "RATE2" : "780m"
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}
