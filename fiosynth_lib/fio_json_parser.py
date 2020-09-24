@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright (c) 2017-present, Facebook, Inc.
+# Copyright (c) Facebook, Inc. and its affiliates.
 # All rights reserved.
 #
 # This source code is licensed under the BSD-style license found in the
@@ -164,8 +164,8 @@ def read_json(fn, serverMode=False):
     return data
 
 
-def new_csv(f, notStdPercentile):
-    if notStdPercentile:
+def new_csv(f, notStdPercentile1, notStdPercentile2):
+    if notStdPercentile1 or notStdPercentile2:
         col_names = [
             'Jobname', 'Read_IOPS', 'Read_BW', 'Write_IOPS', 'Write_BW',
             'Trim_IOPS', 'Trim_BW', 'Mean_Read_Latency', 'Max_Read_Latency',
@@ -217,11 +217,14 @@ def get_csv_line(jobname, json, index, data, version_str, serverMode):
         # convert nanoseconds to microseconds
         con = 1000
     if serverMode:
-        options = json['job options']
+        # Support for older and newer fio json formats
+        options1 = 'percentile_list' in json['job options']
+        options2 = 'percentile_list' in json['global options']
     else:
-        options = json['jobs'][0]['job options']
+        options1 = 'percentile_list' in json['jobs'][0]['job options']
+        options2 = 'percentile_list' in json['global options']
     iotype = ['read', 'write', 'trim']
-    if 'percentile_list' in options:
+    if options1 or options2:
         percent = ['25.000000', '50.000000', '70.000000', '75.000000', '90.000000', '99.000000', '99.900000', '99.990000', '99.999000', '99.999900']
     else:
         percent = ['50.000000', '70.000000', '90.000000', '99.000000', '99.900000', '99.990000']
@@ -380,7 +383,7 @@ def write_csv_file(csv_filepath, fio_json_files):
         fio_jobname = os.path.splitext(os.path.basename(first_file))[0]
         fio_data = read_json(first_file)
         if is_new_file:
-            new_csv(csv_out, ('percentile_list' in fio_data['jobs'][0]['job options']))
+            new_csv(csv_out, ('percentile_list' in fio_data['jobs'][0]['job options']), 'percentile_list' in fio_data['global options'])
         print_csv_line(csv_out, fio_jobname, fio_data)
         for f in fio_json_files[1:]:  # Continue from second element, if any
             fio_jobname = os.path.splitext(os.path.basename(f))[0]

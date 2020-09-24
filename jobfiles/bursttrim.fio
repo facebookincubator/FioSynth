@@ -1,3 +1,4 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
 [global]
 direct=0
 size=${SIZE}

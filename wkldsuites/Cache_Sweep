@@ -39,9 +39,9 @@
  "def":[
          {
           "template":"bcache.fio",
-          "alias":"B_Cache",
+          "alias":"B_Cache_normal",
           "values" : {
-              "TIME" : "1200",
+              "TIME" : "7200",
               "BLKSIZE" : "4K",
               "DEPTH" : 13,
               "RRATE" : 290,
@@ -53,9 +53,60 @@
               "MISC" : "512K",
               "OFFSET2" : 100000
           }
+         },
+         {
+          "template":"bcache.fio",
+          "alias":"B_Cache_highread",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 900,
+              "SIZE" : "90%",
+              "W1THINK" : 6400000,
+              "W2THINK" : 512000,
+              "W3THINK" : 8000000,
+              "W4THINK" : 43200000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"bcache.fio",
+          "alias":"B_Cache_highwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 290,
+              "SIZE" : "90%",
+              "W1THINK" : 19200000,
+              "W2THINK" : 170600,
+              "W3THINK" : 2600000,
+              "W4THINK" : 14400000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"bcache.fio",
+          "alias":"B_Cache_highreadwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 900,
+              "SIZE" : "90%",
+              "W1THINK" : 6400000,
+              "W2THINK" : 170600,
+              "W3THINK" : 2600000,
+              "W4THINK" : 14400000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
          }
         ],
-"run_cycles": 3,
+"run_cycles": 1,
 "precondition_cycles": 1,
 "precondition_first_cycle_only": "Y",
 "devices_in_global": "Y",

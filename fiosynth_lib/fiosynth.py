@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-present, Facebook, Inc.
+# Copyright (c) Facebook, Inc. and its affiliates.
 # All rights reserved.
 #
 # This source code is licensed under the BSD-style license found in the
@@ -46,7 +46,7 @@ def set_attributes():
     # Attribute Table Definition
     #
     parser = argparse.ArgumentParser(
-        description='FB fio Synthetic Benchmark Suite for storage ver 3.5.35'
+        description='FB fio Synthetic Benchmark Suite for storage ver 3.5.36'
     )
     parser.add_argument(
         '-d',
@@ -176,7 +176,7 @@ def set_attributes():
     parser.add_argument(
         '-v',
         action='version',
-        version='fiosynth-3.5.35'
+        version='fiosynth-3.5.36'
     )
     args = parser.parse_args()
     return args

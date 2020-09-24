@@ -222,6 +222,24 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Stacking:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Stacking'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_Sweep:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_Sweep'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/MyRocks_Full_Sweep:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/MyRocks_Full_Sweep'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Cache_Sweep:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Cache_Sweep'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_Sweep:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_Sweep'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_Full_Sweep:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_Full_Sweep'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Twshared_Pkg_Boot_Full_Sweep:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Twshared_Pkg_Boot_Full_Sweep'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/70_30.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/70_30.fio'
         mode: '0644'
