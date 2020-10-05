@@ -1,25 +1,10 @@
 {
 "pre":[
         {
-         "template":"prep_flash.fio",
-         "alias":"prep_flash",
-         "values" : {
-             "TIME" : "N/A",
-             "BLKSIZE" : "512K",
-             "DEPTH" : 256,
-             "RRATE" : 0,
-             "SIZE" : "N/A",
-             "W1THINK" : 0,
-             "W2THINK" : 0,
-             "W3THINK" : 0,
-             "W4THINK" : 0
-         }
-        },
-        {
          "template":"searchindex_wTRIM.fio",
          "alias":"Search_precondition",
          "values" : {
-             "TIME" : "3600",
+             "TIME" : "36000",
              "BLKSIZE" : "8192/75:4096/21:16384/4",
              "DEPTH" : 100,
              "RRATE" : 548,
@@ -38,7 +23,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r1w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 1900,
@@ -53,7 +38,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r2w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2138,
@@ -68,7 +53,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r3w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2375,
@@ -83,7 +68,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r4w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2613,
@@ -98,7 +83,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r5w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2850,
@@ -113,7 +98,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r6w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 5700,
@@ -128,7 +113,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r1w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 1900,
@@ -143,7 +128,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r2w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2138,
@@ -158,7 +143,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r3w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2375,
@@ -173,7 +158,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r4w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2613,
@@ -188,7 +173,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r5w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2850,
@@ -203,7 +188,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r6w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 5700,
@@ -218,7 +203,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r1w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 1900,
@@ -233,7 +218,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r2w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2138,
@@ -248,7 +233,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r3w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2375,
@@ -263,7 +248,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r4w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2613,
@@ -278,7 +263,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r5w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2850,
@@ -293,7 +278,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r6w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 5700,
@@ -308,7 +293,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r1w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 1900,
@@ -323,7 +308,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r2w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2138,
@@ -338,7 +323,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r3w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2375,
@@ -353,7 +338,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r4w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2613,
@@ -368,7 +353,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r5w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2850,
@@ -383,7 +368,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r6w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 5700,
@@ -398,7 +383,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r1w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 1900,
@@ -413,7 +398,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r2w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2138,
@@ -428,7 +413,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r3w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2375,
@@ -443,7 +428,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r4w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2613,
@@ -458,7 +443,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r5w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 2850,
@@ -473,7 +458,7 @@
           "template":"searchlm_wTRIM.fio",
           "alias":"SearchLM_wTRIM_r6w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
               "RRATE" : 5700,

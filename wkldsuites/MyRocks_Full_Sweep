@@ -55,7 +55,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r1w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 210,
@@ -71,7 +71,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r2w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 400,
@@ -87,7 +87,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r3w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 600,
@@ -103,7 +103,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r4w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 800,
@@ -119,7 +119,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r5w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1100,
@@ -135,7 +135,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r6w1",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1500,
@@ -151,7 +151,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r1w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 210,
@@ -167,7 +167,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r2w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 400,
@@ -183,7 +183,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r3w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 600,
@@ -199,7 +199,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r4w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 800,
@@ -215,7 +215,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r5w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1100,
@@ -231,7 +231,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r6w2",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1500,
@@ -247,7 +247,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r1w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 210,
@@ -263,7 +263,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r2w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 400,
@@ -279,7 +279,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r3w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 600,
@@ -295,7 +295,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r4w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 800,
@@ -311,7 +311,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r5w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1100,
@@ -327,7 +327,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r6w3",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1500,
@@ -343,7 +343,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r1w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 210,
@@ -359,7 +359,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r2w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 400,
@@ -375,7 +375,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r3w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 600,
@@ -391,7 +391,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r4w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 800,
@@ -407,7 +407,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r5w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1100,
@@ -423,7 +423,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r6w4",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1500,
@@ -439,7 +439,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r1w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 210,
@@ -455,7 +455,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r2w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 400,
@@ -471,7 +471,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r3w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 600,
@@ -487,7 +487,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r4w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 800,
@@ -503,7 +503,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r5w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1100,
@@ -519,7 +519,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r6w5",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1500,
@@ -535,7 +535,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r1w6",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 210,
@@ -551,7 +551,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r2w6",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 400,
@@ -567,7 +567,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r3w6",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 600,
@@ -583,7 +583,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r4w6",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 800,
@@ -599,7 +599,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r5w6",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1100,
@@ -615,7 +615,7 @@
           "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM_r6w6",
           "values" : {
-              "TIME" : "3600",
+              "TIME" : "7200",
               "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
               "DEPTH" : 20,
               "RRATE" : 1500,

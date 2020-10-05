@@ -105,7 +105,7 @@
           }
          }
         ],
-"run_cycles": 1,
+"run_cycles": 2,
 "precondition_cycles": 1,
 "precondition_first_cycle_only": "Y",
 "devices_in_global": "Y",

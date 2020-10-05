@@ -1,25 +1,10 @@
 {
 "pre":[
         {
-         "template":"prep_flash.fio",
-         "alias":"prep_flash",
-         "values" : {
-             "TIME" : "N/A",
-             "BLKSIZE" : "512K",
-             "DEPTH" : 256,
-             "RRATE" : 0,
-             "SIZE" : "N/A",
-             "W1THINK" : 0,
-             "W2THINK" : 0,
-             "W3THINK" : 0,
-             "W4THINK" : 0
-         }
-        },
-        {
          "template":"searchindex_wTRIM.fio",
          "alias":"Search_precondition",
          "values" : {
-             "TIME" : "3600",
+             "TIME" : "36000",
              "BLKSIZE" : "8192/75:4096/21:16384/4",
              "DEPTH" : 100,
              "RRATE" : 548,
@@ -95,7 +80,7 @@
           }
          }
         ],
-"run_cycles": 1,
+"run_cycles": 2,
 "precondition_cycles": 1,
 "devices_in_global": "Y",
 "scale_by_capacity": "N"

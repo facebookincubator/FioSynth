@@ -240,6 +240,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Twshared_Pkg_Boot_Full_Sweep:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Twshared_Pkg_Boot_Full_Sweep'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/WSF:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/WSF'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/70_30.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/70_30.fio'
         mode: '0644'
@@ -449,4 +452,10 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/stacking.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/stacking.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/wsf-t.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/wsf-t.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/wsf-tl.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/wsf-tl.fio'
         mode: '0644'
