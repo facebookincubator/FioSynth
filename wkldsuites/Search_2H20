@@ -1,0 +1,74 @@
+{
+"pre":[
+        {
+         "template":"prep_flash.fio",
+         "alias":"prep_flash",
+         "values" : {
+             "TIME" : "N/A",
+             "BLKSIZE" : "512K",
+             "DEPTH" : 256,
+             "RRATE" : 0,
+             "SIZE" : "N/A",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "W4THINK" : 0
+         }
+        },
+        {
+         "template":"searchindex_wTRIM.fio",
+         "alias":"Search_precondition",
+         "values" : {
+             "TIME" : "3600",
+             "BLKSIZE" : "8192/75:4096/21:16384/4",
+             "DEPTH" : 100,
+             "RRATE" : 548,
+             "SIZE" : "100%",
+             "W1THINK" : 12800,
+             "W2THINK" : 25600,
+             "W3THINK" : 6000000,
+             "W4THINK" : 1800000,
+             "W5THINK" : 768000,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"searchindex_wTRIM.fio",
+          "alias":"SearchIndex_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/75:4096/21:16384/4",
+              "DEPTH" : 100,
+              "RRATE" : 548,
+              "SIZE" : "100%",
+              "W1THINK" : 5120000,
+              "W2THINK" : 10240000,
+              "W3THINK" : 6000000,
+              "W4THINK" : 120000000,
+              "W5THINK" : 51200000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM.fio",
+          "alias":"SearchLM_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}
