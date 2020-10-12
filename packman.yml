@@ -195,14 +195,23 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_2H19:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_2H19'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_2H20:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_2H20'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_1H20:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_1H20'
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_2H19:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_2H19'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_2H20:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_2H20'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Cache:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Cache'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Cache_2H20:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Cache_2H20'
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Rsw_Cp:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Rsw_Cp'
