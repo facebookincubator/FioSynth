@@ -435,6 +435,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/MyRocks_wTRIM_2H19.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/MyRocks_wTRIM_2H19.fio'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/MyRocks_noTRIM_2H19.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/MyRocks_noTRIM_2H19.fio'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/TypeVIwTRIM_2H19.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/TypeVIwTRIM_2H19.fio'
         mode: '0644'

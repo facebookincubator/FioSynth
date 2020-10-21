@@ -223,7 +223,7 @@
           "alias":"twshared-pkg_r3w3t2",
           "values" : {
               "TIME" : "3600",
-              "RATE1" : 1050",
+              "RATE1" : "1050",
               "RAMPTIME": "120",
               "W1THINK" : 9000000,
               "W2THINK" : 165000,

@@ -44,20 +44,23 @@ fiosynth should work
 * Linux (CentOS, RedHat, Ubuntu)
 
 ## Installing fiosynth
-To install fiosynth simply `git clone` this repo
+To install fiosynth simply `git clone` this repo and have the latest
+versions of pip with setuptools installed
 
 ### Installing into Python environment
 ```
-$ cd fiosynth
-$ python setup.py install
-$ python fiosynth.py -h
+$ git clone https://github.com/facebookincubator/FioSynth
+$ sudo apt install python3 python3-pip fio
+$ cd FioSynth
+$ sudo python3 setup.py install
+$ fiosynth -h
 ```
 
 ### Executing fiosynth without installing
 Simply execute the `fiosynth.py` entry script.
 ```
-$ cd fiosynth
-$ python fiosynth.py -h
+$ cd FioSynth
+$ python3 fiosynth.py -h
 ```
 Note: You may require `sudo` if installing to System's Python environment
 

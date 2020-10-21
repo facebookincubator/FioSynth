@@ -18,7 +18,6 @@ with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
 
 
 def get_data_files():
-    # TODO(cltorres): Update base_dir once we have relative paths
     # To install data files here will require root privileges
     base_dir = '/usr/local/fb-FioSynthFlash'
     data_files = [
@@ -30,14 +29,15 @@ def get_data_files():
         (base_dir, ['README-READHAMMER.txt']),
         (base_dir, ['Release_Notes.txt']),
         (os.path.join(base_dir, 'jobfiles'), glob.glob('jobfiles/*')),
-        (os.path.join(base_dir, 'wkldsuites'), glob.glob('wkldsuites/*'))
+        (os.path.join(base_dir, 'wkldsuites'), glob.glob('wkldsuites/*')),
+        (os.path.join(base_dir, 'fiosynth_lib'), glob.glob('fiosynth_lib/*'))
     ]
     return data_files
 
 
 setup(
     name='fiosynth',
-    version='3.5.34',
+    version='3.5.39',
     description='FB fio Synthetic Benchmark Suite',
     long_description=long_description,
     author='Darryl Gardner',

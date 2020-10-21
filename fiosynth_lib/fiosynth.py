@@ -46,7 +46,7 @@ def set_attributes():
     # Attribute Table Definition
     #
     parser = argparse.ArgumentParser(
-        description='FB fio Synthetic Benchmark Suite for storage ver 3.5.38'
+        description='FB fio Synthetic Benchmark Suite for storage ver 3.5.39'
     )
     parser.add_argument(
         '-d',
@@ -176,7 +176,7 @@ def set_attributes():
     parser.add_argument(
         '-v',
         action='version',
-        version='fiosynth-3.5.38'
+        version='fiosynth-3.5.39'
     )
     args = parser.parse_args()
     return args

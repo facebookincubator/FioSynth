@@ -1,59 +1,33 @@
 {
  "def":[
          {
-          "template":"MyRocks_noTRIM.fio",
-          "alias":"MyRocks_Normal_noTRIM",
-          "values" : {
-              "TIME" : "1200",
-              "BLKSIZE" : "8192/60:4096/35:16384/5",
-              "DEPTH" : 16,
-              "RRATE" : 3500,
-              "SIZE" : "90%",
-              "W1THINK" : 1340000,
-              "W2THINK" : 6000000
-          }
-         },
-         {
-          "template":"MyRocks_noTRIM.fio",
+          "template":"MyRocks_noTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_noTRIM",
           "values" : {
-              "TIME" : "1200",
-              "BLKSIZE" : "8192/60:4096/35:16384/5",
-              "DEPTH" : 16,
-              "RRATE" : 3500,
+              "TIME" : "3600",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
               "SIZE" : "90%",
-              "W1THINK" : 134000,
-              "W2THINK" : 600000
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "OFFSET2" : 100000
           }
          },
          {
-          "template":"MyRocks_wTRIM.fio",
-          "alias":"MyRocks_Normal_wTRIM",
-          "values" : {
-              "TIME" : "1200",
-              "BLKSIZE" : "8192/60:4096/35:16384/5",
-              "DEPTH" : 16,
-              "RRATE" : 3500,
-              "SIZE" : "90%",
-              "W1THINK" : 1340000,
-              "W2THINK" : 6000000,
-              "W3THINK" : 1800000000,
-              "W4THINK" : 36000000
-          }
-         },
-         {
-          "template":"MyRocks_wTRIM.fio",
+          "template":"MyRocks_wTRIM_2H19.fio",
           "alias":"MyRocks_Heavy_wTRIM",
           "values" : {
-              "TIME" : "1200",
-              "BLKSIZE" : "8192/60:4096/35:16384/5",
-              "DEPTH" : 16,
-              "RRATE" : 3500,
+              "TIME" : "3600",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
               "SIZE" : "90%",
-              "W1THINK" : 134000,
-              "W2THINK" : 600000,
-              "W3THINK" : 180000000,
-              "W4THINK" : 6600000
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
           }
          }
         ],
