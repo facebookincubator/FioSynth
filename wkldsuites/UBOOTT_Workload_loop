@@ -5,7 +5,7 @@
          "alias":"prep_flash",
          "values" : {
              "BLKSIZE" : "192K",
-             "DEPTH" : 256,
+             "DEPTH" : 256
          }
         },
         {
