@@ -167,34 +167,34 @@ def read_json(fn, serverMode=False):
 def new_csv(f, notStdPercentile1, notStdPercentile2):
     if notStdPercentile1 or notStdPercentile2:
         col_names = [
-            'Jobname', 'Read_IOPS', 'Read_BW', 'Write_IOPS', 'Write_BW',
-            'Trim_IOPS', 'Trim_BW', 'Mean_Read_Latency', 'Max_Read_Latency',
-            'P25_Read_Latency', 'P50_Read_Latency', 'P70_Read_Latency',
-            'P75_Read_Latency', 'P90_Read_Latency', 'P99_Read_Latency',
-            'P99.9_Read_Latency', 'P99.99_Read_Latency', 'P99.999_Read_Latency',
-            'P99.9999_Read_Latency', 'Mean_Write_Latency', 'Max_Write_Latency',
-            'P25_Write_Latency', 'P50_Write_Latency', 'P70_Write_Latency',
-            'P75_Write_Latency', 'P90_Write_Latency', 'P99_Write_Latency',
-            'P99.9_Write_Latency', 'P99.99_Write_Latency',
-            'P99.999_Write_Latency', 'P99.9999_Write_Latency', 
+            'Jobname',
+            'Read_IOPS', 'Read_BW', 'Write_IOPS', 'Write_BW', 'Trim_IOPS', 'Trim_BW',
+            'Mean_Read_Latency', 'Max_Read_Latency', 'P25_Read_Latency',
+            'P50_Read_Latency', 'P70_Read_Latency', 'P75_Read_Latency',
+            'P90_Read_Latency', 'P99_Read_Latency', 'P99.9_Read_Latency',
+            'P99.99_Read_Latency', 'P99.999_Read_Latency', 'P99.9999_Read_Latency',
+            'Mean_Write_Latency', 'Max_Write_Latency', 'P25_Write_Latency',
+            'P50_Write_Latency', 'P70_Write_Latency', 'P75_Write_Latency',
+            'P90_Write_Latency', 'P99_Write_Latency', 'P99.9_Write_Latency',
+            'P99.99_Write_Latency', 'P99.999_Write_Latency', 'P99.9999_Write_Latency',
             'Mean_Trim_Latency', 'Max_Trim_Latency', 'P25_Trim_Latency',
             'P50_Trim_Latency', 'P70_Trim_Latency', 'P75_Trim_Latency',
             'P90_Trim_Latency', 'P99_Trim_Latency', 'P99.9_Trim_Latency',
-            'P99.99_Trim_Latency', 'P99.999_Trim_Latency',
-            'P99.9999_Trim_Latency'
+            'P99.99_Trim_Latency', 'P99.999_Trim_Latency', 'P99.9999_Trim_Latency'
         ]
     else:
         col_names = [
-            'Jobname', 'Read_IOPS', 'Read_BW', 'Write_IOPS', 'Write_BW',
-            'Trim_IOPS', 'Trim_BW', 'Mean_Read_Latency', 'Max_Read_Latency',
-            'P50_Read_Latency', 'P70_Read_Latency', 'P90_Read_Latency',
-            'P99_Read_Latency', 'P99.9_Read_Latency', 'P99.99_Read_Latency',
+            'Jobname',
+            'Read_IOPS', 'Read_BW', 'Write_IOPS', 'Write_BW', 'Trim_IOPS', 'Trim_BW',
+            'Mean_Read_Latency', 'Max_Read_Latency', 'P50_Read_Latency',
+            'P70_Read_Latency', 'P90_Read_Latency', 'P99_Read_Latency',
+            'P99.9_Read_Latency', 'P99.99_Read_Latency', 'P99.9999_Read_Latency',
             'Mean_Write_Latency', 'Max_Write_Latency', 'P50_Write_Latency',
             'P70_Write_Latency', 'P90_Write_Latency', 'P99_Write_Latency',
-            'P99.9_Write_Latency', 'P99.99_Write_Latency', 'Mean_Trim_Latency',
-            'Max_Trim_Latency', 'P50_Trim_Latency', 'P70_Trim_Latency',
-            'P90_Trim_Latency', 'P99_Trim_Latency', 'P99.9_Trim_Latency',
-            'P99.99_Trim_Latency'
+            'P99.9_Write_Latency', 'P99.99_Write_Latency', 'P99.9999_Write_Latency',
+            'Mean_Trim_Latency', 'Max_Trim_Latency', 'P50_Trim_Latency',
+            'P70_Trim_Latency', 'P90_Trim_Latency', 'P99_Trim_Latency',
+            'P99.9_Trim_Latency', 'P99.99_Trim_Latency', 'P99.9999_Trim_Latency'
         ]
     try:
         writer = csv.writer(f)
@@ -227,7 +227,7 @@ def get_csv_line(jobname, json, index, data, version_str, serverMode):
     if options1 or options2:
         percent = ['25.000000', '50.000000', '70.000000', '75.000000', '90.000000', '99.000000', '99.900000', '99.990000', '99.999000', '99.999900']
     else:
-        percent = ['50.000000', '70.000000', '90.000000', '99.000000', '99.900000', '99.990000']
+        percent = ['50.000000', '70.000000', '90.000000', '99.000000', '99.900000', '99.990000', '99.999900']
     line = [
         jobname, data['read']['iops'], data['read']['bw'],
         data['write']['iops'], data['write']['bw'],

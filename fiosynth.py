@@ -8,7 +8,7 @@
 #
 # AUTHOR = 'Darryl Gardner <darryleg@fb.com>'
 #
-# fiosynth.py- FB fio Synthetic Benchmark Suite for Flash ver 3.5.16.
+# fiosynth.py - FB Fio Synthetic Benchmark Suite for Flash ver 3.5.40
 #
 # Requires the use of workload suite files (in JSON format).  Workload
 # suite files can be edited to adjust the number of precondition cycles,

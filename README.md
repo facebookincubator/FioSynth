@@ -1,6 +1,6 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 # fiosynth
-FB fio Synthetic Benchmark Suite for Flash ver 3.5.36.
+FB fio Synthetic Benchmark Suite for Flash ver 3.5.40
 
 ## Examples
 
