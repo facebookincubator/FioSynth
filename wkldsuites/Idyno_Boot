@@ -1,0 +1,35 @@
+{
+"pre":[
+        {
+         "template":"idyno.fio",
+         "alias":"idyno_precondition",
+         "values" : {
+             "TIME" : "5400",
+             "RATE1" : "75",
+             "RAMPTIME": "120",
+             "W1THINK" : 10000,
+             "W2THINK" : 3000000,
+             "W3THINK" : 300000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"idyno.fio",
+          "alias":"idyno_boot",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 1000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

@@ -17,7 +17,7 @@ filename=${DEV}
 [rd-hashd]
 offset=10%
 rw=randread
-iodepth=60?
+iodepth=60
 bssplit=4K/60:8K/7:16K/9:32K/9:64K/7:128K/7:256K/1
 rate=${RATE1}m
 size=90%

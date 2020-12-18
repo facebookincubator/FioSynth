@@ -40,9 +40,9 @@
              "DEPTH" : 16,
              "RRATE" : 1,
              "SIZE" : "100%",
-             "W1THINK" : 380000,
-             "W2THINK" : 120000000,
-             "W3THINK" : 6000000,
+             "W1THINK" : 713600,
+             "W2THINK" : 225400000,
+             "W3THINK" : 6440000,
              "RAMPTIME": 30,
              "OFFSET2" : 250000
          }
@@ -55,9 +55,9 @@
              "DEPTH" : 32,
              "RRATE" : 2,
              "SIZE" : "100%",
-             "W1THINK" : 190000,
-             "W2THINK" : 60000000,
-             "W3THINK" : 3000000,
+             "W1THINK" : 356800,
+             "W2THINK" : 112700000,
+             "W3THINK" : 3220000,
              "RAMPTIME": 30,
              "OFFSET2" : 250000
          }
@@ -68,11 +68,11 @@
          "values" : {
              "TIME" : "3600",
              "DEPTH" : 16,
-             "RRATE" : 2,
+             "RRATE" : 30,
              "SIZE" : "100%",
-             "W1THINK" : 400000,
+             "W1THINK" : 200000,
              "W2THINK" : 60000000,
-             "W3THINK" : 6000000,
+             "W3THINK" : 10800000,
              "RAMPTIME": 30,
              "OFFSET2" : 250000
          }
@@ -83,11 +83,11 @@
          "values" : {
              "TIME" : "3600",
              "DEPTH" : 32,
-             "RRATE" : 4,
+             "RRATE" : 60,
              "SIZE" : "100%",
-             "W1THINK" : 200000,
+             "W1THINK" : 100000,
              "W2THINK" : 30000000,
-             "W3THINK" : 3000000,
+             "W3THINK" : 5400000,
              "RAMPTIME": 30,
              "OFFSET2" : 250000
          }
@@ -96,5 +96,5 @@
 "run_cycles": 1,
 "precondition_cycles": 1,
 "devices_in_global": "Y",
-"scale_by_capacity": "N"
+"scale_by_capacity": "Y"
 }

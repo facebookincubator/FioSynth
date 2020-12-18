@@ -225,9 +225,6 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Rsw_Cp_wTRIM:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Rsw_Cp_wTRIM'
         mode: '0644'
-      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Rsw_Cp_vTRIM:
-        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Rsw_Cp_vTRIM'
-        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Stacking:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Stacking'
         mode: '0644'
@@ -251,6 +248,9 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/WSF:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/WSF'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Idyno_Boot:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Idyno_Boot'
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/70_30.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/70_30.fio'
@@ -470,4 +470,7 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/wsf-tl.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/wsf-tl.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/idyno.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/idyno.fio'
         mode: '0644'
