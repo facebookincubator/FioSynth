@@ -86,16 +86,16 @@
           }
          },
          {
-          "template":"FLeaf_wTRIM_2H19.fio",
+          "template":"FLeaf_wTRIM.fio",
           "alias":"FLeaf_wTRIM",
           "values" : {
               "TIME" : "3600",
               "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
               "DEPTH" : 10,
-              "RRATE" : 107,
+              "RRATE" : 33000,
               "SIZE" : "90%",
-              "W1THINK" : 96000,
-              "W2THINK" : 76000000,
+              "W1THINK" : 145000,
+              "W2THINK" : 80000000,
               "OFFSET2" : 100000
           }
          },
@@ -173,11 +173,11 @@
               "TIME" : "3600",
               "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
               "DEPTH" : 32,
-              "RRATE" : 1900,
+              "RRATE" : 500,
               "SIZE" : "100%",
-              "W1THINK" : 330000000,
-              "W2THINK" : 6000000,
-              "W3THINK" : 225000,
+              "W1THINK" : 1386000000,
+              "W2THINK" : 25200000,
+              "W3THINK" : 472500,
               "OFFSET2" : 50000
           }
          },
@@ -248,4 +248,3 @@
 "devices_in_global": "Y",
 "scale_by_capacity": "Y"
 }
-
