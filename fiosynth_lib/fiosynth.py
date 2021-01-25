@@ -174,9 +174,18 @@ def set_attributes():
         default='',
     )
     parser.add_argument(
+        '-e',
+        action='store',
+        dest='expert',
+        type=str,
+        help='(Optional) Pass this string directly to fio command line invocation and attach just before jobfile argument'
+        '(default = )',
+        default='',
+    )
+    parser.add_argument(
         '-v',
         action='version',
-        version='fiosynth-3.5.41'
+        version='fiosynth-3.5.42'
     )
     args = parser.parse_args()
     return args
@@ -373,6 +382,7 @@ def run_fio(p, VAL, dut_list, args, run, rtype):
         exitall_flag = ' --exitall '
     fioCmd = 'fio %s --output-format=json%s--output=%s ' % \
         (perc_list, exitall_flag, resultsFileName)
+    fioCmd += ' ' + args.expert.lstrip().rstrip() + ' '
     currDir = os.getcwd()
     tmpJobDir = ''
     if not dut_list[0].inLocalMode():
