@@ -18,7 +18,8 @@ filename=${DEV}
 rw=randwrite
 iodepth=60
 blocksize=4k
-rate_iops=${RATE1}
+thinktime=${W3THINK}
+thinktime_blocks=130
 size=100%
 
 [cp_read]
@@ -29,15 +30,16 @@ rwmixread=100
 percentage_random=70
 bssplit=4k/10:256k/90
 rate=${RATE2}m
+numjobs=3
 size=${SIZE}
 
 [cp_write]
-iodepth=1
-rw=randrw
-rwmixread=0
-percentage_random=20
-bssplit=4k/100
-rate=${DEPTH1}m
+iodepth=3
+rw=randwrite
+percentage_random=100
+bssplit=256K/33:512K/33:2M/33
+thinktime=${W4THINK}
+thinktime_blocks=3
 numjobs=4
 size=100%
 
