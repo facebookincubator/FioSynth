@@ -1,7 +1,6 @@
 include CODE_OF_CONDUCT.md
 include CONTRIBUTING.md
 include LICENSE
-include PATENTS
 include README-READHAMMER.txt
 include Release_Notes.txt
 include smartAll.sh

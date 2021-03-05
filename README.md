@@ -1,4 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates.
 # fiosynth
 FB fio Synthetic Benchmark Suite for Flash ver 3.5.41
 
@@ -235,14 +234,7 @@ To run in client/server mode, ensure that the following requirements are met:
   devserver.
 
 
-## Full documentation
-...
-
 ## Join the fiosynth community
-* Website:
-* Facebook page:
-* Mailing list
-* irc:
 See the CONTRIBUTING file for how to help out.
 
 ## License

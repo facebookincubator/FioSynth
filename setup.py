@@ -20,7 +20,6 @@ def get_data_files():
         (base_dir, ['CODE_OF_CONDUCT.md']),
         (base_dir, ['CONTRIBUTING.md']),
         (base_dir, ['LICENSE']),
-        (base_dir, ['PATENTS']),
         (base_dir, ['README.md']),
         (base_dir, ['README-READHAMMER.txt']),
         (base_dir, ['Release_Notes.txt']),
@@ -40,7 +39,7 @@ setup(
     author_email='darryleg@fb.com',
     packages=find_packages(exclude=['jobfiles', 'wkldsuites', 'tests']),
     data_files=get_data_files(),
-    license='BSD+PATENTS',
+    license='MIT',
     scripts=['fiosynth.py'],
     entry_points={
         'console_scripts': [
