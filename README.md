@@ -1,5 +1,5 @@
 # fiosynth
-FB fio Synthetic Benchmark Suite for Flash ver 3.5.41
+FB fio Synthetic Benchmark Suite for Flash ver 3.5.43
 
 ## Examples
 
