@@ -1,0 +1,190 @@
+{
+ "pre":[
+         {
+          "template":"trim.fio",
+          "alias":"trim",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "1G",
+              "DEPTH" : 0,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"prep_flash_rand.fio",
+          "alias":"randprep",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "RRATE" : 0,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"randread.fio",
+          "alias":"RandomRead_QD64",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randwrite.fio",
+          "alias":"RandomWrite_QD64",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trim.fio",
+          "alias":"trim",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "1G",
+              "DEPTH" : 0,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"prep.fio",
+          "alias":"seqprep_512K",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 256,
+              "RRATE" : 0,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread.fio",
+          "alias":"SeqRead_512K_QD64",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 64,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite.fio",
+          "alias":"SeqWrite_512K_QD64",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 64,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trim.fio",
+          "alias":"trim",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "1G",
+              "DEPTH" : 0,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"prep.fio",
+          "alias":"seqprep_4K",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 256,
+              "RRATE" : 0,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread.fio",
+          "alias":"SeqRead_4K_QD64",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite.fio",
+          "alias":"SeqWrite_4K_QD64",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 64,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 1,
+"devices_in_global": "N",
+"scale_by_capacity": "N"
+}
