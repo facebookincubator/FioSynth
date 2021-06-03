@@ -1,14 +1,6 @@
 {
 "pre":[
         {
-         "template":"prep_flash.fio",
-         "alias":"prep_flash",
-         "values" : {
-             "BLKSIZE" : "192K",
-             "DEPTH" : 256
-         }
-        },
-        {
          "template":"twshared.fio",
          "alias":"Boot_SSD_precondition",
          "values" : {
@@ -20,6 +12,67 @@
         }
        ],
 "def":[
+         {
+          "template":"udb_boot.fio",
+          "alias":"UDB_Boot",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "W1THINK" : 5000000,
+              "W2THINK" : 19000000
+          }
+         },         
+         {
+          "template":"ws_hxfs_ssd.fio",
+          "alias":"Warmstorage_HXFS_SSD_LOW",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "RATE1" : "110k",
+              "RATE2" : "6k",
+              "W1THINK" : 1250,
+              "W2THINK" : 250
+          }
+         },
+         {
+          "template":"ws_hxfs_ssd.fio",
+          "alias":"Warmstorage_HXFS_SSD_HIGH",
+          "values" : {
+              "TIME" : "3600",
+              "RAMPTIME": "120",
+              "RATE1" : "232k",
+              "RATE2" : "11k",
+              "W1THINK" : 3750,
+              "W2THINK" : 750
+          }
+         },
+         {
+          "template":"rsw_cp.fio",
+          "alias":"rsw_cp",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RATE2" : "9",
+              "DEPTH1" : "4",
+              "RAMPTIME": "120"
+          }
+         },
+         {
+          "template":"rsw_cp_wtrim.fio",
+          "alias":"rsw_cp_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "SIZE" : "90%",
+              "RATE1" : "300",
+              "RATE2" : "9",
+              "DEPTH1" : "4",
+              "RAMPTIME": "120",
+              "W1THINK" : "300000000",
+              "W2THINK" : "15000000",
+              "W3THINK" : "200000",
+              "W4THINK" : "130000"
+          }
+         },
          {
           "template":"twshared.fio",
           "alias":"Boot_SSD_twshared",
@@ -52,45 +105,44 @@
           }
          },
          {
-          "template":"rsw_burst.fio",
-          "alias":"Boot_SSD_wedge",
+          "template":"twi_iris.fio",
+          "alias":"twi_iris",
           "values" : {
               "TIME" : "3600",
+              "RATE1" : "9",
+              "RATE2" : "650K,1000K",
+              "DEPTH2" : "15000K,800K",
               "RAMPTIME": "120",
-              "W1THINK" : 30000
+              "W1THINK": "30000000",
+              "W2THINK": "30000000",
+              "W3THINK": "30000000"
           }
          },
          {
-          "template":"ws_hxfs_ssd.fio",
-          "alias":"Boot_SSD_hxfs",
+          "template":"idyno.fio",
+          "alias":"idyno_boot",
           "values" : {
               "TIME" : "3600",
+              "RATE1" : "75",
               "RAMPTIME": "120",
-              "RATE1" : "110k",
-              "RATE2" : "6k",
-              "W1THINK" : 1250,
-              "W2THINK" : 250
+              "W1THINK" : 1000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000
           }
          },
          {
-          "template":"udb_boot.fio",
-          "alias":"UDB_Boot",
+          "template":"stacking.fio",
+          "alias":"stacking",
           "values" : {
               "TIME" : "3600",
-              "RAMPTIME": "120",
-              "W1THINK" : 5000000,
-              "W2THINK" : 19000000
-          }
-         },
-	 {
-          "template":"rsw_cp.fio",
-          "alias":"rsw_cp",
-          "values" : {
-              "TIME" : "3600",
-              "RATE1" : "300",
-              "RATE2" : "9",
+              "SIZE" : "90%",
+              "RATE1" : "120",
               "DEPTH1" : "4",
-              "RAMPTIME": "120"
+              "RAMPTIME": "120",
+              "W1THINK" : "30000",
+              "W2THINK" : "20000000",
+              "W3THINK" : "60000000",
+              "W4THINK" : "700000"
           }
          }
         ],

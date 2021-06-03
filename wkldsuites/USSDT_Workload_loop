@@ -4,7 +4,7 @@
           "template":"TypeVIwTRIM_2H19.fio",
           "alias":"T6_precondition1",
           "values" : {
-              "TIME" : "43200",
+              "TIME" : "3000",
               "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
               "DEPTH" : 13,
               "RRATE" : 69,
@@ -202,7 +202,7 @@
           "template":"wildcard_normal.fio",
           "alias":"Wildcard_normal",
           "values" : {
-              "TIME" : "1200",
+              "TIME" : "3600",
               "BLKSIZE" : "131072/73:65536/2:32768/2:16384/6:8192/11:4096/6",
               "DEPTH" : 10,
               "RRATE" : 32,
@@ -217,7 +217,7 @@
           "template":"wildcard.fio",
           "alias":"Wildcard_heavy",
           "values" : {
-              "TIME" : "1200",
+              "TIME" : "3600",
               "BLKSIZE" : "131072/73:65536/2:32768/2:16384/6:8192/11:4096/6",
               "DEPTH" : 10,
               "RRATE" : 65,
@@ -233,7 +233,7 @@
           "template": "bursttrim.fio",
           "alias": "BurstTrim",
           "values": {
-              "TIME": "1200",
+              "TIME": "3600",
               "RRATE": 50000,
               "SIZE": "90%",
               "BLKSIZE": "4k/25:16k/25:64k/25:256k/25",
