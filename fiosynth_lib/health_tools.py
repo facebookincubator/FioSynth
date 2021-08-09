@@ -29,22 +29,22 @@ def set_attributes():
         description='Logs Flash Health Tool Output to "health.log" file'
     )
     parser.add_argument(
-        '-s',
-        action='store',
-        dest='syntax',
+        "-s",
+        action="store",
+        dest="syntax",
         type=str,
-        help='(Required) Enter Health Monitoring Tool Syntax (default = )',
+        help="(Required) Enter Health Monitoring Tool Syntax (default = )",
         required=True,
-        default=''
+        default="",
     )
     args = parser.parse_args()
     return args
 
 
-class HealthTools():
+class HealthTools:
     def logger(self, syntax):
-        FILENAME = 'health.log'
-        file_ = open(FILENAME, 'a')
+        FILENAME = "health.log"
+        file_ = open(FILENAME, "a")
         subprocess.Popen("date", stdout=file_)
         subprocess.Popen(syntax, stdout=file_, shell=True)
         file_.close()
@@ -56,5 +56,5 @@ def main():
     health.logger(args.syntax)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

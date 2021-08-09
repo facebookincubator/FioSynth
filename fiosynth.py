@@ -61,5 +61,5 @@
 #
 from fiosynth_lib import fiosynth
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     fiosynth.main()
