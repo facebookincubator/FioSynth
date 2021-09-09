@@ -1,0 +1,401 @@
+{
+"pre":[
+        {
+         "template":"idyno.fio",
+         "alias":"idyno_precondition",
+         "values" : {
+             "TIME" : "5400",
+             "RATE1" : "75",
+             "RAMPTIME": "120",
+             "W1THINK" : 10000,
+             "W2THINK" : 3000000,
+             "W3THINK" : 300000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w1t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 1000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w1t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 10000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w1t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 10000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w2t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w2t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w2t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w3t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w3t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w3t1",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 1000000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w1t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 1000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w1t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 10000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w1t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 10000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w2t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w2t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w2t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w3t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w3t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w3t2",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 500000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w1t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 1000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w1t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 10000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w1t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 10000000,
+              "W2THINK" : 300000000,
+              "W3THINK" : 30000000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w2t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w2t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w2t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 500000,
+              "W2THINK" : 150000000,
+              "W3THINK" : 15000000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r1w3t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "75",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 300000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r2w3t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "150",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 150000000,
+              "W5THINK" : 250000
+          }
+         },
+         {
+          "template":"idyno_sweep.fio",
+          "alias":"idyno_boot_r3w3t3",
+          "values" : {
+              "TIME" : "3600",
+              "RATE1" : "300",
+              "RAMPTIME": "120",
+              "W1THINK" : 250000,
+              "W2THINK" : 75000000,
+              "W3THINK" : 7500000,
+              "W4THINK" : 75000000,
+              "W5THINK" : 250000
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

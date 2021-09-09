@@ -252,6 +252,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Idyno_Boot:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Idyno_Boot'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Idyno_Boot_Full_Sweep:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Idyno_Boot_Full_Sweep'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/iocost:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/iocost'
         mode: '0644'
@@ -476,4 +479,7 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/idyno.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/idyno.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/idyno_sweep.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/idyno_sweep.fio'
         mode: '0644'
