@@ -1,0 +1,55 @@
+{
+"pre":[
+        {
+         "template":"wsf-tl_1H22.fio",
+         "alias":"wsf-tl-1H22-precondition1",
+         "values" : {
+             "TIME" : "21600",
+             "DEPTH" : 1,
+             "RRATE" : 1,
+             "SIZE" : "100%",
+             "W1THINK" : 22300,
+             "W2THINK" : 1260,
+             "W3THINK" : 304000,
+             "RAMPTIME": 30,
+             "OFFSET2" : 250000
+         }
+        },
+        {
+         "template":"wsf-tl_1H22.fio",
+         "alias":"wsf-tl-1H22-precondition2",
+         "values" : {
+             "TIME" : "600",
+             "DEPTH" : 64,
+             "RRATE" : 28,
+             "SIZE" : "100%",
+             "W1THINK" : 50000,
+             "W2THINK" : 600,
+             "W3THINK" : 600000,
+             "RAMPTIME": 30,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+        {
+         "template":"wsf-tl_1H22.fio",
+         "alias":"wsf-tl-1H22-normal",
+         "values" : {
+             "TIME" : "3600",
+             "DEPTH" : 32,
+             "RRATE" : 14,
+             "SIZE" : "100%",
+             "W1THINK" : 1400000,
+             "W2THINK" : 126000,
+             "W3THINK" : 15200000,
+             "RAMPTIME": 30,
+             "OFFSET2" : 250000
+         }
+        }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}
