@@ -13,7 +13,7 @@
         },
         {
           "template":"rsw_cp.fio",
-          "alias":"rsw_cp",
+          "alias":"rsw_cp_precondition",
           "values" : {
               "TIME" : "10800",
               "RATE1" : "300",

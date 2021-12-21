@@ -13,7 +13,7 @@
         },
         {
           "template":"rsw_cp_wtrim.fio",
-          "alias":"rsw_cp_wTRIM",
+          "alias":"rsw_cp_wTRIM_precondition",
           "values" : {
               "TIME" : "10800",
               "SIZE" : "90%",
