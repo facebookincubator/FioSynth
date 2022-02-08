@@ -255,6 +255,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/WSF_1H22:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/WSF_1H22'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/WSCACHE_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/WSCACHE_1H22'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Idyno_Boot:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Idyno_Boot'
         mode: '0644'
@@ -488,6 +491,9 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/wsf-tl_1H22.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/wsf-tl_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/wscache_1H22.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/wscache_1H22.fio'
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/idyno.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/idyno.fio'
