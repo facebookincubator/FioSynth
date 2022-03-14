@@ -1,0 +1,87 @@
+{
+"pre":[
+        {
+         "template":"searchindex_wTRIM.fio",
+         "alias":"Search_precondition",
+         "values" : {
+             "TIME" : "36000",
+             "BLKSIZE" : "8192/75:4096/21:16384/4",
+             "DEPTH" : 100,
+             "RRATE" : 548,
+             "SIZE" : "100%",
+             "W1THINK" : 12800,
+             "W2THINK" : 25600,
+             "W3THINK" : 6000000,
+             "W4THINK" : 1800000,
+             "W5THINK" : 768000,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_normal",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_highread",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 5700,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 75000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_highwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 1900,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 225000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_highreadwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 5700,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 75000,
+              "OFFSET2" : 50000
+          }
+         }
+        ],
+"run_cycles": 2,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

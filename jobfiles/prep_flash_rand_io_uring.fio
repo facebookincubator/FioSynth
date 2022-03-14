@@ -1,0 +1,12 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+rw=randwrite
+blocksize=${BLKSIZE}
+blockalign=${BLKSIZE}
+size=100%
+ioengine=io_uring
+iodepth=${DEPTH}
+direct=1
+loops=2
+invalidate=1
+group_reporting=1

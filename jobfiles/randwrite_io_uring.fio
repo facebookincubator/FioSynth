@@ -1,0 +1,19 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+rw=randwrite
+blocksize=${BLKSIZE}
+blockalign=${BLKSIZE}
+size=${SIZE}
+ioengine=io_uring
+iodepth=${DEPTH}
+direct=1
+loops=10000
+invalidate=1
+time_based
+ramp_time=30s
+norandommap
+randrepeat=0
+runtime=${TIME}
+group_reporting=1
+random_generator=tausworthe64
+numjobs=4

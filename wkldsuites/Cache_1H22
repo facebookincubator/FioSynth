@@ -1,0 +1,62 @@
+{
+ "pre":[
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"bcache_precondition1",
+          "values" : {
+              "TIME" : "36000",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 290,
+              "SIZE" : "90%",
+              "W1THINK" : 1200000,
+              "W2THINK" : 3200,
+              "W3THINK" : 50000,
+              "W4THINK" : 270000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"bcache_precondition2",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 290,
+              "SIZE" : "90%",
+              "W1THINK" : 19200000,
+              "W2THINK" : 512000,
+              "W3THINK" : 8000000,
+              "W4THINK" : 43200000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"B_Cache",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 290,
+              "SIZE" : "90%",
+              "W1THINK" : 19200000,
+              "W2THINK" : 512000,
+              "W3THINK" : 8000000,
+              "W4THINK" : 43200000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+"run_cycles": 3,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

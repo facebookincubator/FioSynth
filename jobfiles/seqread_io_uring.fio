@@ -1,0 +1,18 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[global]
+rw=read
+blocksize=${BLKSIZE}
+blockalign=${BLKSIZE}
+size=${SIZE}
+ioengine=io_uring
+iodepth=${DEPTH}
+direct=1
+loops=10000
+invalidate=1
+time_based
+ramp_time=30s
+norandommap
+randrepeat=0
+runtime=${TIME}
+group_reporting=1
+numjobs=4

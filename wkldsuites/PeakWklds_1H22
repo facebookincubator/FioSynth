@@ -1,0 +1,505 @@
+{
+ "pre":[
+         {
+          "template":"prep_flash_rand_io_uring.fio",
+          "alias":"randprep",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 256,
+              "RRATE" : 0,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"randread_io_uring.fio",
+          "alias":"RandomRead_QD01",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 1,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randread_io_uring.fio",
+          "alias":"RandomRead_QD02",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 2,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randread_io_uring.fio",
+          "alias":"RandomRead_QD04",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 4,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randread_io_uring.fio",
+          "alias":"RandomRead_QD08",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 8,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randread_io_uring.fio",
+          "alias":"RandomRead_QD16",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randread_io_uring.fio",
+          "alias":"RandomRead_QD32",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randwrite_io_uring.fio",
+          "alias":"RandomWrite_QD01",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 1,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randwrite_io_uring.fio",
+          "alias":"RandomWrite_QD02",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 2,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randwrite_io_uring.fio",
+          "alias":"RandomWrite_QD04",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 4,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randwrite_io_uring.fio",
+          "alias":"RandomWrite_QD08",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 8,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randwrite_io_uring.fio",
+          "alias":"RandomWrite_QD16",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"randwrite_io_uring.fio",
+          "alias":"RandomWrite_QD32",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"70_30_io_uring.fio",
+          "alias":"70_30_QD01",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 1,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"70_30_io_uring.fio",
+          "alias":"70_30_QD02",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 2,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"70_30_io_uring.fio",
+          "alias":"70_30_QD04",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 4,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"70_30_io_uring.fio",
+          "alias":"70_30_QD08",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 8,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"70_30_io_uring.fio",
+          "alias":"70_30_QD16",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"70_30_io_uring.fio",
+          "alias":"70_30_QD32",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"trim.fio",
+          "alias":"trim",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "1G",
+              "DEPTH" : 0,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"prep.fio",
+          "alias":"seqprep",
+          "values" : {
+              "TIME" : "N/A",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 256,
+              "RRATE" : 0,
+              "SIZE" : "N/A",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread_io_uring.fio",
+          "alias":"SeqRead_QD01",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 1,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread_io_uring.fio",
+          "alias":"SeqRead_QD02",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 2,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread_io_uring.fio",
+          "alias":"SeqRead_QD04",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 4,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread_io_uring.fio",
+          "alias":"SeqRead_QD08",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 8,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread_io_uring.fio",
+          "alias":"SeqRead_QD16",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 16,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqread_io_uring.fio",
+          "alias":"SeqRead_QD32",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 32,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite_io_uring.fio",
+          "alias":"SeqWrite_QD01",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 1,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite_io_uring.fio",
+          "alias":"SeqWrite_QD02",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 2,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite_io_uring.fio",
+          "alias":"SeqWrite_QD04",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 4,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite_io_uring.fio",
+          "alias":"SeqWrite_QD08",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 8,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite_io_uring.fio",
+          "alias":"SeqWrite_QD16",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 16,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         },
+         {
+          "template":"seqwrite_io_uring.fio",
+          "alias":"SeqWrite_QD32",
+          "values" : {
+              "TIME" : "120",
+              "BLKSIZE" : "512K",
+              "DEPTH" : 32,
+              "RRATE" : 0,
+              "SIZE" : "100%",
+              "W1THINK" : 0,
+              "W2THINK" : 0,
+              "W3THINK" : 0,
+              "W4THINK" : 0
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "N",
+"scale_by_capacity": "N"
+}

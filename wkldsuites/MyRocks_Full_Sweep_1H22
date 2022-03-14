@@ -1,0 +1,636 @@
+{
+ "pre":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "43200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 69,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_precon.fio",
+          "alias":"T6_precondition2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 69,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r1w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r2w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 400,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r3w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 600,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r4w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 800,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r5w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1100,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r6w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1500,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r1w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 56971,
+              "W2THINK" : 261333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r2w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 400,
+              "SIZE" : "90%",
+              "W1THINK" : 56971,
+              "W2THINK" : 261333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r3w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 600,
+              "SIZE" : "90%",
+              "W1THINK" : 56971,
+              "W2THINK" : 261333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r4w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 800,
+              "SIZE" : "90%",
+              "W1THINK" : 56971,
+              "W2THINK" : 261333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r5w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1100,
+              "SIZE" : "90%",
+              "W1THINK" : 56971,
+              "W2THINK" : 261333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r6w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1500,
+              "SIZE" : "90%",
+              "W1THINK" : 56971,
+              "W2THINK" : 261333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r1w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 42728,
+              "W2THINK" : 196000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r2w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 400,
+              "SIZE" : "90%",
+              "W1THINK" : 42728,
+              "W2THINK" : 196000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r3w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 600,
+              "SIZE" : "90%",
+              "W1THINK" : 42728,
+              "W2THINK" : 196000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r4w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 800,
+              "SIZE" : "90%",
+              "W1THINK" : 42728,
+              "W2THINK" : 196000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r5w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1100,
+              "SIZE" : "90%",
+              "W1THINK" : 42728,
+              "W2THINK" : 196000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r6w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1500,
+              "SIZE" : "90%",
+              "W1THINK" : 42728,
+              "W2THINK" : 196000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r1w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 28485,
+              "W2THINK" : 130667,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r2w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 400,
+              "SIZE" : "90%",
+              "W1THINK" : 28485,
+              "W2THINK" : 130667,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r3w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 600,
+              "SIZE" : "90%",
+              "W1THINK" : 28485,
+              "W2THINK" : 130667,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r4w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 800,
+              "SIZE" : "90%",
+              "W1THINK" : 28485,
+              "W2THINK" : 130667,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r5w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1100,
+              "SIZE" : "90%",
+              "W1THINK" : 28485,
+              "W2THINK" : 130667,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r6w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1500,
+              "SIZE" : "90%",
+              "W1THINK" : 28485,
+              "W2THINK" : 130667,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r1w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 14243,
+              "W2THINK" : 65333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r2w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 400,
+              "SIZE" : "90%",
+              "W1THINK" : 14243,
+              "W2THINK" : 65333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r3w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 600,
+              "SIZE" : "90%",
+              "W1THINK" : 14243,
+              "W2THINK" : 65333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r4w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 800,
+              "SIZE" : "90%",
+              "W1THINK" : 14243,
+              "W2THINK" : 65333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r5w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1100,
+              "SIZE" : "90%",
+              "W1THINK" : 14243,
+              "W2THINK" : 65333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r6w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1500,
+              "SIZE" : "90%",
+              "W1THINK" : 14243,
+              "W2THINK" : 65333,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r1w6",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 11394,
+              "W2THINK" : 52267,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r2w6",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 400,
+              "SIZE" : "90%",
+              "W1THINK" : 11394,
+              "W2THINK" : 52267,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r3w6",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 600,
+              "SIZE" : "90%",
+              "W1THINK" : 11394,
+              "W2THINK" : 52267,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r4w6",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 800,
+              "SIZE" : "90%",
+              "W1THINK" : 11394,
+              "W2THINK" : 52267,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r5w6",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1100,
+              "SIZE" : "90%",
+              "W1THINK" : 11394,
+              "W2THINK" : 52267,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_r6w6",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1500,
+              "SIZE" : "90%",
+              "W1THINK" : 11394,
+              "W2THINK" : 52267,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

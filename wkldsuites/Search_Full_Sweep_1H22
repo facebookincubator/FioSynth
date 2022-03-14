@@ -1,0 +1,477 @@
+{
+"pre":[
+        {
+         "template":"searchindex_wTRIM.fio",
+         "alias":"Search_precondition",
+         "values" : {
+             "TIME" : "36000",
+             "BLKSIZE" : "8192/75:4096/21:16384/4",
+             "DEPTH" : 100,
+             "RRATE" : 548,
+             "SIZE" : "100%",
+             "W1THINK" : 12800,
+             "W2THINK" : 25600,
+             "W3THINK" : 6000000,
+             "W4THINK" : 1800000,
+             "W5THINK" : 768000,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r1w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 1900,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 225000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r2w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2138,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 200000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r3w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r4w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2613,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 163636,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r5w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2850,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 150000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r6w1",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 5700,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 75000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r1w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 1900,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 1440000,
+              "W3THINK" : 225000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r2w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2138,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 1440000,
+              "W3THINK" : 200000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r3w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 1440000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r4w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2613,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 1440000,
+              "W3THINK" : 163636,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r5w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2850,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 1440000,
+              "W3THINK" : 150000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r6w2",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 5700,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 1440000,
+              "W3THINK" : 75000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r1w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 1900,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 225000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r2w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2138,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 200000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r3w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r4w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2613,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 163636,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r5w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2850,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 150000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r6w3",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 5700,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 75000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r1w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 1900,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 225000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r2w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2138,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 200000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r3w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r4w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2613,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 163636,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r5w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2850,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 150000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r6w4",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 5700,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 360000,
+              "W3THINK" : 75000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r1w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 1900,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 225000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r2w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2138,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 200000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r3w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r4w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2613,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 163636,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r5w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2850,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 150000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_r6w5",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 5700,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 240000,
+              "W3THINK" : 75000,
+              "OFFSET2" : 50000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}
