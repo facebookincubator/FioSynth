@@ -370,13 +370,10 @@ def getJobVars(dut, profile, scale_factor):
 def run_fio(p, VAL, dut_list, args, run, rtype):
 
     resultsFileName = "%s/%s_run%d.json" % (FioDUT.fname, p[rtype][VAL]["alias"], run)
-    perc_list = "--percentile_list=1:5:10:20:25:30:40:50:60:70:75:80:90:95:"
-    perc_list += "99:99.9:99.95:99.99:99.999:99.9999"
     exitall_flag = " "
     if args.exitall:
         exitall_flag = " --exitall "
-    fioCmd = "fio %s --output-format=json%s--output=%s " % (
-        perc_list,
+    fioCmd = "fio --output-format=json%s--output=%s " % (
         exitall_flag,
         resultsFileName,
     )
