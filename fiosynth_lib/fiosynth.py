@@ -9,6 +9,7 @@ import json
 import os
 import os.path
 import shutil
+import socket
 import subprocess
 import sys
 from distutils.version import LooseVersion
@@ -182,6 +183,14 @@ def set_attributes():
         type=str,
         help="(Optional) The user to login as on the server when running fiosynth in client/server mode (default = root)",
         default="root",
+    )
+    parser.add_argument(
+        "-y",
+        action="store",
+        dest="tunneling",
+        type=str,
+        help="(Optional) Set to y to perform server/client mode fio via SSH tunnels. (default = n)",
+        default="n",
     )
     parser.add_argument("-v", action="version", version=parser.description)
     args = parser.parse_args()
@@ -416,12 +425,30 @@ def run_fio(p, VAL, dut_list, args, run, rtype):
                 tmpFile.write(tmpJbStr)
             finally:
                 tmpFile.close()
-            fioCmd = fioCmd + (" --client=ip6:%s %s" % (dut.serverName, tmpJbFilePath))
+            if dut.tunnel:
+                fioCmd = fioCmd + (
+                    " --client=ip6:localhost,%d %s" % (dut.sshTunnelPort, tmpJbFilePath)
+                )
+            else:
+                fioCmd = fioCmd + (
+                    " --client=ip6:%s %s" % (dut.serverName, tmpJbFilePath)
+                )
     if args.dryrun == "n":
         cmdline(fioCmd)
     else:
         print(fioCmd)
     return resultsFileName
+
+
+def isPortAvailable(port):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        sock.bind(("127.0.0.1", port))
+    except socket.error:
+        return False
+    finally:
+        sock.close()
+    return True
 
 
 class FioDUT:
@@ -431,6 +458,7 @@ class FioDUT:
     fname = ""
     prep = "prep"
     csvfname = ""
+    nextTunnelPort = 8765
 
     def __init__(self, sName="", user=""):
         self.factor = 0.0
@@ -442,9 +470,29 @@ class FioDUT:
         self.capacity = 0
         self.serverName = sName  # If blank string, then local mode
         self.sshUser = user
+        self.sshTunnelPort = 0
+        self.tunnel = None
+
+    def __del__(self):
+        if isinstance(self.tunnel, Popen):
+            self.tunnel.terminate()
 
     def inLocalMode(self):
         return self.serverName == ""
+
+    @classmethod
+    def getTunnelPort(cls):
+        port = -1
+        while cls.nextTunnelPort < 65535:
+            try:
+                if not isPortAvailable(cls.nextTunnelPort):
+                    continue
+                else:
+                    port = cls.nextTunnelPort
+                    break
+            finally:
+                cls.nextTunnelPort += 1
+        return port
 
 
 def drivesToJson(dut):
@@ -584,12 +632,34 @@ def loadDevList(dut_list, args, profile):
 def startAoeServer(dut):
     sshProc = getSshProc(dut)
     ipAddr, err = sshProc.communicate("killall fio -q; hostname -i")
-    sshProc = getSshProc(dut)
-    sshProc.stdin.write(
-        "nohup fio --server=ip6:%s > /tmp/fio.log 2> /tmp/fio.err &\n" % ipAddr
+
+    fioSvrCmd = (
+        "nohup fio --server=ip6:%s " % (ipAddr.rstrip())
+        + "> /tmp/fio.log 2> /tmp/fio.err &\n"
     )
+    sshProc = getSshProc(dut)
+    sshProc.stdin.write(fioSvrCmd)
     sshProc.stdin.close()
     sshProc.stdout.close()
+
+
+def startSshTunnel(dut):
+    dut.sshTunnelPort = FioDUT.getTunnelPort()
+    if dut.sshTunnelPort <= 0:
+        print(
+            "Unable to find an available port for ssh tunneling for host %s."
+            % dut.serverName
+        )
+        sys.exit(1)
+
+    cmd = [
+        "ssh",
+        "%s@%s" % (dut.sshUser, dut.serverName),
+        "-N",
+        "-L",
+        "%d:%s:8765" % (dut.sshTunnelPort, dut.serverName),
+    ]
+    dut.tunnel = Popen(cmd, stdout=subprocess.DEVNULL)
 
 
 def clearDriveData(dut_list, dryrun="n"):
@@ -599,7 +669,16 @@ def clearDriveData(dut_list, dryrun="n"):
     else:
         cmd = "fio --name=trim --rw=trim --bs=1G "
         for dut in dut_list:
-            cmd = cmd + "--client=ip6:%s --filename=%s" % (dut.serverName, dut.device)
+            if dut.tunnel:
+                cmd = cmd + "--client=ip6:localhost,%d --filename=%s" % (
+                    dut.sshTunnelPort,
+                    dut.device,
+                )
+            else:
+                cmd = cmd + "--client=ip6:%s --filename=%s" % (
+                    dut.serverName,
+                    dut.device,
+                )
     if dryrun == "n":
         cmdline(cmd)
 
@@ -636,6 +715,9 @@ def prepServers(dut_list, args, profile):
     for dut in dut_list:
         if not dut.inLocalMode():
             startAoeServer(dut)
+        if args.tunneling == "y":
+            startSshTunnel(dut)
+            fio_json_parser.tunnel2host[dut.sshTunnelPort] = dut.serverName
         if dut.capacity:
             dut.increment = int(float(dut.capacity) / 2 ** 20 / 32)
             dut.offset = randint(0, dut.increment)

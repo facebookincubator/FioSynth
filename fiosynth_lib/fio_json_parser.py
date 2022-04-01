@@ -45,6 +45,7 @@ from collections import OrderedDict
 from distutils.version import StrictVersion
 
 TOOL_NAME = "fio-parse-json-flash"
+tunnel2host = {}
 
 
 def set_attributes():
@@ -253,8 +254,8 @@ def get_csv_line(jobname, json, index, data, version_str, serverMode):
     clat = "clat"
     con = 1
     # clat -> clat_ns in version 3.0
-    version_str = version_str[version_str.rfind("-") + 1 :]
-    fio_version = StrictVersion(version_str)
+    verstr = version_str[version_str.rfind("-") + 1 :]
+    fio_version = StrictVersion(verstr)
     v3_version = StrictVersion("3.0")
     if fio_version >= v3_version:
         clat = "clat_ns"
@@ -355,11 +356,17 @@ def write_server_csv_files(csv_dir, json_path):
         with open(host_csv_path, "a") as csv_out:
             jb_data = hostname_data_dict[hostname]
             jb = jb_data[0]
+            jb["global options"] = data["global options"]
             if is_new_file:
-                new_csv(csv_out, ("percentile_list" in jb["job options"]))
+                new_csv(
+                    csv_out,
+                    ("percentile_list" in jb["job options"]),
+                    ("percentile_list" in data["global options"]),
+                )
             print_csv_line(csv_out, jobname, jb, version_str, serverMode=True)
             for jb in jb_data[1:]:
-                print_csv_line(csv_out, jobname, jb, serverMode=True)
+                jb["global options"] = data["global options"]
+                print_csv_line(csv_out, jobname, jb, version_str, serverMode=True)
 
 
 def get_hostname_to_data_dict(fio_data):
@@ -372,7 +379,11 @@ def get_hostname_to_data_dict(fio_data):
     for jb in fio_data["client_stats"]:
         if jb["jobname"] == "All clients":
             continue
-        hostname = jb["hostname"]
+        if len(tunnel2host) == 0:
+            hostname = jb["hostname"]
+        else:
+            hostname = tunnel2host[jb["port"]]
+
         if hostname not in hostname_data_dict:
             hostname_data_dict[hostname] = [jb]
         else:
@@ -385,7 +396,7 @@ def get_combined_stats(stats):
     for job in stats.keys():
         combined_stats[job] = OrderedDict()
         for stat in stats[job].keys():
-            currStat = map(float, stats[job][stat])
+            currStat = [float(val) for val in stats[job][stat]]
             if "_IOPS" in stat or "_BW" in stat:
                 combined_stats[job][stat + "_TOTAL"] = sum(currStat)
                 combined_stats[job][stat + "_MIN"] = min(currStat)
@@ -424,8 +435,8 @@ def combineCsv(csvFolder, fname, dut_list):
         writer = csv.writer(csv_out)
         server_list = ";".join([dut.serverName for dut in dut_list])
         writer.writerow([fname] + [server_list])
-        stats_headers = combined_stats[combined_stats.keys()[0]].keys()
-        writer.writerow(["Jobname"] + stats_headers)
+        stats_headers = combined_stats[list(combined_stats.keys())[0]].keys()
+        writer.writerow(["Jobname"] + list(stats_headers))
 
         for job in combined_stats.keys():
             row = [job]
