@@ -175,6 +175,14 @@ def set_attributes():
         "(default = )",
         default="",
     )
+    parser.add_argument(
+        "-u",
+        action="store",
+        dest="user",
+        type=str,
+        help="(Optional) The user to login as on the server when running fiosynth in client/server mode (default = root)",
+        default="root",
+    )
     parser.add_argument("-v", action="version", version=parser.description)
     args = parser.parse_args()
     return args
@@ -212,9 +220,8 @@ def checkMounted(device, dut):
     cmd = "grep -c %s /proc/mounts" % device
     if not dut.inLocalMode():
         dutSsh = getSshProc(dut)
-        dutSsh.stdin.write(cmd)
-        dutSsh.stdin.close()
-        mount = dutSsh.stdout.readline().strip()
+        out, err = dutSsh.communicate(cmd)
+        mount = out.strip()
     else:
         mount = cmdline(cmd)
     if int(mount) > 0:
@@ -282,9 +289,8 @@ def checkFileExist(path, dut):
     else:
         proc = getSshProc(dut)
         cmdStr = "stat %s 2> /dev/null | wc -l" % path
-        proc.stdin.write(cmdStr)
-        proc.stdin.close()
-        result = proc.stdout.readline().strip()
+        out, err = proc.communicate(cmdStr)
+        result = out.strip()
         if int(result) > 0:
             return True
         else:
@@ -312,7 +318,7 @@ def getNumJobs(data, command, dut):
 
 def getSshProc(dut):
     sshProc = subprocess.Popen(
-        ["ssh", "root@" + dut.serverName, "/bin/bash"],
+        ["ssh", dut.sshUser + "@" + dut.serverName, "/bin/bash"],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         universal_newlines=True,
@@ -426,7 +432,7 @@ class FioDUT:
     prep = "prep"
     csvfname = ""
 
-    def __init__(self, sName=""):
+    def __init__(self, sName="", user=""):
         self.factor = 0.0
         self.numjobs = 1
         self.offset = 0
@@ -435,6 +441,7 @@ class FioDUT:
         self.device = ""  # This replaces args.device
         self.capacity = 0
         self.serverName = sName  # If blank string, then local mode
+        self.sshUser = user
 
     def inLocalMode(self):
         return self.serverName == ""
@@ -445,19 +452,21 @@ def drivesToJson(dut):
     TYPE = 5
     DEVICE = 0
     maxcol = max(TYPE, DEVICE)
-    proc = None
+    output = None
     if dut.inLocalMode():
         proc = subprocess.Popen(["/bin/lsblk", "-rnbp"], stdout=subprocess.PIPE)
+        output = proc.stdout.read()
+        output = output.decode("utf-8")
     else:
         sshProc = getSshProc(dut)
-        sshProc.stdin.write("/bin/lsblk -rnbp\n")
-        sshProc.stdin.close()
-        proc = sshProc
-    for line in proc.stdout:
+        output, err = sshProc.communicate("/bin/lsblk -rnbp\n")
+    for line in output.splitlines():
         bits = line.split()
         if len(bits) > maxcol:
-            drive_type = bits[TYPE].decode("utf-8")
-            drive_device = bits[DEVICE].decode("utf-8")
+            # drive_type = bits[TYPE].decode("utf-8")
+            drive_type = bits[TYPE]
+            # drive_device = bits[DEVICE].decode("utf-8")
+            drive_device = bits[DEVICE]
             drives.setdefault(drive_type, [])
             drives[drive_type].append(drive_device)
     return json.dumps(drives)
@@ -476,8 +485,7 @@ def createOffsetFile(dut, dst_file):
         return
     else:
         dutSsh = getSshProc(dut)
-        dutSsh.stdin.write('echo "%s" > %s' % (str(dut.offset), dst_file))
-        dutSsh.stdin.close()
+        dutSsh.communicate('echo "%s" > %s' % (str(dut.offset), dst_file))
         return
 
 
@@ -528,9 +536,8 @@ def setDutCapacity(dut, cmd, profile):
         dut.device = dut.dev_list
     if not dut.inLocalMode():
         dutSsh = getSshProc(dut)
-        dutSsh.stdin.write(cmd)
-        dutSsh.stdin.close()
-        dut.capacity = dutSsh.stdout.readline().strip()
+        out, err = dutSsh.communicate(cmd)
+        dut.capacity = out.strip()
     else:
         # set capacity to the smallest device under test
         capacity = cmdline(cmd)
@@ -576,10 +583,11 @@ def loadDevList(dut_list, args, profile):
 
 def startAoeServer(dut):
     sshProc = getSshProc(dut)
-    sshProc.stdin.write("killall fio -q\n")
-    sshProc.stdin.write("hostname -i\n")
-    ipAddr = sshProc.stdout.readline()
-    sshProc.stdin.write("nohup fio --server=ip6:%s \n" % ipAddr)
+    ipAddr, err = sshProc.communicate("killall fio -q; hostname -i")
+    sshProc = getSshProc(dut)
+    sshProc.stdin.write(
+        "nohup fio --server=ip6:%s > /tmp/fio.log 2> /tmp/fio.err &\n" % ipAddr
+    )
     sshProc.stdin.close()
     sshProc.stdout.close()
 
@@ -596,20 +604,20 @@ def clearDriveData(dut_list, dryrun="n"):
         cmdline(cmd)
 
 
-def getServers(servers, server_file):
+def getServers(servers, server_file, user):
     dut_list = []  # list of machines running tests
     if len(servers) == 0 and server_file == "":
         dut_list.append(FioDUT())
     else:
         if len(servers) > 0:
             for server in servers:
-                dut_list.append(FioDUT(sName=server))
+                dut_list.append(FioDUT(sName=server, user=user))
         if not server_file == "":
             try:
                 sf = open(server_file, "r")
                 for server in sf.read().split():
                     server = server.strip()
-                    dut_list.append(FioDUT(sName=server))
+                    dut_list.append(FioDUT(sName=server, user=user))
             except IOError:
                 print("Can't open server file")
             finally:
@@ -681,7 +689,7 @@ def runCycles(dut_list, profile, args, rc, pc, lp, csvFolderPath):
 
 
 def runSuite(args):
-    dut_list = getServers(args.servers, args.server_file)
+    dut_list = getServers(args.servers, args.server_file, args.user)
 
     # Use absolute path for workload suite files
     wklds = os.path.join(FioDUT.wkldsuites, args.wklds)
