@@ -1,0 +1,22 @@
+# Copyright (c) Facebook, Inc. and its affiliates.
+[job]
+rw=write
+blocksize=${BLKSIZE}
+blockalign=${BLKSIZE}
+size=${SIZE}
+ioengine=./libfio_ws_sn.so
+iodepth=${DEPTH}
+direct=1
+loops=10000
+invalidate=0
+time_based
+ramp_time=30s
+norandommap
+randrepeat=0
+runtime=${TIME}
+group_reporting=1
+numjobs=6
+create_on_open=1
+unlink=1
+percentile_list=1:5:10:20:25:30:40:50:60:70:75:80:90:95:99:99.9:99.95:99.99:99.999:99.9999
+gflags=--num_mounts=6 --num_chunks=100 --target_ip=${MISC} --target_port=12345 --target_parent_tier=ws.test --is_ssd_test=true --sn_fast_path --sn_read_bypass_cache
