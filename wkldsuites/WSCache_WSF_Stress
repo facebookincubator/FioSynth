@@ -1,0 +1,85 @@
+{
+"pre":[
+        {
+         "template":"wscache_1H22.fio",
+         "alias":"wscache_1H22-precondition1",
+         "values" : {
+             "TIME" : "216",
+             "DEPTH" : 0,
+             "RRATE" : 49,
+             "SIZE" : "100%",
+             "W1THINK" : 23750,
+             "W2THINK" : 78947,
+             "W3THINK" : 0,
+             "RAMPTIME": 30,
+             "OFFSET2" : 0
+         }
+        },
+        {
+         "template":"wscache_1H22.fio",
+         "alias":"wscache_1H22-precondition2",
+         "values" : {
+             "TIME" : "6",
+             "DEPTH" : 2,
+             "RRATE" : 9814,
+             "SIZE" : "100%",
+             "W1THINK" : 48000,
+             "W2THINK" : 160000,
+             "W3THINK" : 0,
+             "RAMPTIME": 30,
+             "OFFSET2" : 0
+         }
+        }
+       ],
+ "def":[
+        {
+         "template":"wscache_1H22.fio",
+         "alias":"wscache_1H22-normal",
+         "values" : {
+             "TIME" : "144",
+             "DEPTH" : 0,
+             "RRATE" : 4907,
+             "SIZE" : "70%",
+             "W1THINK" : 2375000,
+             "W2THINK" : 1140000000,
+             "W3THINK" : 0,
+             "RAMPTIME": 30,
+             "OFFSET2" : 0
+         }
+        },
+        {
+         "template":"wsf-tl_1H22.fio",
+         "alias":"wsf-tl-1H22-normal",
+         "values" : {
+             "TIME" : "36",
+             "DEPTH" : 32,
+             "RRATE" : 14,
+             "SIZE" : "100%",
+             "W1THINK" : 1400000,
+             "W2THINK" : 126000,
+             "W3THINK" : 15200000,
+             "RAMPTIME": 30,
+             "OFFSET2" : 250000
+         }
+        },
+        {
+         "template":"wsf-tl_2H21.fio",
+         "alias":"wsf-tl-normal",
+         "values" : {
+             "TIME" : "36",
+             "DEPTH" : 4,
+             "RRATE" : 30,
+             "SIZE" : "100%",
+             "W1THINK" : 200000,
+             "W2THINK" : 60000000,
+             "W3THINK" : 10800000,
+             "RAMPTIME": 30,
+             "OFFSET2" : 250000
+         }
+        }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}
