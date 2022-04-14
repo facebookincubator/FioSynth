@@ -16,9 +16,7 @@ from distutils.version import LooseVersion
 from random import randint
 from subprocess import PIPE, Popen
 
-from . import fio_json_parser
-from . import flash_config
-from . import health_tools
+from . import fio_json_parser, flash_config, health_tools
 
 
 class Parser:
