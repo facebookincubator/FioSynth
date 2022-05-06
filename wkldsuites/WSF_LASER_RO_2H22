@@ -1,0 +1,40 @@
+{
+"pre":[
+        {
+         "template":"prep_rand.fio",
+         "alias":"prep_rand",
+         "values" : {
+             "TIME" : "N/A",
+             "BLKSIZE" : "64m",
+             "DEPTH" : 1,
+             "RRATE" : 0,
+             "SIZE" : "N/A",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "W4THINK" : 0
+         }
+        }
+       ],
+ "def":[
+        {
+         "template":"wsf-laser-ro_2H22.fio",
+         "alias":"wsf-laser-ro_2H22-normal",
+         "values" : {
+             "TIME" : "14400",
+             "DEPTH" : 34,
+             "RRATE" : 13,
+             "SIZE" : "14%",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "RAMPTIME": 30,
+             "OFFSET2" : 0
+         }
+        }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

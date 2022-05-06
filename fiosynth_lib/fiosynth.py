@@ -39,7 +39,7 @@ def set_attributes():
     # Attribute Table Definition
     #
     parser = argparse.ArgumentParser(
-        description="FB fio Synthetic Benchmark Suite for storage ver 3.5.48"
+        description="FB fio Synthetic Benchmark Suite for storage ver 3.5.49"
     )
     parser.add_argument(
         "-d",
