@@ -717,7 +717,7 @@ def prepServers(dut_list, args, profile):
             startSshTunnel(dut)
             fio_json_parser.tunnel2host[dut.sshTunnelPort] = dut.serverName
         if dut.capacity:
-            dut.increment = int(float(dut.capacity) / 2 ** 20 / 32)
+            dut.increment = int(float(dut.capacity) / 2**20 / 32)
             dut.offset = randint(0, dut.increment)
             dut.numjobs *= args.job_scale
 
