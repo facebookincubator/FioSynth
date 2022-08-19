@@ -201,6 +201,33 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_1H20:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_1H20'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_Sweep_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/HE_Flash_Short_wTRIM_Sweep_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Cache_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Cache_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Cache_Sweep_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Cache_Sweep_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/MyRocks_Full_Sweep_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/MyRocks_Full_Sweep_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/PeakWklds_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/PeakWklds_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_Full_Sweep_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_Full_Sweep_1H22'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_Sweep_1H22:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_Sweep_1H22'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Search_2H19:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Search_2H19'
         mode: '0644'
@@ -506,4 +533,37 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/idyno_sweep.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/idyno_sweep.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/70_30_io_uring.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/70_30_io_uring.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/FLeaf_wTRIM_1H22.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/FLeaf_wTRIM_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/MyRocks_wTRIM_1H22.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/MyRocks_wTRIM_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/TypeVIwTRIM_1H22.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/TypeVIwTRIM_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/bcache_1H22.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/bcache_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/prep_flash_rand_io_uring.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/prep_flash_rand_io_uring.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/randread_io_uring.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/randread_io_uring.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/randwrite_io_uring.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/randwrite_io_uring.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/searchlm_wTRIM_1H22.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/searchlm_wTRIM_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/seqread_io_uring.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/seqread_io_uring.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/seqwrite_io_uring.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/seqwrite_io_uring.fio'
         mode: '0644'
