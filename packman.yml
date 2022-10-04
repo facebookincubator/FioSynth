@@ -5,8 +5,9 @@ packages:
   # We can easily issue 'packman --src ~ build ~/cea/rpm/packman.yml' to generate the rpms
   fb-FioSynthFlash:
     packager: chips_tools
+    build_architectures: [x86_64, aarch64]
     summary: FB fio Synthetic Benchmark Suite for Flash
-   # requires: fio >= 3.11
+    # requires: fio >= 3.11
     rules:
       buck:cea/storage_benchmarks/fb-FioSynthFlash:fiosynth:
         cea/storage_benchmarks/fb-FioSynthFlash/fiosynth.par:
