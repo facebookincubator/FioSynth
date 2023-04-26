@@ -1,0 +1,265 @@
+{
+ "pre":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "3000",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 69,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_precon.fio",
+          "alias":"T6_precondition2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 69,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R6DWPD_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 69,
+              "SIZE" : "90%",
+              "W1THINK" : 1280000,
+              "W2THINK" : 2560000,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 69,
+              "SIZE" : "90%",
+              "W1THINK" : 960000,
+              "W2THINK" : 1920000,
+              "W3THINK" : 9600000,
+              "W4THINK" : 22500000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 210,
+              "SIZE" : "90%",
+              "W1THINK" : 87200,
+              "W2THINK" : 400000,
+              "W3THINK" : 144000000,
+              "W4THINK" : 5280000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 107,
+              "SIZE" : "90%",
+              "W1THINK" : 96000,
+              "W2THINK" : 76000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIII_Messenger_Movement_wTRIM.fio",
+          "alias":"Msg_Migration_HQD_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "131072/92:8192/4:12288/2:4096/1:262144/1",
+              "DEPTH" : 125,
+              "RRATE" : 188,
+              "SIZE" : "90%",
+              "W1THINK" : 12288000,
+              "W2THINK" : 24576000,
+              "W3THINK" : 1040000,
+              "W4THINK" : 8000000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"4K_M2R.5DWPD",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 20,
+              "RRATE" : 20000,
+              "SIZE" : "90%",
+              "W1THINK" : 15360000,
+              "W2THINK" : 30720000,
+              "W3THINK" : 153600000,
+              "W4THINK" : 360000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM.fio",
+          "alias":"4K_L2R1DWPD",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 7000,
+              "SIZE" : "90%",
+              "W1THINK" : 7680000,
+              "W2THINK" : 15360000,
+              "W3THINK" : 76800000,
+              "W4THINK" : 180000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"searchindex_wTRIM.fio",
+          "alias":"SearchIndex_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/75:4096/21:16384/4",
+              "DEPTH" : 100,
+              "RRATE" : 548,
+              "SIZE" : "100%",
+              "W1THINK" : 5120000,
+              "W2THINK" : 10240000,
+              "W3THINK" : 6000000,
+              "W4THINK" : 120000000,
+              "W5THINK" : 51200000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"B_Cache",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 290,
+              "SIZE" : "90%",
+              "W1THINK" : 19200000,
+              "W2THINK" : 512000,
+              "W3THINK" : 8000000,
+              "W4THINK" : 43200000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+            "template":"wsf-tl.fio",
+            "alias":"wsf-tl-heavy",
+            "values" : {
+                "TIME" : "3600",
+                "DEPTH" : 32,
+                "RRATE" : 60,
+                "SIZE" : "100%",
+                "W1THINK" : 100000,
+                "W2THINK" : 30000000,
+                "W3THINK" : 5400000,
+                "RAMPTIME": 30,
+                "OFFSET2" : 250000
+            }
+         },
+         {
+          "template":"wildcard_normal.fio",
+          "alias":"Wildcard_normal",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "131072/73:65536/2:32768/2:16384/6:8192/11:4096/6",
+              "DEPTH" : 10,
+              "RRATE" : 32,
+              "SIZE" : "90%",
+              "W1THINK" : 24000,
+              "W2THINK" : 1250000,
+              "W3THINK" : 1600000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"wildcard.fio",
+          "alias":"Wildcard_heavy",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "131072/73:65536/2:32768/2:16384/6:8192/11:4096/6",
+              "DEPTH" : 10,
+              "RRATE" : 65,
+              "SIZE" : "90%",
+              "W1THINK" : 40000,
+              "W2THINK" : 2400000,
+              "W3THINK" : 4800000,
+              "W4THINK" : 1600000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template": "bursttrim.fio",
+          "alias": "BurstTrim",
+          "values": {
+              "TIME": "3600",
+              "RRATE": 50000,
+              "SIZE": "90%",
+              "BLKSIZE": "4k/25:16k/25:64k/25:256k/25",
+              "DEPTH": 1200,
+              "W4THINK": 500000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}
