@@ -9,19 +9,19 @@ packages:
     summary: FB fio Synthetic Benchmark Suite for Flash
     # requires: fio >= 3.11
     rules:
-      buck:cea/storage_benchmarks/fb-FioSynthFlash:fiosynth:
+      buck2:cea/storage_benchmarks/fb-FioSynthFlash:fiosynth:
         cea/storage_benchmarks/fb-FioSynthFlash/fiosynth.par:
           path: 'bin/fiosynth'
-      buck:cea/storage_benchmarks/fb-FioSynthFlash:fb-FioSynthFlash:
+      buck2:cea/storage_benchmarks/fb-FioSynthFlash:fb-FioSynthFlash:
         cea/storage_benchmarks/fb-FioSynthFlash/fb-FioSynthFlash.par:
           path: 'bin/fb-FioSynthFlash'
-      buck:cea/storage_benchmarks/fb-FioSynthFlash:healthTools:
+      buck2:cea/storage_benchmarks/fb-FioSynthFlash:healthTools:
         cea/storage_benchmarks/fb-FioSynthFlash/healthTools.par:
           path: 'bin/healthTools'
-      buck:cea/storage_benchmarks/fb-FioSynthFlash:FioFlashJsonParser:
+      buck2:cea/storage_benchmarks/fb-FioSynthFlash:FioFlashJsonParser:
         cea/storage_benchmarks/fb-FioSynthFlash/FioFlashJsonParser.par:
           path: 'bin/FioFlashJsonParser'
-      buck:cea/storage_benchmarks/fb-FioSynthFlash:GetFlashConfig:
+      buck2:cea/storage_benchmarks/fb-FioSynthFlash:GetFlashConfig:
         cea/storage_benchmarks/fb-FioSynthFlash/GetFlashConfig.par:
           path: 'bin/GetFlashConfig'
     static:
