@@ -1,0 +1,39 @@
+{
+"pre":[
+    {
+        "template":"prep_flash.fio",
+        "alias":"prep_flash",
+        "values" : {
+            "TIME" : "N/A",
+            "BLKSIZE" : "512K",
+            "DEPTH" : 256
+        }
+    }
+       ],
+ "def":[
+    {
+      "template":"gen_prep_flash.fio",
+      "alias":"gen_prep_flash",
+      "values" : {
+          "TIME" : "N/A",
+          "BLKSIZE" : "128K",
+          "DEPTH" : 256
+      }
+    },
+  {
+      "template":"gen_randwrite.fio",
+      "alias":"gen_randwrite",
+      "values" : {
+      "TIME" : "1200",
+      "RAMPTIME": "600",
+      "BLKSIZE" : "4K",
+      "DEPTH" : 64,
+      "SIZE" : "100%"
+      }
+  }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}
