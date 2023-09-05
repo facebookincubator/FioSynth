@@ -181,6 +181,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/USSDT_Workload_loop:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/USSDT_Workload_loop'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/USSDT_Workload_loop_OCP2.6:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/USSDT_Workload_loop_OCP2.6'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Wedge_Boot:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Wedge_Boot'
         mode: '0644'
