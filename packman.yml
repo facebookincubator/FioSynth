@@ -298,6 +298,51 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Idyno_Boot_Full_Sweep:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Idyno_Boot_Full_Sweep'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Fio_4C:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Fio_4C'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Fio_4C_boot:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Fio_4C_boot'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/RandRead_Fio4C:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/RandRead_Fio4C'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/RandRW_70_30_Fio4C:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/RandRW_70_30_Fio4C'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/RandRW_Fio4C:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/RandRW_Fio4C'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/RandWrite_Fio4C:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/RandWrite_Fio4C'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Read_Fio4C:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Read_Fio4C'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Write_Fio4C:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Write_Fio4C'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_prep_flash.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_prep_flash.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_randread.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_randread.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_randrw_70_30.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_randrw_70_30.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_randrw.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_randrw.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_randwrite.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_randwrite.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_read.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_read.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_write.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_write.fio'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/iocost:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/iocost'
         mode: '0644'
