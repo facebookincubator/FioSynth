@@ -45,6 +45,32 @@
              "W3THINK" : 0,
              "RAMPTIME": 30,
              "OFFSET2" : 0
+         },
+         "targets" : {
+           "throughput" : {
+             "read" : {
+                 "MIN" : 215
+             },
+             "write" : {
+                 "MIN" : 90
+             },
+             "scale_by_TB" : {
+                 "value" : true
+             }
+           },
+           "latency" : {
+             "read" : {
+                 "P99" : 10000,
+                 "P99.99" : 15000,
+                 "P99.9999" : 20000,
+                 "MAX" : 30000
+             },
+             "write" : {
+                 "P99.99" : 50000,
+                 "P99.9999" : 85000,
+                 "MAX" : 100000
+             }
+           }
          }
         }
         ],

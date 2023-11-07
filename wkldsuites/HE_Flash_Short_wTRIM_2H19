@@ -114,6 +114,34 @@
               "W4THINK" : 30000000,
               "MISC" : "512K",
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 68
+              },
+              "write" : {
+                  "MIN" : 72
+              },
+              "trim" : {
+                  "MIN" : 117
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 2000,
+                  "P99.99" : 5000,
+                  "P99.99999" : 8500
+              },
+              "write" : {
+                  "P99.99" : 15000,
+                  "P99.9999" : 25000,
+                  "MAX" : 30000
+              }
+            }
           }
          },
          {
@@ -131,6 +159,33 @@
               "W4THINK" : 22500000,
               "MISC" : "512K",
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 68
+              },
+              "write" : {
+                  "MIN" : 93
+              },
+              "trim" : {
+                  "MIN" : 156
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 2200,
+                  "P99.99" : 5500,
+                  "P99.99999" : 9500
+              },
+              "write" : {
+                  "P99.99" : 15000,
+                  "P99.9999" : 25000
+              }
+            }
           }
          },
          {
@@ -147,6 +202,33 @@
               "W3THINK" : 144000000,
               "W4THINK" : 5280000,
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 120
+              },
+              "write" : {
+                  "MIN" : 101
+              },
+              "trim" : {
+                  "MIN" : 22
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 2000,
+                  "P99.99" : 5000,
+                  "P99.99999" : 8500
+              },
+              "write" : {
+                  "P99.99" : 10000,
+                  "P99.9999" : 15000
+              }
+            }
           }
          },
          {
@@ -161,6 +243,33 @@
               "W1THINK" : 96000,
               "W2THINK" : 76000000,
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 320
+              },
+              "write" : {
+                  "MIN" : 87
+              },
+              "trim" : {
+                  "MIN" : 89
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 3000,
+                  "P99.99" : 6000,
+                  "P99.99999" : 10000
+              },
+              "write" : {
+                  "P99.99" : 20000,
+                  "P99.9999" : 25000
+              }
+            }
           }
          }
         ],

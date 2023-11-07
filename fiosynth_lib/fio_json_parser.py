@@ -35,6 +35,8 @@
 # example create combined csv from csvs in a directory:
 #  FioFlashJsonParser.py -c /some_path/csv_directory
 #
+# @nolint
+
 import argparse
 import csv
 import glob
@@ -43,6 +45,7 @@ import os
 import sys
 from collections import OrderedDict
 from distutils.version import StrictVersion
+import itertools
 
 TOOL_NAME = "fio-parse-json-flash"
 tunnel2host = {}
@@ -132,32 +135,49 @@ def check_if_mounted(fn):
 
 def read_json(fn, serverMode=False):
     data = ""
+    if not fn:
+        return None
     if not os.path.isfile(fn):
         print("%s does not exist" % fn)
         sys.exit(1)
     check_if_mounted(fn)
     f = open(fn)
     if serverMode:
+        f.seek(0)
         jsonstr = f.read()
         jsonstr = "{" + jsonstr[jsonstr.rfind('"fio version" : ') :]
         try:
             data = json.loads(jsonstr)
         except ValueError:
-            print("JSON decoding failed on %s, is file corrupt?" % fn)
+            print("serverMode %s; JSON decoding failed on %s, is file corrupt?" % (serverMode, fn))
             f.close()
             sys.exit(1)
     else:
         try:
             data = json.load(f)
         except ValueError:
-            print("JSON decoding failed on %s. Is file corrupt?" % fn)
-            f.close()
-            sys.exit(1)
+            print("serverMode %s; JSON decoding failed on %s, now trying to format json before parsing" % (serverMode, fn))
+            try:
+                f.seek(0)
+                jsonstr = f.read()
+                jsonstr = "{" + jsonstr[jsonstr.rfind('"fio version" : ') :]
+
+                data = json.loads(jsonstr)
+
+            except:
+                print("serverMode %s; JSON decoding failed on %s, is file corrupt?" % (serverMode, fn))
+                f.close()
+                sys.exit(1)
     f.close()
     return data
 
+def read_extsmart(filename):
+    with open(filename, 'r') as f:
+        f_data = f.read()
+    return f_data
 
-def new_csv(f, notStdPercentile1, notStdPercentile2):
+
+def new_csv(f, notStdPercentile1, notStdPercentile2, add_waf_header, add_lm_header, create_file=True):
     if notStdPercentile1 or notStdPercentile2:
         col_names = [
             "Jobname",
@@ -241,20 +261,42 @@ def new_csv(f, notStdPercentile1, notStdPercentile2):
             "P99.99_Trim_Latency",
             "P99.9999_Trim_Latency",
         ]
-    try:
-        writer = csv.writer(f)
-        writer.writerow(col_names)
-    except IOError:
-        print("cannot write to ", f)
-        f.close()
-        sys.exit(1)
+    if add_waf_header:
+        col_names += [
+            "Total_FIO_Writes",
+            "Host_Writes_BEFORE",
+            "Host_Writes_AFTER",
+            "NAND_Writes_BEFORE",
+            "NAND_Writes_AFTER",
+        ]
+    if add_lm_header:
+        col_names += [
+            "Max_Read_Latency_Counter_BEFORE",
+            "Max_Write_Latency_Counter_BEFORE",
+            "Max_Read_Latency_Measured_BEFORE",
+            "Max_Write_Latency_Measured_BEFORE",
+            "Max_Read_Latency_Counter_AFTER",
+            "Max_Write_Latency_Counter_AFTER",
+            "Max_Read_Latency_Measured_AFTER",
+            "Max_Write_Latency_Measured_AFTER",
+            ]
+    if create_file:
+        try:
+            writer = csv.writer(f)
+            writer.writerow(col_names)
+        except IOError:
+            print("cannot write to ", f)
+            f.close()
+            sys.exit(1)
+
+    return col_names
 
 
-def get_csv_line(jobname, json, index, data, version_str, serverMode):
+def get_csv_line(jobname, json, index, data, version_str, serverMode, scale_by_TB=1):
     clat = "clat"
     con = 1
     # clat -> clat_ns in version 3.0
-    verstr = version_str[version_str.rfind("-") + 1 :]
+    verstr = version_str.split("-")[1]
     fio_version = StrictVersion(verstr)
     v3_version = StrictVersion("3.0")
     if fio_version >= v3_version:
@@ -294,12 +336,12 @@ def get_csv_line(jobname, json, index, data, version_str, serverMode):
         ]
     line = [
         jobname,
-        data["read"]["iops"],
-        data["read"]["bw"],
-        data["write"]["iops"],
-        data["write"]["bw"],
-        data["trim"]["iops"],
-        data["trim"]["bw"],
+        data["read"]["iops"] / scale_by_TB,
+        data["read"]["bw"] / scale_by_TB,
+        data["write"]["iops"] / scale_by_TB,
+        data["write"]["bw"] / scale_by_TB,
+        data["trim"]["iops"] / scale_by_TB,
+        data["trim"]["bw"] / scale_by_TB,
     ]
     for io in iotype:
         line.append(str(data[io][clat]["mean"] / con))
@@ -308,32 +350,244 @@ def get_csv_line(jobname, json, index, data, version_str, serverMode):
             for p in percent:
                 if "percentile" in data[io][clat]:
                     line.append(str(data[io][clat]["percentile"][p] / con))
+                else:  #if FIO bugged out and didnt report percentile
+                    line.append(0)
         else:
             for _p in percent:
                 line.append(0)
     return line
 
 
-def print_csv_line(f, jobname, json, ver="", serverMode=False):
+def get_fio_writes(data):
+    line = []
+    line.append(data['write']['io_bytes'])
+    return line
+
+
+def get_smart_line(data):
+    sum = 0
+    smart_keys = [
+        'data_units_written',
+    ]
+
+    if not data:
+        return []
+
+    # extract the correct key
+    try:
+        results = find(smart_keys, data)
+        for x in results:
+            for key, value in x.items():
+                if isinstance(value, int):
+                    sum += value
+                else:
+                    sum += int(value, 0) # autoguess the format
+                sum *= 512 * 1000
+    except:
+        return ["na"]
+
+    return [sum]
+
+def get_extsmart_line(data):
+    sum = 0
+    extsmart_keys = [
+        'Physical media units written',
+        'Physical Media Units Written-TLC',
+        'Physical Media Units Written-SLC',
+        'NAND Writes TLC (Bytes)',
+        'NAND Writes SLC (Bytes)',
+        'Physical Media Units Written - TLC',
+        'Physical Media Units Written - SLC',
+        'physical_media_units_bytes_tlc',
+        'physical_media_units_bytes_slc',
+        'Physical Media Units Written - TLC (Bytes)',
+        'Physical Media Units Written - SLC (Bytes)',
+    ]
+
+    if not data:
+        return []
+
+    # extract the correct key
+    try:
+        results = find(extsmart_keys, data)
+        for x in results:
+            for key, value in x.items():
+                if isinstance(value, int):
+                    sum += value
+                else:
+                    sum += int(value, 0) # autoguess the format
+    except:
+        return [0]
+
+    return [sum]
+
+def get_lm_line(data, lm_mapping):
+    line = []
+    lm_log = {
+        "Active Bucket Counter": {
+            "Read": "na",
+            "Write": "na",
+        },
+        "Active Measured Latency": {
+            "Read": "na",
+            "Write": "na",
+        },
+    }
+
+    if isinstance(data, dict):
+        map = lm_mapping
+    elif all([data is None, lm_mapping]):
+        map = {}
+    elif all([data is None, not lm_mapping]):
+        return []
+
+    for metric, _ in lm_log.items():
+        for io_type, value in _.items():
+            for bucket, settings in map.items():
+                if io_type in settings["target"]:
+                    lm_log[metric][io_type] = data["%s: %s" % (metric, bucket)][io_type]
+
+    for metric, _ in lm_log.items():
+        for io_type, value in _.items():
+            line += [value]
+
+    return line
+
+def find(search, data):
+    matches = []
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if key in search:
+                if isinstance(value, dict):
+                    if 'lo' in value:  # workaround for OCP plugin output schema
+                        matches.append({key: value['lo']})
+                else:
+                    matches.append({key: value})
+            else:
+                dive = find(search, value)
+                if dive:
+                    matches.extend(dive)
+    elif isinstance(data, list):
+        for idx, x in enumerate(data):
+            sweep_result = find(search, x)
+            if sweep_result:
+                matches.extend(sweep_result)
+    else:
+        return None
+    return matches
+
+def recursive_items(dictionary):
+    for key, value in dictionary.items():
+        if type(value) is dict:
+            yield from recursive_items(value)
+        else:
+            yield key
+
+def get_target_line(col_names, job_targets):
+    target_list = []
+    target_dict = {}
+    col_names_filtered = col_names
+
+    for name in col_names:
+        target_dict[name] = "na"
+
+    if isinstance(job_targets, dict):
+        for metric, subdict1 in job_targets.items():
+            for iotype, subdict2 in subdict1.items():
+                for valuetype, value in subdict2.items():
+                    target_list += [[metric, iotype, valuetype, value]]
+
+    for col in [x.split("_") for x in col_names_filtered]:
+        col_filtered = col
+        col_filtered = list(itertools.chain.from_iterable(["throughput", "MIN"] if x == "BW" else [x] for x in col_filtered))
+        col_filtered = list(itertools.chain.from_iterable(["iops", "MIN"] if x == "IOPS" else [x] for x in col_filtered))
+        col_filtered = list(itertools.chain.from_iterable(["latency"] if x == "Latency" else [x] for x in col_filtered))
+        col_filtered = list(itertools.chain.from_iterable(["read"] if x == "Read" else [x] for x in col_filtered))
+        col_filtered = list(itertools.chain.from_iterable(["write"] if x == "Write" else [x] for x in col_filtered))
+        col_filtered = list(itertools.chain.from_iterable(["trim"] if x == "Trim" else [x] for x in col_filtered))
+        col_filtered = list(itertools.chain.from_iterable(["MAX"] if x == "Max" else [x] for x in col_filtered))
+
+        for target in target_list:
+            target_param = target[0:3]
+            if all(item in target_param for item in col_filtered):
+                target_dict["_".join(col)] = target[-1]
+
+    return list(target_dict.values())
+
+
+def print_csv_line(f, jobname, fio_data, col_names, only_targets, job_targets, scale_by_TB, smart_before_data, smart_after_data, extsmart_before_data, extsmart_after_data, lm_before_data, lm_after_data, lm_mapping, ver="", serverMode=False, ):
     index = 0
     lines = 1
-    if not serverMode:
-        lines = len(json["jobs"])
-        ver = json["fio version"]
+    line_parts = []
+    scale_by_TB_factor = 1
+
+    if job_targets:
+        if "throughput" in job_targets.keys():
+            if "scale_by_TB" in job_targets["throughput"].keys():
+                if job_targets["throughput"]["scale_by_TB"]["value"]:
+                    scale_by_TB_factor = scale_by_TB
+
+    if only_targets:
+        lines = 1
+    elif not serverMode:
+        lines = len(fio_data["jobs"])
+        ver = fio_data["fio version"]
+
     while index != lines:
-        data = json
+        data = fio_data
+        if only_targets:
+            try:
+                line_parts = []
+                line_parts += [jobname + "_targets"]
+                line_parts += get_target_line([x for x in col_names if x != "Jobname"], job_targets)
+
+                rdr = list(csv.reader(f))
+                f.seek(0)
+                for row, line in enumerate(rdr):
+                    for col in line:
+                        if any([x in col for x in ["Jobname", "targets"]]):
+                            idx = row
+
+                rdr.insert(idx+1, line_parts)
+                wrtr = csv.writer(f)
+                wrtr.writerows(rdr)
+            except IOError:
+                print("cannot write to ", f)
+                f.close()
+                sys.exit(1)
+            break
+
         if not serverMode:
-            data = json["jobs"][index]
+            data = fio_data["jobs"][index]
+
         try:
-            line = get_csv_line(jobname, json, index, data, ver, serverMode)
+            line_parts = []
+            line_parts += get_csv_line(jobname, fio_data, index, data, ver, serverMode, scale_by_TB_factor)
+            if smart_before_data:
+                line_parts += get_fio_writes(data)
+            line_parts += get_smart_line(smart_before_data)
+            line_parts += get_smart_line(smart_after_data)
+            line_parts += get_extsmart_line(extsmart_before_data)
+            line_parts += get_extsmart_line(extsmart_after_data)
+            line_parts += get_lm_line(lm_before_data, lm_mapping)
+            line_parts += get_lm_line(lm_after_data, lm_mapping)
             wrtr = csv.writer(f)
-            wrtr.writerow(line)
+            wrtr.writerow(line_parts)
         except IOError:
             print("cannot write to ", f)
             f.close()
             sys.exit(1)
         index += 1
 
+def print_csv_line_generic(filename, content):
+    with open(filename, "a") as f:
+        try:
+            wrtr = csv.writer(f)
+            wrtr.writerow(content)
+        except IOError:
+            print("cannot write to ", filename)
+            f.close()
+            sys.exit(1)
 
 def parseServerResults(json_path, csv_dir):
     if not os.path.isdir(csv_dir):
@@ -454,24 +708,44 @@ def get_json_files(dir_path):
     return json_files
 
 
-def write_csv_file(csv_filepath, fio_json_files):
+def write_csv_file(csv_filepath, fio_json_files, only_targets, job_targets, scale_by_TB, smart_before_json, smart_after_json, extsmart_before_json, extsmart_after_json, lm_before_json, lm_after_json, lm_mapping):
     """Converts and writes each fio json file into a single CSV file."""
     is_new_file = not os.path.isfile(csv_filepath)
-    with open(csv_filepath, "a") as csv_out:
-        first_file = fio_json_files[0]
-        fio_jobname = os.path.splitext(os.path.basename(first_file))[0]
-        fio_data = read_json(first_file)
-        if is_new_file:
-            new_csv(
+    first_file = fio_json_files[0]
+    fio_jobname = os.path.splitext(os.path.basename(first_file))[0] #gen_write_run1
+
+    if only_targets:
+        with open(csv_filepath, "r+") as csv_out:
+            col_names = list(csv.reader(csv_out))[0]
+            csv_out.seek(0)
+            print_csv_line(csv_out, fio_jobname, None, col_names, only_targets, job_targets, 1, None, None, None, None, None, None, None)
+            for f in fio_json_files[1:]:  # Continue from second element, if any
+                fio_jobname = os.path.splitext(os.path.basename(f))[0]
+                print_csv_line(csv_out, fio_jobname, None, col_names, only_targets, job_targets, 1, None, None, None, None, None, None, None)
+    else:
+        with open(csv_filepath, "a+") as csv_out:
+            fio_data = read_json(first_file)
+            smart_before_data = read_json(smart_before_json)
+            smart_after_data = read_json(smart_after_json)
+            extsmart_before_data = read_json(extsmart_before_json)
+            extsmart_after_data = read_json(extsmart_after_json)
+            lm_before_data = read_json(lm_before_json)
+            lm_after_data = read_json(lm_after_json)
+
+            col_names = new_csv(
                 csv_out,
                 ("percentile_list" in fio_data["jobs"][0]["job options"]),
                 "percentile_list" in fio_data["global options"],
+                bool(smart_before_json),
+                bool(lm_mapping),
+                is_new_file,
             )
-        print_csv_line(csv_out, fio_jobname, fio_data)
-        for f in fio_json_files[1:]:  # Continue from second element, if any
-            fio_jobname = os.path.splitext(os.path.basename(f))[0]
-            fio_data = read_json(f)
-            print_csv_line(csv_out, fio_jobname, fio_data)
+
+            print_csv_line(csv_out, fio_jobname, fio_data, col_names, only_targets, job_targets, scale_by_TB, smart_before_data, smart_after_data, extsmart_before_data, extsmart_after_data, lm_before_data, lm_after_data, lm_mapping)
+            for f in fio_json_files[1:]:  # Continue from second element, if any
+                fio_jobname = os.path.splitext(os.path.basename(f))[0]
+                fio_data = read_json(f)
+                print_csv_line(csv_out, fio_jobname, fio_data, col_names, only_targets, job_targets, scale_by_TB, smart_before_data, smart_after_data, extsmart_before_data, extsmart_after_data, lm_before_data, lm_after_data, lm_mapping)
 
 
 def main(args):
@@ -486,7 +760,7 @@ def main(args):
 
     if json_files:
         csv_filepath = os.path.join(args.csv_path, args.csv_file)
-        write_csv_file(csv_filepath, json_files)
+        write_csv_file(csv_filepath, json_files, args.only_targets, args.job_targets, args.scale_by_TB, args.smart_before_file, args.smart_after_file, args.extsmart_before_file, args.extsmart_after_file, args.lm_before_file, args.lm_after_file, args.lm_mapping)
 
 
 def cli_main():

@@ -33,6 +33,36 @@
               "RATE2" : "9",
               "DEPTH1" : "4",
               "RAMPTIME": "120"
+          },
+          "targets" : {
+            "iops" : {
+              "read" : {
+                  "MIN" : 39
+              },
+              "write" : {
+                  "MIN" : 4300
+              }
+            },
+            "throughput" : {
+              "read" : {
+                  "MIN" : 9
+              },
+              "write" : {
+                  "MIN" : 17
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 10000,
+                  "P99.99" : 20000,
+                  "MAX" : 30000
+              },
+              "write" : {
+                  "P99" : 250,
+                  "P99.99" : 500,
+                  "MAX" : 15000
+              }
+            }
           }
          }
         ],

@@ -2,6 +2,7 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 #
 # AUTHOR = 'Darryl Gardner <darryleg@fb.com>'
+# @nolint
 
 import argparse
 import datetime
@@ -12,6 +13,7 @@ import shutil
 import socket
 import subprocess
 import sys
+import time
 from distutils.version import LooseVersion
 from random import randint
 from subprocess import PIPE, Popen
@@ -20,9 +22,19 @@ from . import fio_json_parser, flash_config, health_tools
 
 
 class Parser:
-    def __init__(self, jname, cname):
+    def __init__(self, jname, cname, only_targets=False, job_targets={}, scale_by_TB=1, smart_before_jname="", smart_after_jname="", extsmart_before_jname="", extsmart_after_jname="", lm_before_file="", lm_after_file="", lm_mapping=None):
         self.json_file = jname
         self.json_path = "."
+        self.only_targets = only_targets
+        self.job_targets = job_targets
+        self.scale_by_TB = scale_by_TB
+        self.smart_before_file = smart_before_jname
+        self.smart_after_file = smart_after_jname
+        self.extsmart_before_file = extsmart_before_jname
+        self.extsmart_after_file = extsmart_after_jname
+        self.lm_before_file = lm_before_file
+        self.lm_after_file = lm_after_file
+        self.lm_mapping = lm_mapping
         self.all_json = ""
         self.csv_path = "."
         self.csv_file = cname
@@ -33,13 +45,12 @@ class Parser:
 def parseLocalResults(args):
     fio_json_parser.main(args)
 
-
 def set_attributes():
     #
     # Attribute Table Definition
     #
     parser = argparse.ArgumentParser(
-        description="FB fio Synthetic Benchmark Suite for storage ver 3.5.49"
+        description="FB fio Synthetic Benchmark Suite for storage ver 3.6.0"
     )
     parser.add_argument(
         "-d",
@@ -190,6 +201,31 @@ def set_attributes():
         help="(Optional) Set to y to perform server/client mode fio via SSH tunnels. (default = n)",
         default="n",
     )
+    parser.add_argument(
+        "--waf",
+        action="store_true",
+        dest="calc_waf",
+        help="(Optional) Set to use calculate WAF (Write Amplification Factor) based on OCP SMART / Health Inforamtion Extended (Log Identifier C0h) data. OCP compliant devices only. (default = disabled)",
+    )
+    parser.add_argument(
+        "--lm",
+        action="store_true",
+        dest="check_lm",
+        help="(Optional) Set to use OCP Latency Monitor to check max read and max write latencies if targets avaiable. OCP 2.0 compliant devices only. (default = disabled)",
+    )
+    parser.add_argument(
+        "--targets",
+        action="store_true",
+        dest="show_targets",
+        help="(Optional) Set to add performance targets in the output CSV file. Targets are taken from workload file. (default = disabled)",
+    )
+    parser.add_argument(
+        "--scale-by-TB",
+        action="store_true",
+        dest="scale_by_TB",
+        help="(Optional) Set to scale BW and IOPs by device capacity in the output CSV file. Workload must have store_by_TB set to true. (default = disabled)",
+    )
+
     parser.add_argument("-v", action="version", version=parser.description)
     args = parser.parse_args()
     return args
@@ -349,6 +385,8 @@ def getJobVars(dut, profile, scale_factor):
         "DEPTH1",
         "DEPTH2",
         "MISC",
+        "MD",
+        "DIRECT",
     ]
     vars_scaleup = ["RRATE", "DEPTH", "OFFSET2"]
     vars_scaledown = ["W1THINK", "W2THINK", "W3THINK", "W4THINK", "W5THINK"]
@@ -586,7 +624,8 @@ def setDutCapacity(dut, cmd, profile):
         dut.capacity = out.strip()
     else:
         # set capacity to the smallest device under test
-        capacity = cmdline(cmd)
+        cmd_filtered = cmd.replace("ng", "nvme")
+        capacity = cmdline(cmd_filtered)
         if (int(capacity) < int(dut.capacity)) or (int(dut.capacity) == 0):
             dut.capacity = capacity
 
@@ -741,17 +780,274 @@ def runHealthMon(fname, health="", flash=None):
         runGetFlashConfig.json_to_csv(".", config_as_json, filename, tool)
 
 
-def runTest(dut_list, profile, args, csvFolderPath, rtype, index, rcycle):
-    jfile = run_fio(profile, index, dut_list, args, rcycle, rtype)
+def getSmart(device, output_filename):
+    smart_cmds = [
+        'nvme smart-log %s -o json | tee %s' % (device, output_filename),
+    ]
+    smart_dict = {}
+
+    for cmd in smart_cmds:
+        try:
+            cmd_output = cmdline(cmd)
+            try:
+                smart_dict = json.loads(cmd_output)
+            except:
+                for line in cmd_output.split('\n'):
+                    key = line.split(':')[0].strip()
+                    value = line.split(':')[-1].strip()
+                    smart_dict[key] = value
+                with open(output_filename, 'w') as f:
+                    json.dump(smart_dict, f)
+        except:
+            pass
+        else:
+            break
+
+
+def getVID(device):
+    cmd = 'nvme id-ctrl %s -o json' % (device)
+    cmd_output = cmdline(cmd)
+    idctrl_dict = json.loads(cmd_output)
+    return idctrl_dict["vid"]
+
+
+def getOCP(device):
+    OCP_map = {
+        "OCP Datacenter NVMe SSD Specification Version 2.0": {
+            "Log Page Version": 0x3,
+            "Log Page GUID": 0xAFD514C97C6F4F9CA4f2BFEA2810AFC5,
+            "calc_waf": True,
+            "check_lm": True,
+        },
+        "OCP NVMe Cloud SSD Specification Version 1.0": {
+            "Log Page Version": 0x2,
+            "Log Page GUID": 0xAFD514C97C6F4F9CA4f2BFEA2810AFC5,
+            "calc_waf": True,
+            "check_lm": False,
+        },
+        "OCP Hyperscale NVMe Boot SSD Specification Version 1.0": {
+            "Log Page Version": 0x1,
+            "Log Page GUID": 0xC46DD7920F1E4266A178D8AC78884365,
+            "calc_waf": True,
+            "check_lm": False,
+        },
+        "No OCP Compliance": {
+            "Log Page Version": 0x0,
+            "Log Page GUID": 0x0,
+            "calc_waf": False,
+            "check_lm": False,
+        },
+    }
+
+    cmd = 'nvme get-log %s --log-id=0xC0 --log-len=512 -b' % (device)
+    cmd_output = cmdline(cmd)  # bytes type
+
+    if not cmd_output:
+        return OCP_map["No OCP Compliance"]
+
+    version = cmd_output[494:496]
+    guid = cmd_output[496:512]
+
+    for spec, content in OCP_map.items():
+        if version == content["Log Page Version"].to_bytes(2, 'little'):
+            if guid == content["Log Page GUID"].to_bytes(16, 'little'):
+                print("%s supports %s. Setting calc_waf:%s and check_lm:%s" % (device, spec, content["calc_waf"], content["check_lm"]))
+                return content
+
+    return OCP_map["No OCP Compliance"]
+
+
+def getExtSmart(device, output_filename):
+    vid = getVID(device)
+    vid_extsmart_dict = {
+        # VID : EXT SMART CMD
+        '': 'nvme ocp smart-add-log %s -o json | tee %s' % (device, output_filename),
+    }
+    extsmart_dict = {}
+    cmd_list = []
+    cmd_list += [vid_extsmart_dict['']]
+    cmd_list += [vid_extsmart_dict[hex(vid)] for key in vid_extsmart_dict.keys() if key==hex(vid)]
+
+    for cmd in cmd_list:
+        try:
+            cmd_output = cmdline(cmd)
+            try:
+                extsmart_dict = json.loads(cmd_output)
+            except:
+                for line in cmd_output.split('\n'):
+                    key = line.split(':')[0].strip()
+                    value = line.split(':')[-1].strip()
+                    extsmart_dict[key] = value
+                with open(output_filename, 'w') as f:
+                    json.dump(extsmart_dict, f)
+        except:
+            pass
+        else:
+            break
+
+def setupLM(drive, job_targets, enable_lm):
+    lm_mapping = {
+        "Bucket 0":
+            {
+                "target": [],
+                "threshold": 0x0,  # minimum value allowed by LM
+            },
+        "Bucket 1":
+            {
+                "target": [],
+                "threshold": 0x1,  # minimum value allowed by LM
+            },
+        "Bucket 2":
+            {
+                "target": [],
+                "threshold": 0x2,  # minimum value allowed by LM
+            },
+        "Bucket 3":
+            {
+                "target": [],
+                "threshold": 0x3,  # minimum value allowed by LM
+            },
+    }
+
+    if job_targets:
+        enable = enable_lm
+        for io_type in ["Read", "Write"]:
+            threshold = job_targets["latency"][io_type.lower()]["MAX"] / 1000 / 5 - 1  # convert us to ms zero based
+            for bucket, value in list(lm_mapping.items())[:-1]:
+                if value["threshold"] == threshold:
+                    value["target"] += [io_type]
+                    break
+            else:
+                lm_mapping["Bucket 3"]["target"] += [io_type]
+                lm_mapping["Bucket 3"]["threshold"] = threshold
+                continue
+    else:
+        print("No max latency target found. Disabling LM setup.")
+        enable = 0
+
+    setLM(
+        drive=drive,
+        threshold_a = lm_mapping["Bucket 0"]["threshold"],
+        threshold_b = lm_mapping["Bucket 1"]["threshold"],
+        threshold_c = lm_mapping["Bucket 2"]["threshold"],
+        threshold_d = lm_mapping["Bucket 3"]["threshold"],
+        enable_lm = enable,
+    )
+
+    return lm_mapping
+
+
+def setLM(drive, threshold_a, threshold_b, threshold_c, threshold_d, enable_lm):
+    # LM Rules:
+    # Log data no more than 10 minutes old
+    # Bucket Thresholds must be A<B<C<D
+
+    cmd_options = [
+    "nvme ocp set-latency-monitor-feature",
+    "%s" % (drive),
+    "--active_bucket_timer_threshold=%d" % (2016),  # 5 min increments; default is 07E0h or 2016 which is 1 week
+    "--active_threshold_a=%d" % (threshold_a),  # 5 ms increments; default is 05h which is 30 ms
+    "--active_threshold_b=%d" % (threshold_b),  # 5 ms increments; default is 13h which is 100 ms
+    "--active_threshold_c=%d" % (threshold_c),  # 5 ms increments; default is 1Eh which is 155 ms
+    "--active_threshold_d=%d" % (threshold_d),  # 5 ms increments; default is 2Eh which is 235 ms
+    "--active_latency_config=%s" % ("0x0fff"),  # default is 0FFFh
+    "--active_latency_minimum_window=%d" % (0),  # set to 0 to disable
+    "--debug_log_trigger_enable=%d" % (1),  # set to 0 to disable
+    "--discard_debug_log=%d" % (1),  # set to 1 to discard log and reset LM with this cmd's settings
+    "--latency_monitor_feature_enable=%d" % (enable_lm), #set to 1 to enable
+    ]
+    cmd_output = cmdline(" ".join(cmd_options))
+    return cmd_output
+
+
+def getLM(drive, output_filename):
+    cmd = "nvme ocp latency-monitor-log %s -o json | tee %s" % (drive, output_filename)
+    cmd_output = cmdline(cmd)
+    return json.loads(cmd_output)  # TODO save as file
+
+def getLMbinary(drive, output_filename):
+    cmd = "nvme get-log %s -i 0xC3 -l 512 -b | tee %s" % (drive, output_filename)
+    cmdline(cmd)
+    return
+
+def runTest(dut_list, profile, args, csvFolderPath, rtype, index, rcycle, only_targets=False):
+    job_targets = None
+    smart_before_filename = ""
+    smart_after_filename = ""
+    extsmart_before_filename = ""
+    extsmart_after_filename = ""
+    lm_before_filename = ""
+    lm_after_filename = ""
+    fio_jfile = ""
+    ocp_support = getOCP(dut_list[0].device)
+    args.calc_waf = args.calc_waf and ocp_support["calc_waf"]
+    args.check_lm = args.check_lm and ocp_support["check_lm"]
+    lm_mapping = args.check_lm
+
+    if args.scale_by_TB:
+        scale_by_TB = dut_list[0].factor
+    else:
+        scale_by_TB = 1
+
+    if "targets" in profile[rtype][index]:
+        job_targets = profile[rtype][index]["targets"]
+    elif args.check_lm:
+        job_targets = {}
+
+    if all([args.calc_waf, not only_targets]):
+        smart_before_filename = "%s/%s_run%d_smart_before.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+        smart_after_filename = "%s/%s_run%d_smart_after.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+        extsmart_before_filename = "%s/%s_run%d_extsmart_before.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+        extsmart_after_filename = "%s/%s_run%d_extsmart_after.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+
+        getSmart(dut_list[0].device, smart_before_filename)
+        getExtSmart(dut_list[0].device, extsmart_before_filename)
+
+    if all([args.check_lm, job_targets, not only_targets]):
+        lm_before_filename = "%s/%s_run%d_lm_before.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+        lm_after_filename = "%s/%s_run%d_lm_after.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+        lmbinary_before_filename = "%s/%s_run%d_lmbinary_before.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+        lmbinary_after_filename = "%s/%s_run%d_lmbinary_after.log" % (FioDUT.fname, profile[rtype][index]["alias"], rcycle)
+
+        lm_mapping = setupLM(dut_list[0].device, job_targets, enable_lm=1)
+        getLM(dut_list[0].device, lm_before_filename)
+        getLMbinary(dut_list[0].device, lmbinary_before_filename)
+
+    if all([args.dryrun == "n", not only_targets]):
+        fio_jfile = run_fio(profile, index, dut_list, args, rcycle, rtype)
+    elif only_targets:
+        fio_jfile = profile[rtype][index]["alias"]
+
+    if all([args.calc_waf, not only_targets]):
+        getSmart(dut_list[0].device, smart_after_filename)
+        getExtSmart(dut_list[0].device, extsmart_after_filename)
+
+    if all([args.check_lm, job_targets, not only_targets]):
+        getLM(dut_list[0].device, lm_after_filename)
+        getLMbinary(dut_list[0].device, lmbinary_after_filename)
+        setupLM(dut_list[0].device, job_targets, enable_lm=0)
+
     if args.dryrun == "n":
         if dut_list[0].inLocalMode():  # Health tools only works locally
             runHealthMon(dut_list[0].fname, args.health, args.getflash)
-            results = Parser(jfile, "%s/%s.csv" % (FioDUT.fname, FioDUT.fname))
+            results = Parser(
+                jname = fio_jfile,
+                cname = "%s/%s.csv" % (FioDUT.fname, FioDUT.fname),
+                only_targets = only_targets,
+                job_targets = job_targets,
+                scale_by_TB = scale_by_TB,
+                smart_before_jname = smart_before_filename,
+                smart_after_jname = smart_after_filename,
+                extsmart_before_jname = extsmart_before_filename,
+                extsmart_after_jname = extsmart_after_filename,
+                lm_before_file = lm_before_filename,
+                lm_after_file = lm_after_filename,
+                lm_mapping = lm_mapping)
             parseLocalResults(results)
         else:
-            fio_json_parser.parseServerResults(jfile, csvFolderPath)
+            fio_json_parser.parseServerResults(fio_jfile, csvFolderPath)
     else:
-        print("parse file: %s" % jfile)
+        print("parse file: %s" % fio_jfile)
 
 
 def runCycles(dut_list, profile, args, rc, pc, lp, csvFolderPath):
@@ -762,11 +1058,15 @@ def runCycles(dut_list, profile, args, rc, pc, lp, csvFolderPath):
                 for index in range(len(profile["pre"])):
                     clearDriveData(dut_list, args.dryrun)
                     runTest(
-                        dut_list, profile, args, csvFolderPath, "pre", index, rcycle
+                        dut_list, profile, args, csvFolderPath, "pre", index, rcycle, False
                     )
-        for index in range(len(profile["def"])):
-            runTest(dut_list, profile, args, csvFolderPath, "def", index, rcycle)
 
+        for index in range(len(profile["def"])):
+            runTest(dut_list, profile, args, csvFolderPath, "def", index, rcycle, False)
+        if rcycle == rc and args.show_targets:
+            print("Adding workload targets to the CSV file")
+            for index in range(len(profile["def"])):
+                runTest(dut_list, profile, args, csvFolderPath, "def", index, rcycle, True)
 
 def runSuite(args):
     dut_list = getServers(args.servers, args.server_file, args.user)

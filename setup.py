@@ -32,7 +32,7 @@ def get_data_files():
 
 setup(
     name="fiosynth",
-    version="3.5.39",
+    version="3.6.0",
     description="FB fio Synthetic Benchmark Suite",
     long_description=long_description,
     author="Darryl Gardner",

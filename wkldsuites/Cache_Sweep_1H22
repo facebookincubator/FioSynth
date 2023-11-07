@@ -51,6 +51,16 @@
               "W4THINK" : 43200000,
               "MISC" : "512K",
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
           }
          },
          {
@@ -68,6 +78,16 @@
               "W4THINK" : 43200000,
               "MISC" : "512K",
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
           }
          },
          {
@@ -85,6 +105,16 @@
               "W4THINK" : 14400000,
               "MISC" : "512K",
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
           }
          },
          {
@@ -102,6 +132,16 @@
               "W4THINK" : 14400000,
               "MISC" : "512K",
               "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
           }
          }
         ],

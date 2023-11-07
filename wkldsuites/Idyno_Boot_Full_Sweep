@@ -26,6 +26,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 300000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -40,6 +50,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 150000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -54,6 +74,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 75000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -68,6 +98,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 300000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -82,6 +122,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 150000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -96,6 +146,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 75000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -110,6 +170,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 300000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -124,6 +194,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 150000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -138,6 +218,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 75000000,
               "W5THINK" : 1000000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -152,6 +242,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 300000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -166,6 +266,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 150000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -180,6 +290,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 75000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -194,6 +314,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 300000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -208,6 +338,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 150000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -222,6 +362,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 75000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -236,6 +386,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 300000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -250,6 +410,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 150000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -264,6 +434,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 75000000,
               "W5THINK" : 500000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -278,6 +458,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 300000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -292,6 +482,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 150000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -306,6 +506,16 @@
               "W3THINK" : 30000000,
               "W4THINK" : 75000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -320,6 +530,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 300000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -334,6 +554,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 150000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -348,6 +578,16 @@
               "W3THINK" : 15000000,
               "W4THINK" : 75000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -362,6 +602,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 300000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -376,6 +626,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 150000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          },
          {
@@ -390,6 +650,16 @@
               "W3THINK" : 7500000,
               "W4THINK" : 75000000,
               "W5THINK" : 250000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 90000
+              },
+              "write" : {
+                  "MAX" : 60000
+              }
+            }
           }
          }
         ],
