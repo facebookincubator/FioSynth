@@ -952,7 +952,7 @@ def setLM(drive, threshold_a, threshold_b, threshold_c, threshold_d, enable_lm):
     "--active_threshold_d=%d" % (threshold_d),  # 5 ms increments; default is 2Eh which is 235 ms
     "--active_latency_config=%s" % ("0x0fff"),  # default is 0FFFh
     "--active_latency_minimum_window=%d" % (0),  # set to 0 to disable
-    "--debug_log_trigger_enable=%d" % (1),  # set to 0 to disable
+    "--debug_log_trigger_enable=%d" % (0),  # set to 0 to disable
     "--discard_debug_log=%d" % (1),  # set to 1 to discard log and reset LM with this cmd's settings
     "--latency_monitor_feature_enable=%d" % (enable_lm), #set to 1 to enable
     ]
