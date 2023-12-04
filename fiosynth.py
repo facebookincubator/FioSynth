@@ -61,5 +61,10 @@
 #
 from fiosynth_lib import fiosynth
 
-if __name__ == "__main__":
+
+def main() -> None:
     fiosynth.main()
+
+
+if __name__ == "__main__":
+    main()  # pragma: no cover
