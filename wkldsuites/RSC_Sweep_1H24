@@ -1,0 +1,475 @@
+{
+    "pre":[
+        {
+            "template":"prep_flash.fio",
+            "alias":"prep_flash",
+            "values" : {
+                "TIME" : "N/A",
+                "BLKSIZE" : "512K",
+                "DEPTH" : 256
+            }
+        }
+           ],
+     "def":[
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw100_64K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "100",
+                "BLKSIZE" : "64K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw100_128K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "100",
+                "BLKSIZE" : "128K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw100_256K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "100",
+                "BLKSIZE" : "256K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw100_1M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "100",
+                "BLKSIZE" : "1M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw100_2M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "100",
+                "BLKSIZE" : "2M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw100_4M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "100",
+                "BLKSIZE" : "4M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw0_64K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "0",
+                "BLKSIZE" : "64K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw0_128K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "0",
+                "BLKSIZE" : "128K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw0_256K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "0",
+                "BLKSIZE" : "256K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw0_1M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "0",
+                "BLKSIZE" : "1M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw0_2M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "0",
+                "BLKSIZE" : "2M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw0_4M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "0",
+                "BLKSIZE" : "4M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw90_64K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "90",
+                "BLKSIZE" : "64K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw90_128K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "90",
+                "BLKSIZE" : "128K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw90_256K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "90",
+                "BLKSIZE" : "256K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw90_1M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "90",
+                "BLKSIZE" : "1M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw90_2M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "90",
+                "BLKSIZE" : "2M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw90_4M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "90",
+                "BLKSIZE" : "4M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw80_64K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "80",
+                "BLKSIZE" : "64K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw80_128K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "80",
+                "BLKSIZE" : "128K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw80_256K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "80",
+                "BLKSIZE" : "256K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw80_1M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "80",
+                "BLKSIZE" : "1M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw80_2M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "80",
+                "BLKSIZE" : "2M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw80_4M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "80",
+                "BLKSIZE" : "4M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw50_64K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "50",
+                "BLKSIZE" : "64K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw50_128K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "50",
+                "BLKSIZE" : "128K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw50_256K",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "50",
+                "BLKSIZE" : "256K",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw50_1M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "50",
+                "BLKSIZE" : "1M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw50_2M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "50",
+                "BLKSIZE" : "2M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        },
+        {
+            "template" : "gen.fio",
+            "alias" : "gen_randrw50_4M",
+            "values" : {
+                "RANDRW" : "randrw",
+                "RWMIXREAD" : "50",
+                "BLKSIZE" : "4M",
+                "SIZE" : "100%",
+                "IOENGINE" : "io_uring",
+                "DEPTH" : 32,
+                "RAMP" : "300",
+                "TIME" : "600",
+                "NUMJOBS" : "16"
+            }
+        }
+        ],
+    "run_cycles": 3,
+    "precondition_cycles": 1,
+    "devices_in_global": "Y",
+    "scale_by_capacity": "N"
+    }

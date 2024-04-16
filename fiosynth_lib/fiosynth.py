@@ -387,6 +387,11 @@ def getJobVars(dut, profile, scale_factor):
         "MISC",
         "MD",
         "DIRECT",
+        "RANDRW",
+        "RWMIXREAD",
+        "IOENGINE",
+        "RAMP",
+        "NUMJOBS",
     ]
     vars_scaleup = ["RRATE", "DEPTH", "OFFSET2"]
     vars_scaledown = ["W1THINK", "W2THINK", "W3THINK", "W4THINK", "W5THINK"]
