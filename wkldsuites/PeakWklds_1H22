@@ -303,7 +303,7 @@
           }
          },
          {
-          "template":"prep.fio",
+          "template":"prep_io_uring.fio",
           "alias":"seqprep",
           "values" : {
               "TIME" : "N/A",

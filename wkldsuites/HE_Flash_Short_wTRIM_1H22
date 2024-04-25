@@ -18,7 +18,7 @@
           }
          },
          {
-          "template":"TypeVIwTRIM_precon.fio",
+          "template":"TypeVIwTRIM_precon_1H22.fio",
           "alias":"T6_precondition2",
           "values" : {
               "TIME" : "600",
