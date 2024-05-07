@@ -616,3 +616,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/seqwrite_io_uring.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/seqwrite_io_uring.fio'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/TypeVIwTRIM_precon_1H22.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/TypeVIwTRIM_precon_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/prep_io_uring.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/prep_io_uring.fio'
+        mode: '0644'
