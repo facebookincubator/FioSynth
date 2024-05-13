@@ -1,7 +1,7 @@
 {
 "pre":[
         {
-         "template":"prep_flash.fio",
+         "template":"prep_flash_io_uring.fio",
          "alias":"prep_flash",
          "values" : {
              "TIME" : "N/A",
@@ -16,7 +16,7 @@
          }
         },
         {
-         "template":"searchindex_wTRIM.fio",
+         "template":"searchindex_wTRIM_1H22.fio",
          "alias":"Search_precondition",
          "values" : {
              "TIME" : "3600",
@@ -35,7 +35,7 @@
        ],
  "def":[
          {
-          "template":"searchindex_wTRIM.fio",
+          "template":"searchindex_wTRIM_1H22.fio",
           "alias":"SearchIndex_wTRIM",
           "values" : {
               "TIME" : "1200",
