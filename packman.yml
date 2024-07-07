@@ -622,7 +622,7 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/prep_io_uring.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/prep_io_uring.fio'
         mode: '0644'
-      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/prep_flash__io_uring.fio:
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/prep_flash_io_uring.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/prep_flash_io_uring.fio'
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/searchindex_wTRIM_1H22.fio:
