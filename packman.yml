@@ -283,6 +283,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/WSF_2H21:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/WSF_2H21'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/WSF_2H21_8TB:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/WSF_2H21_8TB'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/WSF_1H22:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/WSF_1H22'
         mode: '0644'

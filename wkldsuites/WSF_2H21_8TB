@@ -1,0 +1,99 @@
+{
+    "pre": [
+        {
+            "template": "wsf-t.fio",
+            "alias": "wsf-t-precondition1",
+            "values": {
+                "TIME": "43200",
+                "DEPTH": 16,
+                "RRATE": 1,
+                "SIZE": "100%",
+                "W1THINK": 3800,
+                "W2THINK": 1200000,
+                "W3THINK": 60000,
+                "RAMPTIME": 30,
+                "OFFSET2": 250000
+            }
+        },
+        {
+            "template": "wsf-t.fio",
+            "alias": "wsf-t-precondition2",
+            "values": {
+                "TIME": "600",
+                "DEPTH": 32,
+                "RRATE": 6,
+                "SIZE": "100%",
+                "W1THINK": 8000,
+                "W2THINK": 600000,
+                "W3THINK": 120000,
+                "RAMPTIME": 30,
+                "OFFSET2": 50000
+            }
+        }
+    ],
+    "def": [
+        {
+            "template": "wsf-t.fio",
+            "alias": "wsf-t-normal",
+            "values": {
+                "TIME": "3600",
+                "DEPTH": 16,
+                "RRATE": 1,
+                "SIZE": "100%",
+                "W1THINK": 713600,
+                "W2THINK": 225400000,
+                "W3THINK": 6440000,
+                "RAMPTIME": 30,
+                "OFFSET2": 250000
+            }
+        },
+        {
+            "template": "wsf-tl_2H21.fio",
+            "alias": "wsf-tl-normal",
+            "values": {
+                "TIME": "3600",
+                "DEPTH": 4,
+                "RRATE": 30,
+                "SIZE": "100%",
+                "W1THINK": 200000,
+                "W2THINK": 60000000,
+                "W3THINK": 10800000,
+                "RAMPTIME": 30,
+                "OFFSET2": 250000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 112.4
+                    },
+                    "write": {
+                        "MIN": 68
+                    },
+                    "trim": {
+                        "MIN": 41.4
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1000,
+                        "P99.99": 4000,
+                        "P99.9999": 8000,
+                        "MAX": 20000
+                    },
+                    "write": {
+                        "P99.99": 20000,
+                        "P99.9999": 30000,
+                        "MAX": 50000
+                    }
+                }
+            }
+        }
+    ],
+    "run_cycles": 1,
+    "precondition_cycles": 1,
+    "devices_in_global": "Y",
+    "scale_by_capacity": "Y"
+}
