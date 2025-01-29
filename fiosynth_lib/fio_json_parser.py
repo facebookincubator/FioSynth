@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# pyre-unsafe
+
 # Copyright (c) Facebook, Inc. and its affiliates.
 #
 # AUTHOR = 'Darryl Gardner <darryleg@fb.com>'

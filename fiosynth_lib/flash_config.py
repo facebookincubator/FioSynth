@@ -5,6 +5,8 @@
 # flash_config.py- Logs flash configuration information in .csv format
 # By default, results will be stored in "flashconfig.csv" file.
 #
+
+# pyre-unsafe
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import argparse

@@ -4,6 +4,8 @@
 # AUTHOR = 'Darryl Gardner <darryleg@fb.com>'
 # @nolint
 
+# pyre-unsafe
+
 import argparse
 import datetime
 import json

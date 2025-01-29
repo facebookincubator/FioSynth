@@ -59,6 +59,8 @@
 # fb-FioSynthFlash -d ALL -w LE_Flash -f LE_Flash_server_noRAID -s <server>
 #   -s <otherserver>
 #
+
+# pyre-unsafe
 from fiosynth_lib import fiosynth
 
 
