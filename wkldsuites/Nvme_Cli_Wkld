@@ -1,0 +1,25 @@
+{
+  "pre": [],
+  "def": [
+    {
+      "template": "Max_Latency_Write.fio",
+      "alias": "nvme_cli_max_latency_write",
+      "values": {
+        "TIME": "600",
+        "SIZE": "100%"
+      }
+    },
+    {
+      "template": "Max_Latency_ReadTrim.fio",
+      "alias": "nvme_cli_max_latency_readtrim",
+      "values": {
+        "TIME": "600",
+        "SIZE": "100%"
+      }
+    }
+  ],
+  "run_cycles": 1,
+  "precondition_cycles": 0,
+  "devices_in_global": "Y",
+  "scale_by_capacity": "Y"
+}
