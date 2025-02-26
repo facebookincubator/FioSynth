@@ -245,7 +245,7 @@ def checkVersion(tool):
         fio_version = LooseVersion(version.decode("utf-8"))
         # Using utf-8 encoding to insure that version is reported as a string
         if fio_version < min_version:
-            print("%s older than version %s" % (tool, minVersion))
+            print("{} older than version {}".format(tool, minVersion))
             sys.exit(1)
         if fio_version >= v3_version:
             return 3
@@ -310,7 +310,7 @@ def createTempJobTemplate(dut, jobname):
     with open(dst_file, "a") as tmp_file:
         try:
             tmp_file.write(dut.dev_list)
-        except IOError:
+        except OSError:
             print("cannot write to %s" % tmp_file)
             sys.exit(1)
     return dst_file
@@ -339,7 +339,7 @@ def checkFileExist(path, dut):
         if int(result) > 0:
             return True
         else:
-            print("%s does not exist on server %s " % (path, dut.serverName))
+            print("{} does not exist on server {} ".format(path, dut.serverName))
             return False
 
 
@@ -431,7 +431,7 @@ def run_fio(p, VAL, dut_list, args, run, rtype):
     exitall_flag = " "
     if args.exitall:
         exitall_flag = " --exitall "
-    fioCmd = "fio --output-format=json%s--output=%s " % (
+    fioCmd = "fio --output-format=json{}--output={} ".format(
         exitall_flag,
         resultsFileName,
     )
@@ -455,7 +455,7 @@ def run_fio(p, VAL, dut_list, args, run, rtype):
                 fioCmd = k + "=" + str(v) + " " + fioCmd
             fioCmd = fioCmd + template
         else:
-            f = open(template, "r")
+            f = open(template)
             tmpJbStr = f.read()
             f.close()
             for var in jobVars.keys():
@@ -474,7 +474,7 @@ def run_fio(p, VAL, dut_list, args, run, rtype):
                 )
             else:
                 fioCmd = fioCmd + (
-                    " --client=ip6:%s %s" % (dut.serverName, tmpJbFilePath)
+                    " --client=ip6:{} {}".format(dut.serverName, tmpJbFilePath)
                 )
     if args.dryrun == "n":
         cmdline(fioCmd)
@@ -487,7 +487,7 @@ def isPortAvailable(port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         sock.bind(("127.0.0.1", port))
-    except socket.error:
+    except OSError:
         return False
     finally:
         sock.close()
@@ -568,7 +568,7 @@ def createOffsetFile(dut, dst_file):
         try:
             tmp_file = open(dst_file, "w")
             tmp_file.write(str(dut.offset))
-        except IOError:
+        except OSError:
             print("cannot write to %s" % tmp_file)
             sys.exit(1)
         finally:
@@ -576,16 +576,16 @@ def createOffsetFile(dut, dst_file):
         return
     else:
         dutSsh = getSshProc(dut)
-        dutSsh.communicate('echo "%s" > %s' % (str(dut.offset), dst_file))
+        dutSsh.communicate('echo "{}" > {}'.format(str(dut.offset), dst_file))
         return
 
 
 def readOffsetFile(dut, dst_file):
     if checkFileExist(dst_file, dut):
-        tmp_file = open(dst_file, "r")
+        tmp_file = open(dst_file)
         try:
             dut.offset = int(tmp_file.readline().strip())
-        except IOError:
+        except OSError:
             print("cannot read from %s" % tmp_file)
             sys.exit(1)
         tmp_file.close()
@@ -698,7 +698,7 @@ def startSshTunnel(dut):
 
     cmd = [
         "ssh",
-        "%s@%s" % (dut.sshUser, dut.serverName),
+        "{}@{}".format(dut.sshUser, dut.serverName),
         "-N",
         "-L",
         "%d:%s:8765" % (dut.sshTunnelPort, dut.serverName),
@@ -719,7 +719,7 @@ def clearDriveData(dut_list, dryrun="n"):
                     dut.device,
                 )
             else:
-                cmd = cmd + "--client=ip6:%s --filename=%s" % (
+                cmd = cmd + "--client=ip6:{} --filename={}".format(
                     dut.serverName,
                     dut.device,
                 )
@@ -737,11 +737,11 @@ def getServers(servers, server_file, user):
                 dut_list.append(FioDUT(sName=server, user=user))
         if not server_file == "":
             try:
-                sf = open(server_file, "r")
+                sf = open(server_file)
                 for server in sf.read().split():
                     server = server.strip()
                     dut_list.append(FioDUT(sName=server, user=user))
-            except IOError:
+            except OSError:
                 print("Can't open server file")
             finally:
                 sf.close()
@@ -789,7 +789,7 @@ def runHealthMon(fname, health="", flash=None):
 
 def getSmart(device, output_filename):
     smart_cmds = [
-        'nvme smart-log %s -o json | tee %s' % (device, output_filename),
+        'nvme smart-log {} -o json | tee {}'.format(device, output_filename),
     ]
     smart_dict = {}
 
@@ -858,7 +858,7 @@ def getOCP(device):
     for spec, content in OCP_map.items():
         if version == content["Log Page Version"].to_bytes(2, 'little'):
             if guid == content["Log Page GUID"].to_bytes(16, 'little'):
-                print("%s supports %s. Setting calc_waf:%s and check_lm:%s" % (device, spec, content["calc_waf"], content["check_lm"]))
+                print("{} supports {}. Setting calc_waf:{} and check_lm:{}".format(device, spec, content["calc_waf"], content["check_lm"]))
                 return content
 
     return OCP_map["No OCP Compliance"]
@@ -868,7 +868,7 @@ def getExtSmart(device, output_filename):
     vid = getVID(device)
     vid_extsmart_dict = {
         # VID : EXT SMART CMD
-        '': 'nvme ocp smart-add-log %s -o json | tee %s' % (device, output_filename),
+        '': 'nvme ocp smart-add-log {} -o json | tee {}'.format(device, output_filename),
     }
     extsmart_dict = {}
     cmd_list = []
@@ -968,12 +968,12 @@ def setLM(drive, threshold_a, threshold_b, threshold_c, threshold_d, enable_lm):
 
 
 def getLM(drive, output_filename):
-    cmd = "nvme ocp latency-monitor-log %s -o json | tee %s" % (drive, output_filename)
+    cmd = "nvme ocp latency-monitor-log {} -o json | tee {}".format(drive, output_filename)
     cmd_output = cmdline(cmd)
     return json.loads(cmd_output)  # TODO save as file
 
 def getLMbinary(drive, output_filename):
-    cmd = "nvme get-log %s -i 0xC3 -l 512 -b | tee %s" % (drive, output_filename)
+    cmd = "nvme get-log {} -i 0xC3 -l 512 -b | tee {}".format(drive, output_filename)
     cmdline(cmd)
     return
 
@@ -1039,7 +1039,7 @@ def runTest(dut_list, profile, args, csvFolderPath, rtype, index, rcycle, only_t
             runHealthMon(dut_list[0].fname, args.health, args.getflash)
             results = Parser(
                 jname = fio_jfile,
-                cname = "%s/%s.csv" % (FioDUT.fname, FioDUT.fname),
+                cname = "{}/{}.csv".format(FioDUT.fname, FioDUT.fname),
                 only_targets = only_targets,
                 job_targets = job_targets,
                 scale_by_TB = scale_by_TB,

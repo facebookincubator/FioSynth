@@ -151,14 +151,14 @@ def read_json(fn, serverMode=False):
         try:
             data = json.loads(jsonstr)
         except ValueError:
-            print("serverMode %s; JSON decoding failed on %s, is file corrupt?" % (serverMode, fn))
+            print("serverMode {}; JSON decoding failed on {}, is file corrupt?".format(serverMode, fn))
             f.close()
             sys.exit(1)
     else:
         try:
             data = json.load(f)
         except ValueError:
-            print("serverMode %s; JSON decoding failed on %s, now trying to format json before parsing" % (serverMode, fn))
+            print("serverMode {}; JSON decoding failed on {}, now trying to format json before parsing".format(serverMode, fn))
             try:
                 f.seek(0)
                 jsonstr = f.read()
@@ -167,14 +167,14 @@ def read_json(fn, serverMode=False):
                 data = json.loads(jsonstr)
 
             except:
-                print("serverMode %s; JSON decoding failed on %s, is file corrupt?" % (serverMode, fn))
+                print("serverMode {}; JSON decoding failed on {}, is file corrupt?".format(serverMode, fn))
                 f.close()
                 sys.exit(1)
     f.close()
     return data
 
 def read_extsmart(filename):
-    with open(filename, 'r') as f:
+    with open(filename) as f:
         f_data = f.read()
     return f_data
 
@@ -286,7 +286,7 @@ def new_csv(f, notStdPercentile1, notStdPercentile2, add_waf_header, add_lm_head
         try:
             writer = csv.writer(f)
             writer.writerow(col_names)
-        except IOError:
+        except OSError:
             print("cannot write to ", f)
             f.close()
             sys.exit(1)
@@ -447,7 +447,7 @@ def get_lm_line(data, lm_mapping):
         for io_type, value in _.items():
             for bucket, settings in map.items():
                 if io_type in settings["target"]:
-                    lm_log[metric][io_type] = data["%s: %s" % (metric, bucket)][io_type]
+                    lm_log[metric][io_type] = data["{}: {}".format(metric, bucket)][io_type]
 
     for metric, _ in lm_log.items():
         for io_type, value in _.items():
@@ -553,7 +553,7 @@ def print_csv_line(f, jobname, fio_data, col_names, only_targets, job_targets, s
                 rdr.insert(idx+1, line_parts)
                 wrtr = csv.writer(f)
                 wrtr.writerows(rdr)
-            except IOError:
+            except OSError:
                 print("cannot write to ", f)
                 f.close()
                 sys.exit(1)
@@ -575,7 +575,7 @@ def print_csv_line(f, jobname, fio_data, col_names, only_targets, job_targets, s
             line_parts += get_lm_line(lm_after_data, lm_mapping)
             wrtr = csv.writer(f)
             wrtr.writerow(line_parts)
-        except IOError:
+        except OSError:
             print("cannot write to ", f)
             f.close()
             sys.exit(1)
@@ -586,7 +586,7 @@ def print_csv_line_generic(filename, content):
         try:
             wrtr = csv.writer(f)
             wrtr.writerow(content)
-        except IOError:
+        except OSError:
             print("cannot write to ", filename)
             f.close()
             sys.exit(1)

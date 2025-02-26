@@ -7,7 +7,6 @@
 #
 
 # pyre-unsafe
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 import argparse
 import csv
@@ -17,7 +16,7 @@ import shlex
 import subprocess
 import sys
 from subprocess import PIPE, Popen
-from typing import Any, Dict, Optional, Union
+from typing import Any
 
 
 def set_attributes():
@@ -54,9 +53,9 @@ def smartctlToJson(data):
         smart[index].setdefault("Device Path:", device_path)
         for line in lb.stdout:
             bits = line.split()
-            a = "%s %s" % (bits[KEY].decode("utf-8"), bits[KEY + 1].decode("utf-8"))
+            a = "{} {}".format(bits[KEY].decode("utf-8"), bits[KEY + 1].decode("utf-8"))
             try:
-                b = "%s %s" % (
+                b = "{} {}".format(
                     bits[VALUE].decode("utf-8"),
                     bits[VALUE + 1].decode("utf-8"),
                 )
@@ -103,8 +102,8 @@ def new_csv(f):
             "KernelVersion",
         ]
         writer = csv.writer(f)
-        writer.writerow((col_names))
-    except IOError:
+        writer.writerow(col_names)
+    except OSError:
         print("cannot write to ", f)
         f.close()
         sys.exit(1)
@@ -129,7 +128,7 @@ def print_nvme_line(f, data, hostname, kernel):
                 kernel,
             )
             writer.writerow(row)
-        except IOError:
+        except OSError:
             print("cannot write to ", f)
             f.close()
             sys.exit(1)
@@ -152,7 +151,7 @@ def print_flash_line(f, data, hostname, kernel):
                 kernel,
             )
         )
-    except IOError:
+    except OSError:
         print("cannot write to ", f)
         sys.exit(1)
 
@@ -177,15 +176,15 @@ def print_smart_line(f, data, hostname, kernel):
                         kernel,
                     )
                 )
-            except IOError:
+            except OSError:
                 print("cannot write to ", f)
                 sys.exit(1)
         index += 1
 
 
 def convert_nvme_output(
-    new_output: Dict[str, Any],
-) -> Optional[Dict[str, Union[str, int]]]:
+    new_output: dict[str, Any],
+) -> dict[str, str | int] | None:
     """
     Convert the new nvme list -o json output to old format
 

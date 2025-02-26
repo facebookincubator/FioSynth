@@ -1,5 +1,4 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 import os
 import shutil
@@ -20,7 +19,7 @@ class TestFioJsonParser(unittest.TestCase):
         self.tmp_dir = tempfile.mkdtemp()  # Create temporary directory for csv
         self.expected_csv_output = ""
         expected_csv_path = os.path.join(samples_dirpath, FIO_SAMPLE_CSV)
-        with open(expected_csv_path, "r") as csv_output:
+        with open(expected_csv_path) as csv_output:
             self.expected_csv_output = csv_output.read().splitlines()
 
     def tearDown(self):
@@ -29,7 +28,7 @@ class TestFioJsonParser(unittest.TestCase):
             shutil.rmtree(self.tmp_dir)
 
     def _assert_csv_format(self, csv_filepath):
-        with open(csv_filepath, "r") as csv_out:
+        with open(csv_filepath) as csv_out:
             actual_csv_lines = csv_out.read().splitlines()
             for a, e in zip(actual_csv_lines, self.expected_csv_output):
                 self.assertEqual(a, e)
