@@ -325,6 +325,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Write_Fio4C:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/Write_Fio4C'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/RSC_Sweep_1H24:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/RSC_Sweep_1H24'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_prep_flash.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_prep_flash.fio'
         mode: '0644'
@@ -630,4 +633,13 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/searchindex_wTRIM_1H22.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/searchindex_wTRIM_1H22.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/Max_Latency_ReadTrim.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/Max_Latency_ReadTrim.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/Max_Latency_write.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/Max_Latency_write.fio'
+        mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen.fio:
+        path: '/usr/local/fb-FioSynthFlash/jobfiles/gen.fio'
         mode: '0644'
