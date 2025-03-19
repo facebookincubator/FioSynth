@@ -12,9 +12,6 @@ packages:
       buck2:cea/storage_benchmarks/fb-FioSynthFlash:fiosynth:
         cea/storage_benchmarks/fb-FioSynthFlash/fiosynth.par:
           path: 'bin/fiosynth'
-      buck2:cea/storage_benchmarks/fb-FioSynthFlash:fb-FioSynthFlash:
-        cea/storage_benchmarks/fb-FioSynthFlash/fb-FioSynthFlash.par:
-          path: 'bin/fb-FioSynthFlash'
       buck2:cea/storage_benchmarks/fb-FioSynthFlash:healthTools:
         cea/storage_benchmarks/fb-FioSynthFlash/healthTools.par:
           path: 'bin/healthTools'
