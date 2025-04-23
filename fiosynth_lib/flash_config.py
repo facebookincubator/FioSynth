@@ -16,7 +16,7 @@ import shlex
 import subprocess
 import sys
 from subprocess import PIPE, Popen
-from typing import Any
+from typing import Any, Dict, Optional, Union
 
 
 def set_attributes():
@@ -183,8 +183,8 @@ def print_smart_line(f, data, hostname, kernel):
 
 
 def convert_nvme_output(
-    new_output: dict[str, Any],
-) -> dict[str, str | int] | None:
+    new_output: Dict[str, Any],
+) -> Optional[Dict[str, Union[str, int]]]:
     """
     Convert the new nvme list -o json output to old format
 
