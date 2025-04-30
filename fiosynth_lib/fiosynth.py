@@ -16,7 +16,7 @@ import socket
 import subprocess
 import sys
 import time
-from distutils.version import LooseVersion
+from packaging.version import parse
 from random import randint
 from subprocess import PIPE, Popen
 
@@ -239,10 +239,10 @@ def checkVersion(tool):
         minVersion = "2.20"
         cmd = "fio -v | sed s/fio-//"
     if cmd is not None:
-        min_version = LooseVersion(minVersion)
-        v3_version = LooseVersion("3.0")
+        min_version = parse(minVersion)
+        v3_version = parse("3.0")
         version = cmdline(cmd).rstrip()
-        fio_version = LooseVersion(version.decode("utf-8"))
+        fio_version = parse(version.decode("utf-8"))
         # Using utf-8 encoding to insure that version is reported as a string
         if fio_version < min_version:
             print("{} older than version {}".format(tool, minVersion))
