@@ -12,6 +12,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import shlex
 import subprocess
 import sys
@@ -113,12 +114,15 @@ def print_nvme_line(f, data, hostname, kernel):
     CAPACITY_KEY = 3
     for datum in data:
         device = datum["DevicePath"]
+        index = datum.get("Index", None)
+        if not index:
+            index = int(re.search(r"nvme(\d+)n", device).group(1))
         syntax = "lsblk -rnb %s | grep disk" % device
         capacity = cmdline(syntax).split()[CAPACITY_KEY]
         try:
             writer = csv.writer(f)
             row = (
-                datum["Index"],
+                index,
                 datum["DevicePath"],
                 capacity,
                 datum["ModelNumber"],
