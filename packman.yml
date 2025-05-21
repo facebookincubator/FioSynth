@@ -325,6 +325,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/RSC_Sweep_1H24:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/RSC_Sweep_1H24'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/Nvme_Cli_Wkld:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/Nvme_Cli_Wkld'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/gen_prep_flash.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/gen_prep_flash.fio'
         mode: '0644'
