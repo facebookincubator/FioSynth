@@ -188,7 +188,7 @@ def print_smart_line(f, data, hostname, kernel):
 
 def convert_nvme_output(
     new_output: Dict[str, Any],
-) -> Optional[Dict[str, Union[str, int]]]:
+) -> list[Optional[Dict[str, Union[str, int]]]]:
     """
     Convert the new nvme list -o json output to old format
 
@@ -199,25 +199,27 @@ def convert_nvme_output(
         old_format_list: old format
     """
     controllers = new_output.get("Controllers", [])
+    old_format_list = []
 
     for controller in controllers:
         if "Namespaces" in controller and controller["Namespaces"]:
-            namespace_info = controller["Namespaces"][0]
+            for namespace_info in controller["Namespaces"]:
+                # Create the old output format
+                old_format = {
+                    "NameSpace": namespace_info.get("NSID"),
+                    "DevicePath": f"/dev/{namespace_info.get('NameSpace')}",
+                    "Firmware": controller.get("Firmware"),
+                    "Index": int(controller.get("Controller").replace("nvme", "")),
+                    "ModelNumber": controller.get("ModelNumber"),
+                    "SerialNumber": controller.get("SerialNumber"),
+                    "UsedBytes": namespace_info.get("UsedBytes"),
+                    "MaximumLBA": namespace_info.get("MaximumLBA"),
+                    "PhysicalSize": namespace_info.get("PhysicalSize"),
+                    "SectorSize": namespace_info.get("SectorSize"),
+                }
+                old_format_list.append(old_format)
 
-            # Create the old output format
-            old_format = {
-                "NameSpace": namespace_info.get("NSID"),
-                "DevicePath": f"/dev/{namespace_info.get('NameSpace')}",
-                "Firmware": controller.get("Firmware"),
-                "Index": int(controller.get("Controller").replace("nvme", "")),
-                "ModelNumber": controller.get("ModelNumber"),
-                "SerialNumber": controller.get("SerialNumber"),
-                "UsedBytes": namespace_info.get("UsedBytes"),
-                "MaximumLBA": namespace_info.get("MaximumLBA"),
-                "PhysicalSize": namespace_info.get("PhysicalSize"),
-                "SectorSize": namespace_info.get("SectorSize"),
-            }
-            return old_format
+    return old_format_list
 
 
 def print_csv_line(f, data, tool):
@@ -230,7 +232,7 @@ def print_csv_line(f, data, tool):
         for dr in nvme_data:
             if "DevicePath" not in dr:
                 for output in dr.get("Subsystems", []):
-                    entry_list.append(convert_nvme_output(output))
+                    entry_list.extend(convert_nvme_output(output))
 
         nvme_data = entry_list or nvme_data
         print_nvme_line(f, nvme_data, hostname, kernel)
