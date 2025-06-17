@@ -106,6 +106,9 @@ packages:
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/SpinCycle:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/SpinCycle'
         mode: '0644'
+      cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/SpinCycle_1H25:
+        path: '/usr/local/fb-FioSynthFlash/wkldsuites/SpinCycle_1H25'
+        mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/wkldsuites/prep:
         path: '/usr/local/fb-FioSynthFlash/wkldsuites/prep'
         mode: '0644'
@@ -501,9 +504,6 @@ packages:
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/wildcard_normal.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/wildcard_normal.fio'
-        mode: '0644'
-      cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/wildcard.fio:
-        path: '/usr/local/fb-FioSynthFlash/jobfiles/wildcard.fio'
         mode: '0644'
       cea/storage_benchmarks/fb-FioSynthFlash/jobfiles/coldstorage.fio:
         path: '/usr/local/fb-FioSynthFlash/jobfiles/coldstorage.fio'

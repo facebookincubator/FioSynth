@@ -1,0 +1,52 @@
+{
+ "def":[
+         {
+          "template":"HDD_randread.fio",
+          "alias":"RandomRead_QD16",
+          "values" : {
+              "TIME" : "270",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 32,
+              "SIZE" : "100%"
+          }
+         },
+         {
+          "template":"HDD_randwrite.fio",
+          "alias":"RandomWrite_QD16",
+          "values" : {
+              "TIME" : "270",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 16,
+              "SIZE" : "100%"
+          }
+         },
+         {
+          "template":"HDD_seqread.fio",
+          "alias":"SeqRead_QD16",
+          "values" : {
+              "TIME" : "2670",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "1m",
+              "DEPTH" : 16,
+              "SIZE" : "100%"
+          }
+         },
+         {
+          "template":"HDD_seqwrite.fio",
+          "alias":"SeqWrite_QD16",
+          "values" : {
+              "TIME" : "2670",
+              "RAMPTIME" : "30",
+              "BLKSIZE" : "1m",
+              "DEPTH" : 16,
+              "SIZE" : "100%"
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}
