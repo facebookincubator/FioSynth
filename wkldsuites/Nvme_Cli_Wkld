@@ -2,7 +2,7 @@
   "pre": [],
   "def": [
     {
-      "template": "Max_Latency_Write.fio",
+      "template": "Max_Latency_write.fio",
       "alias": "nvme_cli_max_latency_write",
       "values": {
         "TIME": "600",
