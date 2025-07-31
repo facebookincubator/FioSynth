@@ -1,0 +1,42 @@
+{
+ "pre":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "43200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 69,
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"TypeVIwTRIM_precon_1H22.fio",
+          "alias":"100pct_Write_wTRIM",
+          "values" : {
+              "TIME" : "29400",
+              "SIZE" : "90%",
+              "W1THINK" : 12800,
+              "W2THINK" : 25600,
+              "W3THINK" : 12800000,
+              "W4THINK" : 30000000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}
