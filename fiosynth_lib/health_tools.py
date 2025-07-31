@@ -15,6 +15,8 @@
 # pyre-unsafe
 
 import argparse
+import re
+import shlex
 import subprocess
 
 
@@ -41,11 +43,24 @@ def set_attributes():
 
 class HealthTools:
     def logger(self, syntax):
+        allowed_commands = [
+            r"^smartctl\s+.*\s+/dev/[a-zA-Z0-9]+$",
+            r"^nvme\s+.*\s+/dev/[a-zA-Z0-9]+$",
+        ]
+
+        try:
+            args = shlex.split(syntax)
+        except ValueError:
+            raise ValueError(f"Invalid syntax format: {syntax}")
+
+        command_str = " ".join(args)
+        if not any(re.match(pattern, command_str) for pattern in allowed_commands):
+            raise ValueError(f"Invalid or unauthorized command: {syntax}")
+
         FILENAME = "health.log"
-        file_ = open(FILENAME, "a")
-        subprocess.Popen("date", stdout=file_)
-        subprocess.Popen(syntax, stdout=file_, shell=True)
-        file_.close()
+        with open(FILENAME, "a") as file_:
+            subprocess.Popen(["date"], stdout=file_)
+            subprocess.Popen(args, stdout=file_)
 
 
 def main():

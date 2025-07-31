@@ -15,7 +15,8 @@ import shutil
 import socket
 import subprocess
 import sys
-import time
+import re
+import shlex
 from packaging.version import parse
 from random import randint
 from subprocess import PIPE, Popen
@@ -324,6 +325,12 @@ def getTotalDataCapacity(data):
 
 # For checking devices, but can also be used for checking files
 def checkFileExist(path, dut):
+    valid_path_pattern = r'^[a-zA-Z0-9/_.-]+$'
+
+    if not re.match(valid_path_pattern, path):
+        print(f"Invalid path: {path}. Path contains invalid characters.")
+        sys.exit(1)
+
     if dut.inLocalMode():
         try:
             os.stat(path)
@@ -333,7 +340,8 @@ def checkFileExist(path, dut):
         return True
     else:
         proc = getSshProc(dut)
-        cmdStr = "stat %s 2> /dev/null | wc -l" % path
+        safe_path = shlex.quote(path)
+        cmdStr = f"stat {safe_path} 2> /dev/null | wc -l"
         out, err = proc.communicate(cmdStr)
         result = out.strip()
         if int(result) > 0:
