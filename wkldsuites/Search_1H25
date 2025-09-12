@@ -1,0 +1,100 @@
+{
+"pre":[
+        {
+         "template":"prep_flash_io_uring.fio",
+         "alias":"prep_flash",
+         "values" : {
+             "TIME" : "N/A",
+             "BLKSIZE" : "512K",
+             "DEPTH" : 256,
+             "RRATE" : 0,
+             "SIZE" : "N/A",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "W4THINK" : 0
+         }
+        },
+        {
+         "template":"searchindex_wTRIM_1H22.fio",
+         "alias":"Search_precondition",
+         "values" : {
+             "TIME" : "3600",
+             "BLKSIZE" : "8192/75:4096/21:16384/4",
+             "DEPTH" : 100,
+             "RRATE" : 603,
+             "SIZE" : "100%",
+             "W1THINK" : 11648,
+             "W2THINK" : 23296,
+             "W3THINK" : 5460000,
+             "W4THINK" : 1638000,
+             "W5THINK" : 698880,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"searchindex_wTRIM_1H22.fio",
+          "alias":"SearchIndex_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/75:4096/21:16384/4",
+              "DEPTH" : 100,
+              "RRATE" : 603,
+              "SIZE" : "100%",
+              "W1THINK" : 4659200,
+              "W2THINK" : 9318400,
+              "W3THINK" : 5460000,
+              "W4THINK" : 109200000,
+              "W5THINK" : 46592000,
+              "OFFSET2" : 50000
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2612,
+              "SIZE" : "100%",
+              "W1THINK" : 27300000,
+              "W2THINK" : 5460000,
+              "W3THINK" : 163800,
+              "OFFSET2" : 50000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 2550
+              },
+              "write" : {
+                  "MIN" : 12
+              },
+              "trim" : {
+                  "MIN" : 130
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 1500,
+                  "P99.99" : 5000,
+                  "P99.9999" : 15000,
+                  "MAX" : 20000
+              },
+              "write" : {
+                  "P99.99" : 15000,
+                  "P99.9999" : 20000,
+                  "MAX" : 25000
+              }
+            }
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

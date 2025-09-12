@@ -1,0 +1,84 @@
+{
+"pre":[
+        {
+         "template":"wsf-tl_1H22.fio",
+         "alias":"wsf-tl-1H22-precondition1",
+         "values" : {
+             "TIME" : "21600",
+             "DEPTH" : 1,
+             "RRATE" : 1,
+             "SIZE" : "100%",
+             "W1THINK" : 20293,
+             "W2THINK" : 1147,
+             "W3THINK" : 276640,
+             "RAMPTIME": 30,
+             "OFFSET2" : 250000
+         }
+        },
+        {
+         "template":"wsf-tl_1H22.fio",
+         "alias":"wsf-tl-1H22-precondition2",
+         "values" : {
+             "TIME" : "600",
+             "DEPTH" : 64,
+             "RRATE" : 31,
+             "SIZE" : "100%",
+             "W1THINK" : 45500,
+             "W2THINK" : 546,
+             "W3THINK" : 546000,
+             "RAMPTIME": 30,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+        {
+         "template":"wsf-tl_1H22.fio",
+         "alias":"wsf-tl-1H22-normal",
+         "values" : {
+             "TIME" : "3600",
+             "DEPTH" : 32,
+             "RRATE" : 15,
+             "SIZE" : "100%",
+             "W1THINK" : 1274000,
+             "W2THINK" : 114660,
+             "W3THINK" : 13832000,
+             "RAMPTIME": 30,
+             "OFFSET2" : 250000
+         },
+         "targets" : {
+           "throughput" : {
+             "read" : {
+                 "MIN" : 78
+             },
+             "write" : {
+                 "MIN" : 43
+             },
+             "trim" : {
+                 "MIN" : 29
+             },
+             "scale_by_TB" : {
+                 "value" : true
+             }
+           },
+           "latency" : {
+             "read" : {
+                 "P99" : 1000,
+                 "P99.99" : 5000,
+                 "P99.9999" : 10000,
+                 "MAX" : 25000
+             },
+             "write" : {
+                 "P99.99" : 10000,
+                 "P99.9999" : 15000,
+                 "MAX" : 25000
+             }
+           }
+         }
+        }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

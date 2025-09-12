@@ -1,0 +1,399 @@
+{
+ "pre":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "43200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 11648,
+              "W2THINK" : 23296,
+              "W3THINK" : 11648000,
+              "W4THINK" : 27300000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_precon.fio",
+          "alias":"T6_precondition2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 11648,
+              "W2THINK" : 23296,
+              "W3THINK" : 11648000,
+              "W4THINK" : 27300000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 873600,
+              "W2THINK" : 1747200,
+              "W3THINK" : 8736000,
+              "W4THINK" : 20475000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 231,
+              "SIZE" : "90%",
+              "W1THINK" : 79352,
+              "W2THINK" : 364000,
+              "W3THINK" : 131040000,
+              "W4THINK" : 4804800,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 118,
+              "SIZE" : "90%",
+              "W1THINK" : 87360,
+              "W2THINK" : 69160000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM_normal",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 873600,
+              "W2THINK" : 1747200,
+              "W3THINK" : 8736000,
+              "W4THINK" : 20475000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM_highread",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 660,
+              "SIZE" : "90%",
+              "W1THINK" : 873600,
+              "W2THINK" : 1747200,
+              "W3THINK" : 8736000,
+              "W4THINK" : 20475000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM_highwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 342451,
+              "W2THINK" : 684902,
+              "W3THINK" : 8736000,
+              "W4THINK" : 20475000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM_highreadwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 660,
+              "SIZE" : "90%",
+              "W1THINK" : 342451,
+              "W2THINK" : 684902,
+              "W3THINK" : 8736000,
+              "W4THINK" : 20475000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_normal",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 231,
+              "SIZE" : "90%",
+              "W1THINK" : 79352,
+              "W2THINK" : 364000,
+              "W3THINK" : 131040000,
+              "W4THINK" : 4804800,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_highread",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1650,
+              "SIZE" : "90%",
+              "W1THINK" : 79352,
+              "W2THINK" : 364000,
+              "W3THINK" : 131040000,
+              "W4THINK" : 4804800,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_highwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 231,
+              "SIZE" : "90%",
+              "W1THINK" : 10369,
+              "W2THINK" : 47563,
+              "W3THINK" : 131040000,
+              "W4THINK" : 4804800,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_highreadwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 1650,
+              "SIZE" : "90%",
+              "W1THINK" : 10369,
+              "W2THINK" : 47563,
+              "W3THINK" : 131040000,
+              "W4THINK" : 4804800,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM_normal",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 118,
+              "SIZE" : "90%",
+              "W1THINK" : 87360,
+              "W2THINK" : 69160000,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM_highread",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 706,
+              "SIZE" : "90%",
+              "W1THINK" : 87360,
+              "W2THINK" : 69160000,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM_highwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 118,
+              "SIZE" : "90%",
+              "W1THINK" : 34944,
+              "W2THINK" : 69160000,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM_highreadwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 706,
+              "SIZE" : "90%",
+              "W1THINK" : 34944,
+              "W2THINK" : 69160000,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 35000
+              },
+              "write" : {
+                  "MAX" : 45000
+              }
+            }
+          }
+         }
+        ],
+"run_cycles": 2,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

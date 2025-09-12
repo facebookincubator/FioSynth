@@ -1,0 +1,153 @@
+{
+ "pre":[
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"bcache_precondition1",
+          "values" : {
+              "TIME" : "36000",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 10,
+              "RRATE" : 319,
+              "SIZE" : "90%",
+              "W1THINK" : 1092000,
+              "W2THINK" : 2912,
+              "W3THINK" : 45500,
+              "W4THINK" : 245700,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"bcache_precondition2",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 319,
+              "SIZE" : "90%",
+              "W1THINK" : 17472000,
+              "W2THINK" : 465920,
+              "W3THINK" : 7280000,
+              "W4THINK" : 39312000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"B_Cache_normal",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 319,
+              "SIZE" : "90%",
+              "W1THINK" : 17472000,
+              "W2THINK" : 465920,
+              "W3THINK" : 7280000,
+              "W4THINK" : 39312000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         },
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"B_Cache_highread",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 990,
+              "SIZE" : "90%",
+              "W1THINK" : 5824000,
+              "W2THINK" : 465920,
+              "W3THINK" : 7280000,
+              "W4THINK" : 39312000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         },
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"B_Cache_highwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 319,
+              "SIZE" : "90%",
+              "W1THINK" : 17472000,
+              "W2THINK" : 155246,
+              "W3THINK" : 2366000,
+              "W4THINK" : 13104000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         },
+         {
+          "template":"bcache_1H22.fio",
+          "alias":"B_Cache_highreadwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "4K",
+              "DEPTH" : 13,
+              "RRATE" : 990,
+              "SIZE" : "90%",
+              "W1THINK" : 5824000,
+              "W2THINK" : 155246,
+              "W3THINK" : 2366000,
+              "W4THINK" : 13104000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         }
+        ],
+"run_cycles": 2,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

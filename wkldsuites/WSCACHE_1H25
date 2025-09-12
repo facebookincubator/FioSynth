@@ -1,0 +1,81 @@
+{
+"pre":[
+        {
+         "template":"wscache_1H22.fio",
+         "alias":"wscache_1H22-precondition1",
+         "values" : {
+             "TIME" : "21600",
+             "DEPTH" : 0,
+             "RRATE" : 54,
+             "SIZE" : "100%",
+             "W1THINK" : 21612,
+             "W2THINK" : 71842,
+             "W3THINK" : 0,
+             "RAMPTIME": 30,
+             "OFFSET2" : 0
+         }
+        },
+        {
+         "template":"wscache_1H22.fio",
+         "alias":"wscache_1H22-precondition2",
+         "values" : {
+             "TIME" : "600",
+             "DEPTH" : 2,
+             "RRATE" : 10795,
+             "SIZE" : "100%",
+             "W1THINK" : 43680,
+             "W2THINK" : 145600,
+             "W3THINK" : 0,
+             "RAMPTIME": 30,
+             "OFFSET2" : 0
+         }
+        }
+       ],
+ "def":[
+        {
+         "template":"wscache_1H22.fio",
+         "alias":"wscache_1H22-normal",
+         "values" : {
+             "TIME" : "14400",
+             "DEPTH" : 0,
+             "RRATE" : 5398,
+             "SIZE" : "70%",
+             "W1THINK" : 2161250,
+             "W2THINK" : 1037400000,
+             "W3THINK" : 0,
+             "RAMPTIME": 30,
+             "OFFSET2" : 0
+         },
+         "targets" : {
+           "throughput" : {
+             "read" : {
+                 "MIN" : 215
+             },
+             "write" : {
+                 "MIN" : 90
+             },
+             "scale_by_TB" : {
+                 "value" : true
+             }
+           },
+           "latency" : {
+             "read" : {
+                 "P99" : 10000,
+                 "P99.99" : 15000,
+                 "P99.9999" : 20000,
+                 "MAX" : 30000
+             },
+             "write" : {
+                 "P99.99" : 50000,
+                 "P99.9999" : 85000,
+                 "MAX" : 100000
+             }
+           }
+         }
+        }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}

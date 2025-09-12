@@ -1,0 +1,127 @@
+{
+"pre":[
+        {
+         "template":"searchindex_wTRIM.fio",
+         "alias":"Search_precondition",
+         "values" : {
+             "TIME" : "36000",
+             "BLKSIZE" : "8192/75:4096/21:16384/4",
+             "DEPTH" : 100,
+             "RRATE" : 603,
+             "SIZE" : "100%",
+             "W1THINK" : 11648,
+             "W2THINK" : 23296,
+             "W3THINK" : 5460000,
+             "W4THINK" : 1638000,
+             "W5THINK" : 698880,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_normal",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2612,
+              "SIZE" : "100%",
+              "W1THINK" : 27300000,
+              "W2THINK" : 5460000,
+              "W3THINK" : 163800,
+              "OFFSET2" : 50000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_highread",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 6270,
+              "SIZE" : "100%",
+              "W1THINK" : 27300000,
+              "W2THINK" : 5460000,
+              "W3THINK" : 68250,
+              "OFFSET2" : 50000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_highwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2090,
+              "SIZE" : "100%",
+              "W1THINK" : 27300000,
+              "W2THINK" : 218400,
+              "W3THINK" : 204750,
+              "OFFSET2" : 50000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         },
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM_highreadwrite",
+          "values" : {
+              "TIME" : "7200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 6270,
+              "SIZE" : "100%",
+              "W1THINK" : 27300000,
+              "W2THINK" : 218400,
+              "W3THINK" : 68250,
+              "OFFSET2" : 50000
+          },
+          "targets" : {
+            "latency" : {
+              "read" : {
+                  "MAX" : 65000
+              },
+              "write" : {
+                  "MAX" : 85000
+              }
+            }
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}

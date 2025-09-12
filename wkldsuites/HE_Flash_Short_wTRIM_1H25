@@ -1,0 +1,288 @@
+{
+ "pre":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"T6_precondition1",
+          "values" : {
+              "TIME" : "43200",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 11648,
+              "W2THINK" : 23296,
+              "W3THINK" : 11648000,
+              "W4THINK" : 27300000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_precon_1H22.fio",
+          "alias":"T6_precondition2",
+          "values" : {
+              "TIME" : "600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 11648,
+              "W2THINK" : 23296,
+              "W3THINK" : 11648000,
+              "W4THINK" : 27300000,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R6DWPD_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 1164800,
+              "W2THINK" : 2329600,
+              "W3THINK" : 11648000,
+              "W4THINK" : 27300000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 873600,
+              "W2THINK" : 1747200,
+              "W3THINK" : 8736000,
+              "W4THINK" : 20475000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 231,
+              "SIZE" : "90%",
+              "W1THINK" : 79352,
+              "W2THINK" : 364000,
+              "W3THINK" : 131040000,
+              "W4THINK" : 4804800,
+              "OFFSET2" : 100000
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM_precondition",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 118,
+              "SIZE" : "90%",
+              "W1THINK" : 87360,
+              "W2THINK" : 69160000,
+              "OFFSET2" : 100000
+          }
+         }
+        ],
+ "def":[
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R6DWPD_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 1164800,
+              "W2THINK" : 2329600,
+              "W3THINK" : 11648000,
+              "W4THINK" : 27300000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 68
+              },
+              "write" : {
+                  "MIN" : 72
+              },
+              "trim" : {
+                  "MIN" : 117
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 1500,
+                  "P99.99" : 2500,
+                  "P99.99999" : 5000,
+                  "MAX" : 10000
+              },
+              "write" : {
+                  "P99.99" : 8000,
+                  "P99.9999" : 15000,
+                  "MAX" : 20000
+              }
+            }
+          }
+         },
+         {
+          "template":"TypeVIwTRIM_1H22.fio",
+          "alias":"4K_L2R9DWPD_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+              "DEPTH" : 13,
+              "RRATE" : 76,
+              "SIZE" : "90%",
+              "W1THINK" : 873600,
+              "W2THINK" : 1747200,
+              "W3THINK" : 8736000,
+              "W4THINK" : 20475000,
+              "MISC" : "512K",
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 68
+              },
+              "write" : {
+                  "MIN" : 93
+              },
+              "trim" : {
+                  "MIN" : 156
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 1500,
+                  "P99.99" : 2500,
+                  "P99.9999" : 8000,
+                  "MAX" : 10000
+              },
+              "write" : {
+                  "P99.99" : 10000,
+                  "P99.9999" : 15000,
+                  "MAX" : 20000
+              }
+            }
+          }
+         },
+         {
+          "template":"MyRocks_wTRIM_1H22.fio",
+          "alias":"MyRocks_Heavy_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "8192/68:4096/8:16384/12:131072/12",
+              "DEPTH" : 20,
+              "RRATE" : 231,
+              "SIZE" : "90%",
+              "W1THINK" : 79352,
+              "W2THINK" : 364000,
+              "W3THINK" : 131040000,
+              "W4THINK" : 4804800,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 210
+              },
+              "write" : {
+                  "MIN" : 101
+              },
+              "trim" : {
+                  "MIN" : 22
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 1500,
+                  "P99.99" : 2500,
+                  "P99.9999" : 8500,
+                  "MAX" : 15000
+              },
+              "write" : {
+                  "P99.99" : 8000,
+                  "P99.9999" : 15000,
+                  "MAX" : 20000
+              }
+            }
+          }
+         },
+         {
+          "template":"FLeaf_wTRIM_1H22.fio",
+          "alias":"FLeaf_wTRIM",
+          "values" : {
+              "TIME" : "3600",
+              "BLKSIZE" : "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+              "DEPTH" : 10,
+              "RRATE" : 118,
+              "SIZE" : "90%",
+              "W1THINK" : 87360,
+              "W2THINK" : 69160000,
+              "OFFSET2" : 100000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 320
+              },
+              "write" : {
+                  "MIN" : 87
+              },
+              "trim" : {
+                  "MIN" : 89
+              },
+              "scale_by_TB" : {
+                  "value" : true
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 1500,
+                  "P99.99" : 2500,
+                  "P99.9999" : 10000,
+                  "MAX" : 15000
+              },
+              "write" : {
+                  "P99.99" : 12000,
+                  "P99.9999" : 15000,
+                  "MAX" : 25000
+              }
+            }
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"precondition_first_cycle_only": "Y",
+"devices_in_global": "Y",
+"scale_by_capacity": "Y"
+}
