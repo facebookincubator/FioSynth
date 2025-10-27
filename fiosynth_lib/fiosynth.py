@@ -17,7 +17,6 @@ import subprocess
 import sys
 import re
 import shlex
-from packaging.version import parse
 from random import randint
 from subprocess import PIPE, Popen
 
@@ -232,29 +231,6 @@ def set_attributes():
     parser.add_argument("-v", action="version", version=parser.description)
     args = parser.parse_args()
     return args
-
-
-def checkVersion(tool):
-    cmd = None
-    if tool == "fio":
-        minVersion = "2.20"
-        cmd = "fio -v | sed s/fio-//"
-    if cmd is not None:
-        min_version = parse(minVersion)
-        v3_version = parse("3.0")
-        version = cmdline(cmd).rstrip()
-        fio_version = parse(version.decode("utf-8"))
-        # Using utf-8 encoding to insure that version is reported as a string
-        if fio_version < min_version:
-            print("{} older than version {}".format(tool, minVersion))
-            sys.exit(1)
-        if fio_version >= v3_version:
-            return 3
-        else:
-            return 2
-    else:
-        print("Unknown tool %s, can't check version." % tool)
-        sys.exit(1)
 
 
 def cmdline(cmd):
@@ -1028,7 +1004,7 @@ def runTest(dut_list, profile, args, csvFolderPath, rtype, index, rcycle, only_t
         getLM(dut_list[0].device, lm_before_filename)
         getLMbinary(dut_list[0].device, lmbinary_before_filename)
 
-    if all([args.dryrun == "n", not only_targets]):
+    if not only_targets:
         fio_jfile = run_fio(profile, index, dut_list, args, rcycle, rtype)
     elif only_targets:
         fio_jfile = profile[rtype][index]["alias"]
@@ -1142,7 +1118,6 @@ def runSuite(args):
 
 def main():
     args = set_attributes()
-    # checkVersion('fio')
     runSuite(args)
 
 

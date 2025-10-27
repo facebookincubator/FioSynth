@@ -46,7 +46,6 @@ import json
 import os
 import sys
 from collections import OrderedDict
-from packaging.version import parse
 import itertools
 
 TOOL_NAME = "fio-parse-json-flash"
@@ -298,13 +297,9 @@ def get_csv_line(jobname, json, index, data, version_str, serverMode, scale_by_T
     clat = "clat"
     con = 1
     # clat -> clat_ns in version 3.0
-    verstr = version_str.split("-")[1]
-    fio_version = parse(verstr)
-    v3_version = parse("3.0")
-    if fio_version >= v3_version:
-        clat = "clat_ns"
-        # convert nanoseconds to microseconds
-        con = 1000
+    clat = "clat_ns"
+    # convert nanoseconds to microseconds
+    con = 1000
     if serverMode:
         # Support for older and newer fio json formats
         options1 = "percentile_list" in json["job options"]
