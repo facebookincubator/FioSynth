@@ -1,7 +1,7 @@
 {
  "pre":[
          {
-          "template":"TypeVIwTRIM_1H22.fio",
+          "template":"TypeVIwTRIM_1H25.fio",
           "alias":"T6_precondition1",
           "values" : {
               "TIME" : "43200",
@@ -34,7 +34,7 @@
           }
          },
          {
-          "template":"TypeVIwTRIM_1H22.fio",
+          "template":"TypeVIwTRIM_1H25.fio",
           "alias":"4K_L2R9DWPD_wTRIM_precondition",
           "values" : {
               "TIME" : "3600",
@@ -51,7 +51,7 @@
           }
          },
          {
-          "template":"MyRocks_wTRIM_1H22.fio",
+          "template":"MyRocks_wTRIM_1H25.fio",
           "alias":"MyRocks_Heavy_wTRIM_precondition",
           "values" : {
               "TIME" : "3600",
@@ -67,7 +67,7 @@
           }
          },
          {
-          "template":"FLeaf_wTRIM_1H22.fio",
+          "template":"FLeaf_wTRIM_1H25.fio",
           "alias":"FLeaf_wTRIM_precondition",
           "values" : {
               "TIME" : "3600",
@@ -83,7 +83,7 @@
         ],
  "def":[
          {
-          "template":"TypeVIwTRIM_1H22.fio",
+          "template":"TypeVIwTRIM_1H25.fio",
           "alias":"4K_L2R9DWPD_wTRIM_normal",
           "values" : {
               "TIME" : "7200",
@@ -110,7 +110,7 @@
           }
          },
          {
-          "template":"TypeVIwTRIM_1H22.fio",
+          "template":"TypeVIwTRIM_1H25.fio",
           "alias":"4K_L2R9DWPD_wTRIM_highread",
           "values" : {
               "TIME" : "7200",
@@ -137,7 +137,7 @@
           }
          },
          {
-          "template":"TypeVIwTRIM_1H22.fio",
+          "template":"TypeVIwTRIM_1H25.fio",
           "alias":"4K_L2R9DWPD_wTRIM_highwrite",
           "values" : {
               "TIME" : "7200",
@@ -164,7 +164,7 @@
           }
          },
          {
-          "template":"TypeVIwTRIM_1H22.fio",
+          "template":"TypeVIwTRIM_1H25.fio",
           "alias":"4K_L2R9DWPD_wTRIM_highreadwrite",
           "values" : {
               "TIME" : "7200",
@@ -191,7 +191,7 @@
           }
          },
          {
-          "template":"MyRocks_wTRIM_1H22.fio",
+          "template":"MyRocks_wTRIM_1H25.fio",
           "alias":"MyRocks_Heavy_wTRIM_normal",
           "values" : {
               "TIME" : "7200",
@@ -217,7 +217,7 @@
           }
          },
          {
-          "template":"MyRocks_wTRIM_1H22.fio",
+          "template":"MyRocks_wTRIM_1H25.fio",
           "alias":"MyRocks_Heavy_wTRIM_highread",
           "values" : {
               "TIME" : "7200",
@@ -243,7 +243,7 @@
           }
          },
          {
-          "template":"MyRocks_wTRIM_1H22.fio",
+          "template":"MyRocks_wTRIM_1H25.fio",
           "alias":"MyRocks_Heavy_wTRIM_highwrite",
           "values" : {
               "TIME" : "7200",
@@ -269,7 +269,7 @@
           }
          },
          {
-          "template":"MyRocks_wTRIM_1H22.fio",
+          "template":"MyRocks_wTRIM_1H25.fio",
           "alias":"MyRocks_Heavy_wTRIM_highreadwrite",
           "values" : {
               "TIME" : "7200",
@@ -295,7 +295,7 @@
           }
          },
          {
-          "template":"FLeaf_wTRIM_1H22.fio",
+          "template":"FLeaf_wTRIM_1H25.fio",
           "alias":"FLeaf_wTRIM_normal",
           "values" : {
               "TIME" : "7200",
@@ -319,7 +319,7 @@
           }
          },
          {
-          "template":"FLeaf_wTRIM_1H22.fio",
+          "template":"FLeaf_wTRIM_1H25.fio",
           "alias":"FLeaf_wTRIM_highread",
           "values" : {
               "TIME" : "7200",
@@ -343,7 +343,7 @@
           }
          },
          {
-          "template":"FLeaf_wTRIM_1H22.fio",
+          "template":"FLeaf_wTRIM_1H25.fio",
           "alias":"FLeaf_wTRIM_highwrite",
           "values" : {
               "TIME" : "7200",
@@ -367,7 +367,7 @@
           }
          },
          {
-          "template":"FLeaf_wTRIM_1H22.fio",
+          "template":"FLeaf_wTRIM_1H25.fio",
           "alias":"FLeaf_wTRIM_highreadwrite",
           "values" : {
               "TIME" : "7200",

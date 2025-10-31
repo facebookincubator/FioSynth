@@ -1,7 +1,7 @@
 {
  "pre":[
          {
-          "template":"bcache_1H22.fio",
+          "template":"bcache_1H25.fio",
           "alias":"bcache_precondition1",
           "values" : {
               "TIME" : "36000",
@@ -18,7 +18,7 @@
           }
          },
          {
-          "template":"bcache_1H22.fio",
+          "template":"bcache_1H25.fio",
           "alias":"bcache_precondition2",
           "values" : {
               "TIME" : "1200",
@@ -37,7 +37,7 @@
         ],
  "def":[
          {
-          "template":"bcache_1H22.fio",
+          "template":"bcache_1H25.fio",
           "alias":"B_Cache_normal",
           "values" : {
               "TIME" : "7200",
@@ -64,7 +64,7 @@
           }
          },
          {
-          "template":"bcache_1H22.fio",
+          "template":"bcache_1H25.fio",
           "alias":"B_Cache_highread",
           "values" : {
               "TIME" : "7200",
@@ -91,7 +91,7 @@
           }
          },
          {
-          "template":"bcache_1H22.fio",
+          "template":"bcache_1H25.fio",
           "alias":"B_Cache_highwrite",
           "values" : {
               "TIME" : "7200",
@@ -118,7 +118,7 @@
           }
          },
          {
-          "template":"bcache_1H22.fio",
+          "template":"bcache_1H25.fio",
           "alias":"B_Cache_highreadwrite",
           "values" : {
               "TIME" : "7200",

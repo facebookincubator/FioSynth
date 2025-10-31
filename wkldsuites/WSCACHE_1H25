@@ -1,8 +1,8 @@
 {
 "pre":[
         {
-         "template":"wscache_1H22.fio",
-         "alias":"wscache_1H22-precondition1",
+         "template":"wscache_1H25.fio",
+         "alias":"wscache_1H25-precondition1",
          "values" : {
              "TIME" : "21600",
              "DEPTH" : 0,
@@ -16,8 +16,8 @@
          }
         },
         {
-         "template":"wscache_1H22.fio",
-         "alias":"wscache_1H22-precondition2",
+         "template":"wscache_1H25.fio",
+         "alias":"wscache_1H25-precondition2",
          "values" : {
              "TIME" : "600",
              "DEPTH" : 2,
@@ -33,8 +33,8 @@
        ],
  "def":[
         {
-         "template":"wscache_1H22.fio",
-         "alias":"wscache_1H22-normal",
+         "template":"wscache_1H25.fio",
+         "alias":"wscache_1H25-normal",
          "values" : {
              "TIME" : "14400",
              "DEPTH" : 0,

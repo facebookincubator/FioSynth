@@ -227,6 +227,20 @@ def set_attributes():
         dest="scale_by_TB",
         help="(Optional) Set to scale BW and IOPs by device capacity in the output CSV file. Workload must have store_by_TB set to true. (default = disabled)",
     )
+    parser.add_argument(
+        "--ioengine",
+        action="store",
+        dest="ioengine",
+        type=str,
+        help="(Optional) Specify either io_uring or libaio ioengine. For 1H25 and later wkldsuites. (default = io_uring)",
+        default="io_uring",
+    )
+    parser.add_argument(
+        "--tmp-directory",
+        action="store_true",
+        dest="tmp_directory",
+        help="(Optional) Use current directory for temporary files required to run benchmark (default temporary directory = /tmp)",
+    )
 
     parser.add_argument("-v", action="version", version=parser.description)
     args = parser.parse_args()
@@ -432,6 +446,8 @@ def run_fio(p, VAL, dut_list, args, run, rtype):
         jobVars = getJobVars(dut, p[rtype][VAL]["values"], f)
         if args.misc != "":
             jobVars["MISC"] = args.misc
+        if args.ioengine != "":
+            jobVars["IOENGINE"] = args.ioengine
         if p["devices_in_global"] == "N":
             template = createTempJobTemplate(dut, template)
         if dut.inLocalMode():
@@ -1065,8 +1081,11 @@ def runSuite(args):
     # Use absolute path for workload suite files
     wklds = os.path.join(FioDUT.wkldsuites, args.wklds)
     profile = fio_json_parser.read_json(wklds)
-    # dst_file = '/usr/local/fb-FioSynthFlash/offset.txt'
-    dst_file = "/tmp/offset.txt"
+    if args.tmp_directory:
+        currDir = os.getcwd()
+        dst_file = os.path.join(currDir, "offset.txt")
+    else:
+        dst_file = "/tmp/offset.txt"
     loadDevList(dut_list, args, profile)
 
     prepServers(dut_list, args, profile)

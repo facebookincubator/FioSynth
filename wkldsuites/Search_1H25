@@ -1,7 +1,7 @@
 {
 "pre":[
         {
-         "template":"prep_flash_io_uring.fio",
+         "template":"prep_flash_io_uring_1H25.fio",
          "alias":"prep_flash",
          "values" : {
              "TIME" : "N/A",
@@ -16,7 +16,7 @@
          }
         },
         {
-         "template":"searchindex_wTRIM_1H22.fio",
+         "template":"searchindex_wTRIM_1H25.fio",
          "alias":"Search_precondition",
          "values" : {
              "TIME" : "3600",
@@ -35,7 +35,7 @@
        ],
  "def":[
          {
-          "template":"searchindex_wTRIM_1H22.fio",
+          "template":"searchindex_wTRIM_1H25.fio",
           "alias":"SearchIndex_wTRIM",
           "values" : {
               "TIME" : "1200",
@@ -52,7 +52,7 @@
           }
          },
          {
-          "template":"searchlm_wTRIM_1H22.fio",
+          "template":"searchlm_wTRIM_1H25.fio",
           "alias":"SearchLM_wTRIM",
           "values" : {
               "TIME" : "1200",
