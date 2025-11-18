@@ -23,8 +23,8 @@ rw=randread
 bs=4k
 iodepth=832
 numjobs=4
-offset=1G
-size=15G
+offset=0
+size=10G
 offset_increment=0
 
 [write-job]
