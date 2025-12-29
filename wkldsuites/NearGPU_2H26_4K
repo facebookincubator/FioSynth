@@ -1,0 +1,129 @@
+{
+  "description": "Near-GPU TLC SSD Performance Workloads for H2/2026.",
+  "pre": [],
+  "def": [
+    {
+      "template": "prep_neargpu_seq_write.fio",
+      "alias": "NearGPU_Precondition_Seq_100",
+      "values": {
+        "DEPTH": 512,
+        "SIZE": "100%"
+      }
+    },
+    {
+      "template": "prep_neargpu_seq_write.fio",
+      "alias": "NearGPU_Precondition_Seq_50",
+      "values": {
+        "DEPTH": 512,
+        "SIZE": "50%"
+      }
+    },
+    {
+      "template": "neargpu_tlc_ssd.fio",
+      "alias": "NearGPU_SeqWrite_256K",
+      "values": {
+        "RANDRW": "write",
+        "BLKSIZE": "256K",
+        "RAMPTIME": "300",
+        "TIME": "600",
+        "DEPTH": 512,
+        "DIRECT": 1,
+        "SIZE": "100%"
+      },
+      "targets": {
+        "throughput": {
+          "write": {
+            "MIN": 9000
+          }
+        }
+      }
+    },
+    {
+      "template": "neargpu_tlc_ssd.fio",
+      "alias": "NearGPU_SeqRead_256K",
+      "values": {
+        "RANDRW": "read",
+        "BLKSIZE": "256K",
+        "RAMPTIME": "300",
+        "TIME": "600",
+        "DEPTH": 512,
+        "DIRECT": 1,
+        "SIZE": "100%"
+      },
+      "targets": {
+        "throughput": {
+          "read": {
+            "MIN": 14000
+          }
+        }
+      }
+    },
+    {
+      "template": "prep_neargpu_seq_write.fio",
+      "alias": "NearGPU_Precondition_Rand_Seq_100",
+      "values": {
+        "DEPTH": 512,
+        "SIZE": "100%"
+      }
+    },
+    {
+      "template": "prep_neargpu_seq_write.fio",
+      "alias": "NearGPU_Precondition_Rand_Seq_50",
+      "values": {
+        "DEPTH": 512,
+        "SIZE": "50%"
+      }
+    },
+    {
+      "template": "prep_neargpu_rand_write.fio",
+      "alias": "NearGPU_Precondition_Rand_Write_4K",
+      "values": {
+        "DEPTH": 512
+      }
+    },
+    {
+      "template": "neargpu_tlc_ssd.fio",
+      "alias": "NearGPU_RandWrite_4K",
+      "values": {
+        "RANDRW": "randwrite",
+        "BLKSIZE": "4K",
+        "RAMPTIME": "300",
+        "TIME": "600",
+        "DEPTH": 512,
+        "DIRECT": 1,
+        "SIZE": "100%"
+      },
+      "targets": {
+        "iops": {
+          "write": {
+            "MIN": 400
+          }
+        }
+      }
+    },
+    {
+      "template": "neargpu_tlc_ssd.fio",
+      "alias": "NearGPU_RandRead_4K",
+      "values": {
+        "RANDRW": "randread",
+        "BLKSIZE": "4K",
+        "RAMPTIME": "300",
+        "TIME": "600",
+        "DEPTH": 512,
+        "DIRECT": 1,
+        "SIZE": "100%"
+      },
+      "targets": {
+        "iops": {
+          "read": {
+            "MIN": 3000
+          }
+        }
+      }
+    }
+  ],
+  "run_cycles": 1,
+  "precondition_cycles": 0,
+  "devices_in_global": "N",
+  "scale_by_capacity": "N"
+}
