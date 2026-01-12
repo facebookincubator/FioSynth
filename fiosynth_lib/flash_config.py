@@ -32,7 +32,7 @@ def set_attributes():
         action="store",
         dest="filename",
         type=str,
-        help=("(Optional) Flash configuration filename (default = " "flashconfig.csv"),
+        help=("(Optional) Flash configuration filename (default = flashconfig.csv"),
         default="flashconfig.csv",
     )
     args = parser.parse_args()
