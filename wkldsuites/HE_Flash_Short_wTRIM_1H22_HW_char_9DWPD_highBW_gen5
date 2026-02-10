@@ -1,0 +1,5076 @@
+{
+    "pre": [
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "T6_precondition1",
+            "values": {
+                "TIME": "43200",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 12800,
+                "W2THINK": 25600,
+                "W3THINK": 12800000,
+                "W4THINK": 30000000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_precon_1H22.fio",
+            "alias": "T6_precondition2",
+            "values": {
+                "TIME": "600",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 12800,
+                "W2THINK": 25600,
+                "W3THINK": 12800000,
+                "W4THINK": 30000000,
+                "OFFSET2": 100000
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R6DWPD_wTRIM_precondition",
+            "values": {
+                "TIME": "3600",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 1280000,
+                "W2THINK": 2560000,
+                "W3THINK": 12800000,
+                "W4THINK": 30000000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_precondition",
+            "values": {
+                "TIME": "3600",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            }
+        },
+        {
+            "template": "MyRocks_wTRIM_1H22.fio",
+            "alias": "MyRocks_Heavy_wTRIM_precondition",
+            "values": {
+                "TIME": "3600",
+                "BLKSIZE": "8192/68:4096/8:16384/12:131072/12",
+                "DEPTH": 20,
+                "RRATE": 210,
+                "SIZE": "90%",
+                "W1THINK": 87200,
+                "W2THINK": 400000,
+                "W3THINK": 144000000,
+                "W4THINK": 5280000,
+                "OFFSET2": 100000
+            }
+        },
+        {
+            "template": "FLeaf_wTRIM_1H22.fio",
+            "alias": "FLeaf_wTRIM_precondition",
+            "values": {
+                "TIME": "3600",
+                "BLKSIZE": "4096/58:8192/18:16384/8:32768/7:65536/5:131072/3:262144/1",
+                "DEPTH": 10,
+                "RRATE": 107,
+                "SIZE": "90%",
+                "W1THINK": 96000,
+                "W2THINK": 76000000,
+                "OFFSET2": 100000
+            }
+        }
+    ],
+    "def": [
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W93",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 960000,
+                "W2THINK": 1920000,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 93
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W200",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 446400,
+                "W2THINK": 892800,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 200
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W300",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 297600,
+                "W2THINK": 595200,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 300
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 178560,
+                "W2THINK": 357120,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W750",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 119040,
+                "W2THINK": 238080,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 750
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W1000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 89280,
+                "W2THINK": 178560,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 1000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W1250",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 71424,
+                "W2THINK": 142848,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 1250
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W1500",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 59520,
+                "W2THINK": 119040,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 1500
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R69_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 69,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 69
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R200_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 200,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 200
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R500_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 500,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 500
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R750_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 750,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 750
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1000_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1000,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1000
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1250_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1250,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1250
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1500_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1500,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1500
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R1750_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 1750,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 1750
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2000_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2000,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2000
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R2500_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 2500,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 2500
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3000_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3000,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3000
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        },
+        {
+            "template": "TypeVIwTRIM_1H22.fio",
+            "alias": "4K_L2R9DWPD_wTRIM_R3500_W2000",
+            "values": {
+                "TIME": "1800",
+                "BLKSIZE": "4096/28:8192/9:16384/8:32768/9:65536/11:131072/35",
+                "DEPTH": 13,
+                "RRATE": 3500,
+                "SIZE": "90%",
+                "W1THINK": 44640,
+                "W2THINK": 89280,
+                "W3THINK": 9600000,
+                "W4THINK": 22500000,
+                "MISC": "512K",
+                "OFFSET2": 100000
+            },
+            "targets": {
+                "throughput": {
+                    "read": {
+                        "MIN": 3500
+                    },
+                    "write": {
+                        "MIN": 2000
+                    },
+                    "trim": {
+                        "MIN": 156
+                    },
+                    "scale_by_TB": {
+                        "value": true
+                    }
+                },
+                "latency": {
+                    "read": {
+                        "P99": 1500,
+                        "P99.99": 2500,
+                        "P99.9999": 8000,
+                        "MAX": 10000
+                    },
+                    "write": {
+                        "P99.99": 10000,
+                        "P99.9999": 15000,
+                        "MAX": 20000
+                    }
+                }
+            }
+        }
+    ],
+    "run_cycles": 1,
+    "precondition_cycles": 1,
+    "precondition_first_cycle_only": "Y",
+    "devices_in_global": "Y",
+    "scale_by_capacity": "Y"
+}

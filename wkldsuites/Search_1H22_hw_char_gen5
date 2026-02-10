@@ -1,0 +1,3406 @@
+{
+"pre":[
+        {
+         "template":"prep_flash_io_uring.fio",
+         "alias":"prep_flash",
+         "values" : {
+             "TIME" : "N/A",
+             "BLKSIZE" : "512K",
+             "DEPTH" : 256,
+             "RRATE" : 0,
+             "SIZE" : "N/A",
+             "W1THINK" : 0,
+             "W2THINK" : 0,
+             "W3THINK" : 0,
+             "W4THINK" : 0
+         }
+        },
+        {
+         "template":"searchindex_wTRIM_1H22.fio",
+         "alias":"Search_precondition",
+         "values" : {
+             "TIME" : "3600",
+             "BLKSIZE" : "8192/75:4096/21:16384/4",
+             "DEPTH" : 100,
+             "RRATE" : 548,
+             "SIZE" : "100%",
+             "W1THINK" : 12800,
+             "W2THINK" : 25600,
+             "W3THINK" : 6000000,
+             "W4THINK" : 1800000,
+             "W5THINK" : 768000,
+             "OFFSET2" : 50000
+         }
+        }
+       ],
+ "def":[
+         {
+          "template":"searchlm_wTRIM_1H22.fio",
+          "alias":"SearchLM_wTRIM",
+          "values" : {
+              "TIME" : "1200",
+              "BLKSIZE" : "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+              "DEPTH" : 32,
+              "RRATE" : 2375,
+              "SIZE" : "100%",
+              "W1THINK" : 30000000,
+              "W2THINK" : 6000000,
+              "W3THINK" : 180000,
+              "OFFSET2" : 50000
+          },
+          "targets" : {
+            "throughput" : {
+              "read" : {
+                  "MIN" : 2550
+              },
+              "write" : {
+                  "MIN" : 12
+              },
+              "trim" : {
+                  "MIN" : 130
+              }
+            },
+            "latency" : {
+              "read" : {
+                  "P99" : 1500,
+                  "P99.99" : 5000,
+                  "P99.9999" : 15000,
+                  "MAX" : 20000
+              },
+              "write" : {
+                  "P99.99" : 15000,
+                  "P99.9999" : 20000,
+                  "MAX" : 25000
+              }
+            }
+          }
+         },
+
+         {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W12",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 6000000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 12
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W25",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 2880000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 25
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W50",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 1440000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 50
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W75",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 960000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 75
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W100",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 720000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 100
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W150",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 480000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 150
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W200",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 360000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 200
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W300",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 240000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 300
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R2550_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 2550,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 2550
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R3000_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 3000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 3000
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R4000_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 4000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 4000
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R5000_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 5000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 5000
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R6000_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 6000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 6000
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R8000_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 8000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 8000
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R10000_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 10000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 10000
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R12500_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 12500,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 12500
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        },
+        {
+        "template": "searchlm_wTRIM_1H22.fio",
+        "alias": "SearchLM_wTRIM_R15000_W500",
+        "values": {
+            "TIME": "1800",
+            "BLKSIZE": "8192/50:4096/16:16384/12:32768/8:65536/6:131072/4:262144/4",
+            "DEPTH": 32,
+            "RRATE": 15000,
+            "SIZE": "100%",
+            "W1THINK": 30000000,
+            "W2THINK": 144000,
+            "W3THINK": 180000,
+            "OFFSET2": 50000
+        },
+        "targets": {
+            "throughput": {
+            "read": {
+                "MIN": 15000
+            },
+            "write": {
+                "MIN": 500
+            },
+            "trim": {
+                "MIN": 130
+            }
+            },
+            "latency": {
+            "read": {
+                "P99": 1500,
+                "P99.99": 5000,
+                "P99.9999": 15000,
+                "MAX": 20000
+            },
+            "write": {
+                "P99.99": 15000,
+                "P99.9999": 20000,
+                "MAX": 25000
+            }
+            }
+        }
+        }
+
+        ],
+"run_cycles": 1,
+"precondition_cycles": 1,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}
