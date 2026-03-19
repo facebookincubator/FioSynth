@@ -49,13 +49,13 @@
          "targets" : {
            "throughput" : {
              "read" : {
-                 "MIN" : 78
+                 "MIN" : 85.8
              },
              "write" : {
-                 "MIN" : 43
+                 "MIN" : 37.4
              },
              "trim" : {
-                 "MIN" : 29
+                 "MIN" : 31.9
              },
              "scale_by_TB" : {
                  "value" : true
