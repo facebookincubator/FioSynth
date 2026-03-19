@@ -1,0 +1,16 @@
+{
+ "def":[
+         {
+          "template":"drive_fill.fio",
+          "alias":"drive_fill",
+          "values" : {
+              "BLKSIZE" : "4K",
+              "DEPTH" : 256
+          }
+         }
+        ],
+"run_cycles": 1,
+"precondition_cycles": 0,
+"devices_in_global": "Y",
+"scale_by_capacity": "N"
+}
