@@ -213,7 +213,7 @@ def set_attributes():
         "--lm",
         action="store_true",
         dest="check_lm",
-        help="(Optional) Set to use OCP Latency Monitor to check max read and max write latencies if targets avaiable. OCP 2.0 compliant devices only. (default = disabled)",
+        help="(Optional) Set to use OCP Latency Monitor to check max read and max write latencies if targets available. Supported on compatible OCP Datacenter NVMe SSD devices. (default = disabled)",
     )
     parser.add_argument(
         "--targets",
@@ -820,6 +820,24 @@ def getVID(device):
 
 def getOCP(device):
     OCP_map = {
+        "OCP Datacenter NVMe SSD Specification Version 2.7": {
+            "Log Page Version": 0x6,
+            "Log Page GUID": 0xAFD514C97C6F4F9CA4f2BFEA2810AFC5,
+            "calc_waf": True,
+            "check_lm": True,
+        },
+        "OCP Datacenter NVMe SSD Specification Version 2.6": {
+            "Log Page Version": 0x5,
+            "Log Page GUID": 0xAFD514C97C6F4F9CA4f2BFEA2810AFC5,
+            "calc_waf": True,
+            "check_lm": True,
+        },
+        "OCP Datacenter NVMe SSD Specification Version 2.5": {
+            "Log Page Version": 0x4,
+            "Log Page GUID": 0xAFD514C97C6F4F9CA4f2BFEA2810AFC5,
+            "calc_waf": True,
+            "check_lm": True,
+        },
         "OCP Datacenter NVMe SSD Specification Version 2.0": {
             "Log Page Version": 0x3,
             "Log Page GUID": 0xAFD514C97C6F4F9CA4f2BFEA2810AFC5,
