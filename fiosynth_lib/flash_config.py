@@ -219,6 +219,7 @@ def convert_nvme_output(
                 }
                 old_format_list.append(old_format)
 
+    # pyrefly: ignore [bad-return]
     return old_format_list
 
 
