@@ -55,10 +55,10 @@
           "targets" : {
             "latency" : {
               "read" : {
-                  "MAX" : 65000
+                  "MAX" : 35000
               },
               "write" : {
-                  "MAX" : 85000
+                  "MAX" : 40000
               }
             }
           }
@@ -82,10 +82,10 @@
           "targets" : {
             "latency" : {
               "read" : {
-                  "MAX" : 65000
+                  "MAX" : 35000
               },
               "write" : {
-                  "MAX" : 85000
+                  "MAX" : 40000
               }
             }
           }
@@ -109,10 +109,10 @@
           "targets" : {
             "latency" : {
               "read" : {
-                  "MAX" : 65000
+                  "MAX" : 35000
               },
               "write" : {
-                  "MAX" : 85000
+                  "MAX" : 40000
               }
             }
           }
@@ -136,10 +136,10 @@
           "targets" : {
             "latency" : {
               "read" : {
-                  "MAX" : 65000
+                  "MAX" : 35000
               },
               "write" : {
-                  "MAX" : 85000
+                  "MAX" : 40000
               }
             }
           }
